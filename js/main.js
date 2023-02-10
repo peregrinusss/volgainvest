@@ -171,6 +171,7 @@ if (phones.length != 0) {
     var mask = new imask__WEBPACK_IMPORTED_MODULE_0__["default"](phone, maskOptions);
   });
 }
+const screenWidth = window.innerWidth;
 
 // Menu burger action
 const menuBurgerOpen = document.querySelector('.header-burger');
@@ -251,6 +252,67 @@ if (mapTabs.length != 0) {
       mapTab.classList.add('active');
     });
   });
+}
+const house1 = document.querySelector('.house__img-house-1');
+const house2 = document.querySelector('.house__img-house-2');
+if (house1) {
+  const popup1 = document.querySelector('.house-hover__first');
+  const popup2 = document.querySelector('.house-hover__sec');
+  if (screenWidth >= 1200) {
+    house1.addEventListener('mouseover', () => {
+      popup1.classList.add('active');
+      house1.classList.add('active');
+    });
+    popup1.addEventListener('mouseover', () => {
+      popup1.classList.add('active');
+      house1.classList.add('active');
+    });
+    house1.addEventListener('mouseleave', () => {
+      popup1.classList.remove('active');
+      house1.classList.remove('active');
+    });
+    popup1.addEventListener('mouseleave', () => {
+      popup1.classList.remove('active');
+      house1.classList.remove('active');
+    });
+    house2.addEventListener('mouseover', () => {
+      popup2.classList.add('active');
+      house2.classList.add('active');
+    });
+    popup2.addEventListener('mouseover', () => {
+      popup2.classList.add('active');
+      house2.classList.add('active');
+    });
+    house2.addEventListener('mouseleave', () => {
+      popup2.classList.remove('active');
+      house2.classList.remove('active');
+    });
+    popup2.addEventListener('mouseleave', () => {
+      popup2.classList.remove('active');
+      house2.classList.remove('active');
+    });
+  } else {
+    const choose1 = document.querySelector('.house__choose-1');
+    const choose2 = document.querySelector('.house__choose-2');
+    popup1.classList.add('active');
+    house1.classList.add('active');
+    choose1.addEventListener('click', () => {
+      choose2.classList.remove('active');
+      choose1.classList.add('active');
+      popup1.classList.add('active');
+      popup2.classList.remove('active');
+      house1.classList.add('active');
+      house2.classList.remove('active');
+    });
+    choose2.addEventListener('click', () => {
+      choose1.classList.remove('active');
+      choose2.classList.add('active');
+      popup1.classList.remove('active');
+      popup2.classList.add('active');
+      house2.classList.add('active');
+      house1.classList.remove('active');
+    });
+  }
 }
 
 // Main popup action

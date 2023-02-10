@@ -444,6 +444,22 @@ ul, ol {
     font-size: 24px;
   }
 }
+.title-h4 {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 125%;
+  color: #000000;
+}
+@media (max-width: 1400px) {
+  .title-h4 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 1200px) {
+  .title-h4 {
+    font-size: 24px;
+  }
+}
 
 .input {
   position: relative;
@@ -551,8 +567,31 @@ ul, ol {
   }
 }
 
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .page__hat {
   margin-top: 32px;
+}
+.page__container {
+  padding: 0 27px;
+}
+@media (max-width: 1200px) {
+  .page__container {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 767px) {
+  .page__container {
+    padding: 0;
+  }
 }
 .page__breadcrumbs {
   margin-bottom: 50px;
@@ -3243,6 +3282,18 @@ ul, ol {
 }
 .house__img {
   margin-top: 50px;
+  position: relative;
+}
+@media (max-width: 1200px) {
+  .house__img {
+    margin-top: 300px;
+  }
+}
+@media (max-width: 767px) {
+  .house__img {
+    margin-top: 24px;
+    margin-bottom: 200px;
+  }
 }
 .house__img svg {
   width: 100%;
@@ -3258,9 +3309,378 @@ ul, ol {
   -o-transition: all 0.1s;
   transition: all 0.1s;
 }
-.house__img-house:hover {
+.house__img-house.active {
   fill-opacity: 0.2;
   stroke-width: 15;
+}
+.house__params {
+  margin-top: 24px;
+}
+@media (max-width: 1400px) {
+  .house__params {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 1200px) {
+  .house__params {
+    margin-top: 14px;
+  }
+}
+.house__chooses {
+  display: none;
+  margin-top: 24px;
+}
+.house__chooses > :first-child {
+  margin-right: 80px;
+}
+@media (max-width: 767px) {
+  .house__chooses {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+  }
+}
+.house__choose {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 125%;
+  color: #159947;
+  position: relative;
+  padding-left: 46px;
+  cursor: pointer;
+}
+.house__choose::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #159947;
+}
+.house__choose::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #159947;
+  opacity: 0;
+  visibility: hidden;
+}
+.house__choose.active::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.house-hover {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  background: #ffffff;
+  max-width: 282px;
+  padding: 30px 24px;
+  position: relative;
+  -webkit-box-shadow: 5px 6px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 6px 14px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  z-index: 4;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.house-hover.active {
+  opacity: 1;
+  visibility: visible;
+}
+@media (max-width: 1400px) {
+  .house-hover {
+    max-width: 260px;
+  }
+}
+@media (max-width: 1200px) {
+  .house-hover {
+    padding: 20px;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@media (max-width: 767px) {
+  .house-hover {
+    padding: 20px 16px;
+    max-width: 210px;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.house-hover h4 {
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .house-hover h4 {
+    display: none;
+  }
+}
+.house-hover span {
+  display: block;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin-top: 8px;
+}
+@media (max-width: 1400px) {
+  .house-hover span {
+    font-size: 18px;
+    margin-top: 4px;
+  }
+}
+@media (max-width: 1200px) {
+  .house-hover span {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .house-hover span {
+    font-size: 14px;
+  }
+}
+.house-hover__first {
+  top: 150px;
+  left: 33%;
+}
+@media (max-width: 1400px) {
+  .house-hover__first {
+    left: 35%;
+  }
+}
+@media (max-width: 1200px) {
+  .house-hover__first {
+    top: -250px;
+    left: 15%;
+  }
+}
+@media (max-width: 960px) {
+  .house-hover__first {
+    left: 8%;
+  }
+}
+@media (max-width: 960px) {
+  .house-hover__first {
+    left: 8%;
+  }
+}
+@media (max-width: 767px) {
+  .house-hover__first {
+    top: auto;
+    bottom: -200px;
+  }
+}
+@media (max-width: 420px) {
+  .house-hover__first {
+    left: 3%;
+  }
+}
+.house-hover__first::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 30px;
+  width: 0;
+  height: 0;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-right: 30px solid #ffffff;
+}
+@media (max-width: 1200px) {
+  .house-hover__first::before {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: auto;
+    bottom: -45px;
+    border-top: 30px solid #ffffff;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+  }
+}
+@media (max-width: 767px) {
+  .house-hover__first::before {
+    border-top: none;
+    border-bottom: 30px solid #ffffff;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    bottom: auto;
+    top: -28px;
+  }
+}
+@media (max-width: 420px) {
+  .house-hover__first::before {
+    left: 30%;
+  }
+}
+.house-hover__sec {
+  top: 300px;
+  left: 37%;
+}
+@media (max-width: 1400px) {
+  .house-hover__sec {
+    top: 250px;
+    left: 32%;
+  }
+}
+@media (max-width: 1200px) {
+  .house-hover__sec {
+    top: -250px;
+    left: auto;
+    right: 15%;
+  }
+}
+@media (max-width: 960px) {
+  .house-hover__sec {
+    right: 8%;
+  }
+}
+@media (max-width: 767px) {
+  .house-hover__sec {
+    top: auto;
+    bottom: -200px;
+  }
+}
+.house-hover__sec::before {
+  content: "";
+  position: absolute;
+  right: -28px;
+  top: 30px;
+  width: 0;
+  height: 0;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 30px solid #ffffff;
+}
+@media (max-width: 1200px) {
+  .house-hover__sec::before {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: auto;
+    bottom: -45px;
+    border-top: 30px solid #ffffff;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+  }
+}
+@media (max-width: 767px) {
+  .house-hover__sec::before {
+    border-top: none;
+    border-bottom: 30px solid #ffffff;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    bottom: auto;
+    top: -28px;
+  }
+}
+@media (max-width: 420px) {
+  .house-hover__sec::before {
+    left: 60%;
+  }
+}
+.house-hover__btn {
+  margin-top: 24px;
+}
+@media (max-width: 1200px) {
+  .house-hover__btn {
+    margin-top: 16px;
+  }
+}
+
+.house-param {
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.house-param img {
+  width: 45px;
+  height: 45px;
+}
+@media (max-width: 1400px) {
+  .house-param img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .house-param img {
+    width: 35px;
+    height: 35px;
+  }
+}
+.house-param h5 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  -webkit-font-feature-settings: "pnum" on, "lnum" on;
+  font-feature-settings: "pnum" on, "lnum" on;
+  color: #159947;
+}
+@media (max-width: 1400px) {
+  .house-param h5 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1200px) {
+  .house-param h5 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .house-param h5 {
+    font-size: 16px;
+  }
+}
+.house-param span {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  margin-top: 0;
+}
+@media (max-width: 1400px) {
+  .house-param span {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1200px) {
+  .house-param span {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .house-param span {
+    font-size: 14px;
+  }
 }
 
 .popup {
