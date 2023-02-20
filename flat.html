@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>ЖК на Журова</title>
+  <link rel="preload" href="fonts/FiraSansCondensed-ExtraLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+    <header class="header">
+  <div class="container-header">
+    <div class="header__content">
+      <div class="header__menu">
+        <div class="header-burger">
+          <span>Меню</span>
+        </div>
+        <a href="tel:+79005676767" class="header__tel">+7 (90) 05-67-67-67</a>
+      </div>
+      <a href="#" class="header__logo">
+        <img src="img/pages/logo.svg" alt="">
+      </a>
+      <a href="#" class="header__btn btn-green">Выбрать квартиру</a>
+    </div>
+  </div>
+</header>
+
+    <main class="main">
+      <div class="container">
+        <div class="page__hat">
+          <div class="page__breadcrumbs">
+            <a href="#">Главная</a>
+            <a href="#">Выбор квартиры</a>
+          </div>
+          <h1 class="title-h1 page__title">Выбор квартиры</h1>
+        </div>
+      </div>
+      <div class="container-header page__container">
+        <div class="page__wrap">
+          <div class="container">
+            <div class="page__header">
+              <a href="#" class="text-btn">
+                <svg class="">
+                  <use xlink:href="img/sprite.svg#arrow_back"></use>
+                </svg>
+                Назад
+              </a>
+              <h3 class="title-h3 flat__title">Дом 1</h3>
+            </div>
+            <div class="flat">
+              <aside class="flat-filter filter">
+                <h6 class="filter__title">Количество комнат</h6>
+                <div class="filter__rooms">
+                  <svg class="filter__room" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="63" height="63" stroke="#1F5F5B"/>
+                    <path d="M17.76 19V45.76H14.2V22.76L8.64 26.52L7 24.12L14.6 19H17.76Z" fill="#159947"/>
+                    <path d="M34.912 28.208L31.384 34.016L35.464 40.76H33.952L30.28 34.64H28.6V40.76H27.256V28.208H28.6V33.56H30.304L33.52 28.208H34.912Z" fill="#159947"/>
+                    <path d="M45.7167 28.208L42.1887 34.016L46.2687 40.76H44.7567L41.0847 34.64H39.4047V40.76H38.0607V28.208H39.4047V33.56H41.1087L44.3247 28.208H45.7167Z" fill="#159947"/>
+                    <path d="M54.2894 33.944C55.2014 34.04 55.9054 34.344 56.4014 34.856C56.8974 35.368 57.1454 36.088 57.1454 37.016C57.1454 38.264 56.7294 39.2 55.8974 39.824C55.0654 40.448 53.9454 40.76 52.5374 40.76H48.8654V28.328C50.3374 28.072 51.5054 27.944 52.3694 27.944C53.6814 27.944 54.6974 28.24 55.4174 28.832C56.1534 29.424 56.5214 30.224 56.5214 31.232C56.5214 32.704 55.7774 33.608 54.2894 33.944ZM52.3934 29.048C51.7534 29.048 51.0254 29.104 50.2094 29.216V33.536H52.8014C53.5534 33.536 54.1374 33.352 54.5534 32.984C54.9694 32.6 55.1774 32.032 55.1774 31.28C55.1774 30.56 54.9454 30.008 54.4814 29.624C54.0174 29.24 53.3214 29.048 52.3934 29.048ZM52.5134 39.656C54.6734 39.656 55.7534 38.776 55.7534 37.016C55.7534 36.168 55.5214 35.552 55.0574 35.168C54.5934 34.784 53.8894 34.592 52.9454 34.592H50.2094V39.656H52.5134Z" fill="#159947"/>
+                  </svg>
+                  <svg class="filter__room" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="63" height="63" stroke="#1F5F5B"/>
+                    <path d="M14.48 18C16 18 17.3067 18.32 18.4 18.96C19.52 19.5733 20.3733 20.4267 20.96 21.52C21.5467 22.5867 21.84 23.8 21.84 25.16C21.84 26.7867 21.52 28.3333 20.88 29.8C20.2667 31.24 19.2667 32.8533 17.88 34.64C16.4933 36.4267 14.36 38.96 11.48 42.24H22.44L22 45.2H7.52V42.4C10.6133 38.8267 12.8667 36.12 14.28 34.28C15.72 32.44 16.72 30.8667 17.28 29.56C17.84 28.2267 18.12 26.8267 18.12 25.36C18.12 23.9467 17.76 22.8533 17.04 22.08C16.3467 21.3067 15.4 20.92 14.2 20.92C13.1867 20.92 12.3067 21.1467 11.56 21.6C10.8133 22.0533 10.04 22.7733 9.24 23.76L7 22.04C8.94667 19.3467 11.44 18 14.48 18Z" fill="#159947"/>
+                    <path d="M35.272 27.648L31.744 33.456L35.824 40.2H34.312L30.64 34.08H28.96V40.2H27.616V27.648H28.96V33H30.664L33.88 27.648H35.272Z" fill="#159947"/>
+                    <path d="M46.0767 27.648L42.5487 33.456L46.6287 40.2H45.1167L41.4447 34.08H39.7647V40.2H38.4207V27.648H39.7647V33H41.4687L44.6847 27.648H46.0767Z" fill="#159947"/>
+                    <path d="M54.6494 33.384C55.5614 33.48 56.2654 33.784 56.7614 34.296C57.2574 34.808 57.5054 35.528 57.5054 36.456C57.5054 37.704 57.0894 38.64 56.2574 39.264C55.4254 39.888 54.3054 40.2 52.8974 40.2H49.2254V27.768C50.6974 27.512 51.8654 27.384 52.7294 27.384C54.0414 27.384 55.0574 27.68 55.7774 28.272C56.5134 28.864 56.8814 29.664 56.8814 30.672C56.8814 32.144 56.1374 33.048 54.6494 33.384ZM52.7534 28.488C52.1134 28.488 51.3854 28.544 50.5694 28.656V32.976H53.1614C53.9134 32.976 54.4974 32.792 54.9134 32.424C55.3294 32.04 55.5374 31.472 55.5374 30.72C55.5374 30 55.3054 29.448 54.8414 29.064C54.3774 28.68 53.6814 28.488 52.7534 28.488ZM52.8734 39.096C55.0334 39.096 56.1134 38.216 56.1134 36.456C56.1134 35.608 55.8814 34.992 55.4174 34.608C54.9534 34.224 54.2494 34.032 53.3054 34.032H50.5694V39.096H52.8734Z" fill="#159947"/>
+                  </svg>
+                  <svg class="filter__room" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="63" height="63" stroke="#1F5F5B"/>
+                    <path d="M14.84 18C16.3067 18 17.5867 18.3067 18.68 18.92C19.7733 19.5067 20.6133 20.32 21.2 21.36C21.7867 22.3733 22.08 23.4933 22.08 24.72C22.08 26.4267 21.64 27.8133 20.76 28.88C19.88 29.92 18.6267 30.6267 17 31C18.76 31.16 20.1733 31.8 21.24 32.92C22.3067 34.04 22.84 35.6 22.84 37.6C22.84 39.12 22.4933 40.4933 21.8 41.72C21.1333 42.9467 20.16 43.92 18.88 44.64C17.6267 45.36 16.16 45.72 14.48 45.72C12.9333 45.72 11.5467 45.4267 10.32 44.84C9.12 44.2267 8.01333 43.3067 7 42.08L9.16 40.24C9.98667 41.1467 10.8 41.8133 11.6 42.24C12.4267 42.64 13.3467 42.84 14.36 42.84C15.8267 42.84 16.9867 42.3733 17.84 41.44C18.72 40.48 19.16 39.1733 19.16 37.52C19.16 35.76 18.72 34.4933 17.84 33.72C16.9867 32.92 15.7467 32.52 14.12 32.52H12.44L12.88 29.84H14C15.3333 29.84 16.4267 29.4267 17.28 28.6C18.16 27.7733 18.6 26.5867 18.6 25.04C18.6 23.7067 18.2267 22.6667 17.48 21.92C16.76 21.1733 15.76 20.8 14.48 20.8C13.5467 20.8 12.68 20.9867 11.88 21.36C11.1067 21.7333 10.32 22.32 9.52 23.12L7.64 21.2C9.72 19.0667 12.12 18 14.84 18Z" fill="#159947"/>
+                    <path d="M35.552 27.648L32.024 33.456L36.104 40.2H34.592L30.92 34.08H29.24V40.2H27.896V27.648H29.24V33H30.944L34.16 27.648H35.552Z" fill="#159947"/>
+                    <path d="M46.3567 27.648L42.8287 33.456L46.9087 40.2H45.3967L41.7247 34.08H40.0447V40.2H38.7007V27.648H40.0447V33H41.7487L44.9647 27.648H46.3567Z" fill="#159947"/>
+                    <path d="M54.9294 33.384C55.8414 33.48 56.5454 33.784 57.0414 34.296C57.5374 34.808 57.7854 35.528 57.7854 36.456C57.7854 37.704 57.3694 38.64 56.5374 39.264C55.7054 39.888 54.5854 40.2 53.1774 40.2H49.5054V27.768C50.9774 27.512 52.1454 27.384 53.0094 27.384C54.3214 27.384 55.3374 27.68 56.0574 28.272C56.7934 28.864 57.1614 29.664 57.1614 30.672C57.1614 32.144 56.4174 33.048 54.9294 33.384ZM53.0334 28.488C52.3934 28.488 51.6654 28.544 50.8494 28.656V32.976H53.4414C54.1934 32.976 54.7774 32.792 55.1934 32.424C55.6094 32.04 55.8174 31.472 55.8174 30.72C55.8174 30 55.5854 29.448 55.1214 29.064C54.6574 28.68 53.9614 28.488 53.0334 28.488ZM53.1534 39.096C55.3134 39.096 56.3934 38.216 56.3934 36.456C56.3934 35.608 56.1614 34.992 55.6974 34.608C55.2334 34.224 54.5294 34.032 53.5854 34.032H50.8494V39.096H53.1534Z" fill="#159947"/>
+                  </svg>
+                </div>
+                <div class="filter-range">
+                  <h6 class="filter__title">Этаж</h6>
+                  <div class="filter-range-body" id="slider-floor"></div>
+                  <div class="filter-range__amounts">
+                    <div class="filter-range__amount">с <input type="number" min="5" max="17" placeholder="5" class="floor-input"></div>
+                    <div class="filter-range__amount">по <input type="number" min="5" max="17" placeholder="17" class="floor-input"></div>
+                  </div>
+                </div>
+                <div class="filter-range">
+                  <h6 class="filter__title">Площадь квартиры</h6>
+                  <div class="filter-range-body" id="slider-square"></div>
+                  <div class="filter-range__amounts">
+                    <div class="filter-range__amount">от <input type="number" min="39.89" max="82.45" placeholder="39,89" class="square-input"></div>
+                    <div class="filter-range__amount">до <input type="number" min="39.89" max="82.45" placeholder="82,45" class="square-input"></div>
+                  </div>
+                </div>
+                <button class="text-btn filter__btn">
+                  Сбросить фильтр
+                  <svg class="">
+                    <use xlink:href="img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+              </aside>
+              <section class="flat__body">
+                <div class="flat-hat">
+                  <div class="flat-hat__sort">
+                    <span>Сортировать:</span>
+                    <div class="flat-hat__select">
+                      <select name="" id="" class="default" required>
+                          <option value="">по убыванию цены</option>
+                          <option data-bue="123" value="lower">по убыванию цены</option>
+                          <option value="upper">по возрастанию площади</option>
+                          <option value="lower-square">по убыванию площади</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="flat-hat__filter">
+                    <div class="flat-hat__filter-left">
+                      <button class="flat-hat__filter-btn" data-graph-path="popup-flat">
+                        <svg class="">
+                          <use xlink:href="img/sprite.svg#filter"></use>
+                        </svg>
+                        Фильтр
+                      </button>
+                      <div class="flat-hat__filter-items">
+                        <div class="flat-hat__filter-item"><span>1</span> ккв</div>
+                        <div class="flat-hat__filter-item"><span>5</span>-<span>8</span> этаж</div>
+                        <div class="flat-hat__filter-item"><span>34</span> м2 — <span>45</span> м2</div>
+                      </div>
+                    </div>
+                    <button class="flat-hat__filter-clear text-btn">
+                      Сбросить фильтр
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#close"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="flat-tabs">
+                    <button class="flat-tabs__btn active" data-flat="list">
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#list"></use>
+                      </svg>
+                      Список квартир
+                    </button>
+                    <button class="flat-tabs__btn" data-flat="scheme">
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#plan"></use>
+                      </svg>
+                      На плане
+                    </button>
+                  </div>
+                </div>
+                <div class="flat__content">
+                  <div class="flat__item flat__list active">
+                    <div class="flat__cards">
+                      <a href="#" class="flat-card">
+                        <div class="flat-card__info">
+                          <div class="flat-card__left">
+                            <h4 class="title-h4">№ 112</h4>
+                            <div class="flat-card__left-items">
+                              <div class="flat-icon flat-icon__rooms">
+                                <span>1</span>
+                                <span>ККВ</span>
+                              </div>
+                              <div class="flat-icon">
+                                <span>74,25 м²</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flat-card__img">
+                            <picture>
+                              <source srcset="img/pages/flats/flat.webp" type="image/webp">
+                              <img loading="lazy" src="img/pages/flats/flat.png" class="image" width="" height="" alt="">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="flat-card__stats">
+                          <div class="flat-card__stat">
+                            <h6>Этаж</h6>
+                            <span>2</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>S общая</h6>
+                            <span>76,7 м²</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>S жилая</h6>
+                            <span>71,8 м²</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>Кухня</h6>
+                            <span>12 м²</span>
+                          </div>
+                        </div>
+                        <div class="flat-card__price">
+                          <div class="flat-card__price-left">
+                            <h4 class="title-h4">5 300 000 руб</h4>
+                            <span>120 000 руб/кв м</span>
+                            <div class="flat-available flat-available__onsale">В продаже</div>
+                          </div>
+                          <button class="flat-card__btn text-btn">
+                            Подробнее
+                            <svg class="">
+                              <use xlink:href="img/sprite.svg#arrow_up_right"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </a>
+                      <a href="#" class="flat-card">
+                        <div class="flat-card__info">
+                          <div class="flat-card__left">
+                            <h4 class="title-h4">№ 112</h4>
+                            <div class="flat-card__left-items">
+                              <div class="flat-icon flat-icon__rooms">
+                                <span>1</span>
+                                <span>ККВ</span>
+                              </div>
+                              <div class="flat-icon">
+                                <span>74,25 м²</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flat-card__img">
+                            <picture>
+                              <source srcset="img/pages/flats/flat.webp" type="image/webp">
+                              <img loading="lazy" src="img/pages/flats/flat.png" class="image" width="" height="" alt="">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="flat-card__stats">
+                          <div class="flat-card__stat">
+                            <h6>Этаж</h6>
+                            <span>2</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>S общая</h6>
+                            <span>76,7 м²</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>S жилая</h6>
+                            <span>71,8 м²</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>Кухня</h6>
+                            <span>12 м²</span>
+                          </div>
+                        </div>
+                        <div class="flat-card__price">
+                          <div class="flat-card__price-left">
+                            <h4 class="title-h4">5 300 000 руб</h4>
+                            <span>120 000 руб/кв м</span>
+                            <div class="flat-available flat-available__onsale">В продаже</div>
+                          </div>
+                          <button class="flat-card__btn text-btn">
+                            Подробнее
+                            <svg class="">
+                              <use xlink:href="img/sprite.svg#arrow_up_right"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </a>
+                      <a href="#" class="flat-card">
+                        <div class="flat-card__info">
+                          <div class="flat-card__left">
+                            <h4 class="title-h4">№ 112</h4>
+                            <div class="flat-card__left-items">
+                              <div class="flat-icon flat-icon__rooms">
+                                <span>1</span>
+                                <span>ККВ</span>
+                              </div>
+                              <div class="flat-icon">
+                                <span>74,25 м²</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flat-card__img">
+                            <picture>
+                              <source srcset="img/pages/flats/flat.webp" type="image/webp">
+                              <img loading="lazy" src="img/pages/flats/flat.png" class="image" width="" height="" alt="">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="flat-card__stats">
+                          <div class="flat-card__stat">
+                            <h6>Этаж</h6>
+                            <span>2</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>S общая</h6>
+                            <span>76,7 м²</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>S жилая</h6>
+                            <span>71,8 м²</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>Кухня</h6>
+                            <span>12 м²</span>
+                          </div>
+                        </div>
+                        <div class="flat-card__price">
+                          <div class="flat-card__price-left">
+                            <h4 class="title-h4">5 300 000 руб</h4>
+                            <span>120 000 руб/кв м</span>
+                            <div class="flat-available flat-available__booked">Забронирована</div>
+                          </div>
+                          <button class="flat-card__btn text-btn">
+                            Подробнее
+                            <svg class="">
+                              <use xlink:href="img/sprite.svg#arrow_up_right"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </a>
+                      <a href="#" class="flat-card">
+                        <div class="flat-card__info">
+                          <div class="flat-card__left">
+                            <h4 class="title-h4">№ 112</h4>
+                            <div class="flat-card__left-items">
+                              <div class="flat-icon flat-icon__rooms">
+                                <span>1</span>
+                                <span>ККВ</span>
+                              </div>
+                              <div class="flat-icon">
+                                <span>74,25 м²</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flat-card__img">
+                            <picture>
+                              <source srcset="img/pages/flats/flat.webp" type="image/webp">
+                              <img loading="lazy" src="img/pages/flats/flat.png" class="image" width="" height="" alt="">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="flat-card__stats">
+                          <div class="flat-card__stat">
+                            <h6>Этаж</h6>
+                            <span>2</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>S общая</h6>
+                            <span>76,7 м²</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>S жилая</h6>
+                            <span>71,8 м²</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>Кухня</h6>
+                            <span>12 м²</span>
+                          </div>
+                        </div>
+                        <div class="flat-card__price">
+                          <div class="flat-card__price-left">
+                            <h4 class="title-h4">5 300 000 руб</h4>
+                            <span>120 000 руб/кв м</span>
+                            <div class="flat-available flat-available__booked">Забронирована</div>
+                          </div>
+                          <button class="flat-card__btn text-btn">
+                            Подробнее
+                            <svg class="">
+                              <use xlink:href="img/sprite.svg#arrow_up_right"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </a>
+                      <a href="#" class="flat-card">
+                        <div class="flat-card__info">
+                          <div class="flat-card__left">
+                            <h4 class="title-h4">№ 112</h4>
+                            <div class="flat-card__left-items">
+                              <div class="flat-icon flat-icon__rooms">
+                                <span>1</span>
+                                <span>ККВ</span>
+                              </div>
+                              <div class="flat-icon">
+                                <span>74,25 м²</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flat-card__img">
+                            <picture>
+                              <source srcset="img/pages/flats/flat.webp" type="image/webp">
+                              <img loading="lazy" src="img/pages/flats/flat.png" class="image" width="" height="" alt="">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="flat-card__stats">
+                          <div class="flat-card__stat">
+                            <h6>Этаж</h6>
+                            <span>2</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>S общая</h6>
+                            <span>76,7 м²</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>S жилая</h6>
+                            <span>71,8 м²</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>Кухня</h6>
+                            <span>12 м²</span>
+                          </div>
+                        </div>
+                        <div class="flat-card__price">
+                          <div class="flat-card__price-left">
+                            <h4 class="title-h4">5 300 000 руб</h4>
+                            <span>120 000 руб/кв м</span>
+                            <div class="flat-available flat-available__sold">Продана</div>
+                          </div>
+                          <button class="flat-card__btn text-btn">
+                            Подробнее
+                            <svg class="">
+                              <use xlink:href="img/sprite.svg#arrow_up_right"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </a>
+                      <a href="#" class="flat-card">
+                        <div class="flat-card__info">
+                          <div class="flat-card__left">
+                            <h4 class="title-h4">№ 112</h4>
+                            <div class="flat-card__left-items">
+                              <div class="flat-icon flat-icon__rooms">
+                                <span>1</span>
+                                <span>ККВ</span>
+                              </div>
+                              <div class="flat-icon">
+                                <span>74,25 м²</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flat-card__img">
+                            <picture>
+                              <source srcset="img/pages/flats/flat.webp" type="image/webp">
+                              <img loading="lazy" src="img/pages/flats/flat.png" class="image" width="" height="" alt="">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="flat-card__stats">
+                          <div class="flat-card__stat">
+                            <h6>Этаж</h6>
+                            <span>2</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>S общая</h6>
+                            <span>76,7 м²</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>S жилая</h6>
+                            <span>71,8 м²</span>
+                          </div>
+                          <div class="flat-card__stat">
+                            <h6>Кухня</h6>
+                            <span>12 м²</span>
+                          </div>
+                        </div>
+                        <div class="flat-card__price">
+                          <div class="flat-card__price-left">
+                            <h4 class="title-h4">5 300 000 руб</h4>
+                            <span>120 000 руб/кв м</span>
+                            <div class="flat-available flat-available__sold">Продана</div>
+                          </div>
+                          <button class="flat-card__btn text-btn">
+                            Подробнее
+                            <svg class="">
+                              <use xlink:href="img/sprite.svg#arrow_up_right"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </a>
+
+                    </div>
+                    <button class="text-btn flat__cards-more">
+                      Показать ещё
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#arrow_down"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="flat__item">
+                    <div class="flat-scheme">
+                      <div class="flat-scheme__overlay hidden">
+                        <div class="flat-scheme__overlay-body">
+                          <svg width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.7084 5.68913C16.8512 5.8329 17.0387 5.90396 17.2261 5.90396C17.4136 5.90396 17.601 5.83281 17.7438 5.68913C18.0302 5.40313 18.0302 4.93822 17.7438 4.65223L15.6721 2.57836C15.3857 2.29159 14.9222 2.29159 14.6366 2.57836C14.3503 2.86435 14.3503 3.32926 14.6366 3.61525L16.7084 5.68913Z" fill="white"/>
+                            <path d="M24.4737 5.90465C24.6613 5.90465 24.8487 5.83281 24.9915 5.68981L27.0625 3.61525C27.3488 3.32848 27.3488 2.86435 27.0625 2.57836C26.7769 2.29159 26.3133 2.29159 26.027 2.57836L23.956 4.65292C23.6696 4.93891 23.6696 5.40382 23.956 5.68981C24.0987 5.83281 24.2862 5.90465 24.4737 5.90465Z" fill="white"/>
+                            <path d="M20.8495 4.39988C21.2537 4.39988 21.5818 4.07135 21.5818 3.6666V0.733285C21.5818 0.32853 21.2537 0 20.8495 0C20.4453 0 20.1172 0.32853 20.1172 0.733285V3.66651C20.1171 4.07135 20.4452 4.39988 20.8495 4.39988Z" fill="white"/>
+                            <path d="M16.4551 8.79998C16.4551 8.39523 16.127 8.0667 15.7228 8.0667L0.732293 8.06641C0.328086 8.06641 0 8.39494 0 8.79969C0 9.20445 0.328086 9.53298 0.732293 9.53298L15.7227 9.53327C16.127 9.53327 16.4551 9.20474 16.4551 8.79998Z" fill="white"/>
+                            <path d="M16.7044 11.9104L14.6328 13.9849C14.3464 14.2716 14.3464 14.7358 14.6328 15.0218C14.7756 15.1655 14.9631 15.2366 15.1505 15.2366C15.338 15.2366 15.5254 15.1655 15.6682 15.0218L17.74 12.9472C18.0256 12.6612 18.0256 12.197 17.74 11.9103C17.4536 11.6236 16.9901 11.6236 16.7044 11.9104Z" fill="white"/>
+                            <path d="M55.9462 34.1929C55.148 32.202 54.9686 30.7478 54.7943 29.3421C54.5592 27.4464 54.3168 25.4855 52.5797 22.4724L47.8196 14.216C47.0529 12.8873 45.1466 12.3739 43.8174 13.1424C43.3729 13.3998 43.0023 13.7855 42.7475 14.2468C42.2547 13.5362 41.5355 13.0287 40.6919 12.8021C39.7472 12.5483 38.7608 12.6796 37.9135 13.168C37.1079 13.6337 36.5463 14.3618 36.2731 15.1824C35.1277 14.235 33.4668 14.0443 32.1069 14.8319C31.3152 15.2895 30.7338 16.0103 30.4555 16.8756L24.1532 8.00047C22.299 5.46977 20.4755 5.9846 19.552 6.51912C18.7018 7.01041 18.1408 7.79285 17.971 8.72345C17.815 9.57919 17.9988 10.5179 18.4997 11.3846L28.6336 27.8717C28.8452 28.2164 29.2963 28.3242 29.6405 28.1122C29.9854 27.8996 30.0931 27.4486 29.8807 27.104L19.7571 10.6338C19.4414 10.0853 19.3184 9.50082 19.4121 8.98606C19.5044 8.4793 19.8061 8.06578 20.2843 7.78933C20.6139 7.59864 21.6157 7.01789 22.9661 8.85922L30.8049 19.8992C31.0312 20.2175 31.4677 20.3025 31.7979 20.0914C32.1267 19.8795 32.2314 19.4461 32.0359 19.1073C31.7422 18.5984 31.6646 18.0058 31.8162 17.4375C31.9677 16.8699 32.3317 16.3955 32.8392 16.1022C33.8886 15.4964 35.2361 15.8565 35.841 16.9074L36.5704 18.1731C36.5718 18.1746 36.5726 18.1761 36.5733 18.1775C36.7754 18.5287 37.2236 18.6476 37.5737 18.4459C37.9237 18.2435 38.0438 17.7955 37.8417 17.4442C37.2361 16.3934 37.5963 15.0455 38.6458 14.4391C39.1533 14.145 39.7487 14.0673 40.3126 14.2191C40.8801 14.3716 41.3532 14.7353 41.6461 15.2443L42.7424 17.145C42.7432 17.1465 42.7438 17.1479 42.7446 17.1494C42.9475 17.4999 43.395 17.6195 43.7457 17.4178C44.0957 17.2154 44.2158 16.7673 44.0137 16.416C43.8284 16.0956 43.7823 15.69 43.8877 15.3043C43.9932 14.9201 44.2341 14.5951 44.5497 14.4125C45.1912 14.0415 46.1821 14.3084 46.5512 14.9493L51.3113 23.2057C52.9004 25.9608 53.1143 27.6913 53.3406 29.5224C53.5091 30.8806 53.6819 32.2804 54.3593 34.1438L40.1918 42.3349C37.7239 39.6737 33.9516 36.8812 28.9675 34.0279C28.4285 33.7191 27.8939 33.4206 27.3689 33.134C26.0229 32.3992 25.0723 30.9384 25.0554 29.5825C25.0481 28.9665 25.2414 28.1152 26.2052 27.5586C26.5559 27.3554 26.676 26.9067 26.4739 26.5561C26.2711 26.2056 25.8221 26.0854 25.4729 26.2878C24.2426 26.9998 23.5739 28.176 23.5915 29.6001C23.6135 31.4914 24.8504 33.4288 26.6681 34.4224C27.1843 34.704 27.7102 34.9973 28.2403 35.3009C33.3637 38.2341 37.1505 41.0772 39.4954 43.7501C39.6382 43.9129 39.8403 43.9994 40.0454 43.9994C40.1706 43.9994 40.2973 43.9672 40.4116 43.9012L55.6329 35.1014C55.9485 34.9189 56.0817 34.5318 55.9462 34.1929Z" fill="white"/>
+                          </svg>
+                          <span>Двигайте пальцем <br> для просмотра</span>
+                        </div>
+                      </div>
+                      <img src="img/icons/compass.svg" alt="" class="flat-scheme__compass">
+                      <div class="flat-scheme__zooms">
+                        <svg class="flat-scheme__zoom flat-scheme__zoom-in" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#159947"/>
+                          <path d="M31.8724 21.8729H21.8724V31.8729H18.5391V21.8729H8.53906V18.5396H18.5391V8.53955H21.8724V18.5396H31.8724V21.8729Z" fill="#159947"/>
+                        </svg>
+                        <svg class="flat-scheme__zoom flat-scheme__zoom-out" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#159947"/>
+                          <path d="M31.8724 21.7601H8.53906V18.4268H31.8724V21.7601Z" fill="#159947"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item active" id="floor-2" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-3" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-4" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-5" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-6" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-7" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-8" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-9" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-10" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-11" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-12" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-13" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-14" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-15" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-16" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                      <div class="flat-scheme__img tab-item" id="floor-17" style="left: 0; top: 0;">
+                        <img src="img/pages/flats/floor.png" alt="">
+                        <svg width="836" height="835" viewBox="0 0 836 835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g opacity="0.8">
+                          <rect width="836" height="835" fill="url(#pattern0)" style="mix-blend-mode:darken"/>
+                          </g>
+                          <path data-tooltip="Lorem ipsum tooltip text" opacity="0.95" d="M503.097 302.975H494.991V331.763H503.097V359.203H497.693V491H794V282.283H754.823V277.335H572.896V240H436V291.729H503.097V302.975Z" fill="transparent"/>
+                          <path class="flat-unavailable" opacity="0.95" d="M436.123 124.121H450.565V63.2967H447.406V25H561.132V75.011H794V271H580.538V233.604L436.123 233.154V229.549H428V202.066H436.123V124.121Z" fill="transparent"/>
+                          <path opacity="0.95" d="M280.758 455.521H288V427.302H280.758V335.031H71.6601V331H35V503H269.444V461.344H280.758V455.521Z" fill="transparent"/>
+                          <path d="M502.682 521.12H495V550.328H502.682V773.659H498.615V815H744V500H502.682V521.12Z" fill="transparent"/>
+                          <path class="flat-booked" opacity="0.95" d="M406.286 552V560.075H288.448V765.997H397.773V777.661H394.636V814H495V571.291H439.442V560.075H435.409V552H406.286Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M282.5 768L286.5 507H36.5V613.5H31V768H282.5Z" fill="transparent"/>
+                          <path class="flat-sold" opacity="0.95" d="M279.864 329.733H288V300.265H279.412V24.1735H180.418V21H76V61.8018H83.2324V332H279.864V329.733Z" fill="transparent"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="flat-floors">
+                      <span>Этаж</span>
+                      <div class="flat-floors__items">
+                        <div class="flat-floors__item zoom-item tab-btn active" data-tab="#floor-2">2</div>
+                        <div class="flat-floors__item zoom-item tab-btn" data-tab="#floor-3">3</div>
+                        <div class="flat-floors__item zoom-item tab-btn" data-tab="#floor-4">4</div>
+                        <div class="flat-floors__item zoom-item tab-btn" data-tab="#floor-5">5</div>
+                        <div class="flat-floors__item zoom-item tab-btn" data-tab="#floor-6">6</div>
+                        <div class="flat-floors__item zoom-item tab-btn unavailable" data-tab="#floor-7">7</div>
+                        <div class="flat-floors__item zoom-item tab-btn unavailable" data-tab="#floor-8">8</div>
+                        <div class="flat-floors__item zoom-item tab-btn unavailable" data-tab="#floor-9">9</div>
+                        <div class="flat-floors__item zoom-item tab-btn" data-tab="#floor-10">10</div>
+                        <div class="flat-floors__item zoom-item tab-btn" data-tab="#floor-11">11</div>
+                        <div class="flat-floors__item zoom-item tab-btn" data-tab="#floor-12">12</div>
+                        <div class="flat-floors__item zoom-item tab-btn" data-tab="#floor-13">13</div>
+                        <div class="flat-floors__item zoom-item tab-btn" data-tab="#floor-14">14</div>
+                        <div class="flat-floors__item zoom-item tab-btn" data-tab="#floor-15">15</div>
+                        <div class="flat-floors__item zoom-item tab-btn" data-tab="#floor-16">16</div>
+                        <div class="flat-floors__item zoom-item tab-btn" data-tab="#floor-17">17</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__content">
+      <img src="img/pages/logo_white.svg" alt="" class="footer__logo">
+      <h3 class="footer__builder">Застройщик: <br> ООО «Специализированный застройщик <br> „ВолгаИнвестГрупп“</h3>
+      <div class="footer-info">
+        <div class="footer__left">
+          <div class="footer__mlinks">
+            <a href="#" class="footer__mlink">О жилом комплексе</a>
+            <a href="#" class="footer__mlink">Выбор квартиры</a>
+            <a href="#" class="footer__mlink">Выбор ситибокса</a>
+            <a href="#" class="footer__mlink">Выбор коммерческого помещения</a>
+          </div>
+          <div class="footer__slinks">
+            <a href="#" class="footer__slink">О застройщике</a>
+            <a href="#" class="footer__slink">Документы</a>
+            <a href="#" class="footer__slink">Ипотека</a>
+            <a href="#" class="footer__slink">Гарантии</a>
+            <a href="#" class="footer__slink">Контакты</a>
+            <a href="#" class="footer__slink">Новости и акции</a>
+          </div>
+        </div>
+        <div class="footer__right">
+          <div class="footer-item">
+            <span class="footer-item__title">Главный офис</span>
+            <span class="footer-item__subtitle">г Нижний Новгород, ул Павла Мочалова, д. 11, помещ. п1; оф. 3</span>
+          </div>
+          <div class="footer-item">
+            <span class="footer-item__title">Часы работы</span>
+            <span class="footer-item__subtitle">c 9 до 18 Пн-Пт</span>
+          </div>
+          <div class="footer-item">
+            <span class="footer-item__title">Контактный номер</span>
+            <a href="tel:+79005676767" class="footer-item__subtitle">+7 (90) 05-67-67-67</a>
+          </div>
+          <div class="footer-item">
+            <span class="footer-item__title">Адрес почты</span>
+            <a href="mailto:Volga.net" class="footer-item__subtitle">Volga.net</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copy">
+        <div class="footer-copy__left">
+          <span>© СЗ ВолгаИнвестГрупп 2023</span>
+          <a href="#">Политика конфиденциальности</a>
+        </div>
+        <span class="footer-copy__right">Информация, размещённая на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 Гражданского кодекса РФ.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <div class="menu">
+  <div class="menu__body">
+    <div class="container-header menu__container">
+      <button class="menu__close" type="">
+        <svg class="">
+          <use xlink:href="img/sprite.svg#close"></use>
+        </svg>
+        <span>Закрыть</span>
+      </button>
+    </div>
+    <div class="container">
+      <div class="menu__content">
+        <div class="menu__hat">
+          <img src="img/pages/logo_green.svg" alt="" class="menu__logo">
+          <div class="footer__left menu__links">
+            <div class="footer__mlinks">
+              <a href="#" class="footer__mlink">О жилом комплексе</a>
+              <a href="#" class="footer__mlink">Выбор квартиры</a>
+              <a href="#" class="footer__mlink">Выбор ситибокса</a>
+              <a href="#" class="footer__mlink">Выбор коммерческого помещения</a>
+            </div>
+            <div class="footer__slinks">
+              <a href="#" class="footer__slink">О застройщике</a>
+              <a href="#" class="footer__slink">Документы</a>
+              <a href="#" class="footer__slink">Ипотека</a>
+              <a href="#" class="footer__slink">Гарантии</a>
+              <a href="#" class="footer__slink">Контакты</a>
+              <a href="#" class="footer__slink">Новости и акции</a>
+            </div>
+          </div>
+          <div class="footer__right menu__info">
+            <div class="footer-item">
+              <span class="footer-item__title">Главный офис</span>
+              <span class="footer-item__subtitle">г Нижний Новгород, ул Павла Мочалова, д. 11, помещ. п1; оф. 3</span>
+            </div>
+            <div class="footer-item">
+              <span class="footer-item__title">Часы работы</span>
+              <span class="footer-item__subtitle">c 9 до 18 Пн-Пт</span>
+            </div>
+            <div class="footer-item">
+              <span class="footer-item__title">Контактный номер</span>
+              <a href="tel:+79005676767" class="footer-item__subtitle">+7 (90) 05-67-67-67</a>
+            </div>
+            <div class="footer-item">
+              <span class="footer-item__title">Адрес почты</span>
+              <a href="mailto:Volga.net" class="footer-item__subtitle">Volga.net</a>
+            </div>
+          </div>
+        </div>
+        <div class="menu__footer">
+          <button class="menu__btn text-btn">
+            Скачать презентацию
+            <svg class="">
+              <use xlink:href="img/sprite.svg#arrow_down"></use>
+            </svg>
+          </button>
+          <div class="menu__request">
+            <span>Не нашли нужной информации? <br> Мы поможем:</span>
+            <button class="btn-green">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="graph-modal popup-flat">
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="popup-flat">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <h6 class="filter__title">Количество комнат</h6>
+      <div class="filter__rooms">
+        <svg class="filter__room" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="63" height="63" stroke="#1F5F5B"/>
+          <path d="M17.76 19V45.76H14.2V22.76L8.64 26.52L7 24.12L14.6 19H17.76Z" fill="#159947"/>
+          <path d="M34.912 28.208L31.384 34.016L35.464 40.76H33.952L30.28 34.64H28.6V40.76H27.256V28.208H28.6V33.56H30.304L33.52 28.208H34.912Z" fill="#159947"/>
+          <path d="M45.7167 28.208L42.1887 34.016L46.2687 40.76H44.7567L41.0847 34.64H39.4047V40.76H38.0607V28.208H39.4047V33.56H41.1087L44.3247 28.208H45.7167Z" fill="#159947"/>
+          <path d="M54.2894 33.944C55.2014 34.04 55.9054 34.344 56.4014 34.856C56.8974 35.368 57.1454 36.088 57.1454 37.016C57.1454 38.264 56.7294 39.2 55.8974 39.824C55.0654 40.448 53.9454 40.76 52.5374 40.76H48.8654V28.328C50.3374 28.072 51.5054 27.944 52.3694 27.944C53.6814 27.944 54.6974 28.24 55.4174 28.832C56.1534 29.424 56.5214 30.224 56.5214 31.232C56.5214 32.704 55.7774 33.608 54.2894 33.944ZM52.3934 29.048C51.7534 29.048 51.0254 29.104 50.2094 29.216V33.536H52.8014C53.5534 33.536 54.1374 33.352 54.5534 32.984C54.9694 32.6 55.1774 32.032 55.1774 31.28C55.1774 30.56 54.9454 30.008 54.4814 29.624C54.0174 29.24 53.3214 29.048 52.3934 29.048ZM52.5134 39.656C54.6734 39.656 55.7534 38.776 55.7534 37.016C55.7534 36.168 55.5214 35.552 55.0574 35.168C54.5934 34.784 53.8894 34.592 52.9454 34.592H50.2094V39.656H52.5134Z" fill="#159947"/>
+        </svg>
+        <svg class="filter__room" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="63" height="63" stroke="#1F5F5B"/>
+          <path d="M14.48 18C16 18 17.3067 18.32 18.4 18.96C19.52 19.5733 20.3733 20.4267 20.96 21.52C21.5467 22.5867 21.84 23.8 21.84 25.16C21.84 26.7867 21.52 28.3333 20.88 29.8C20.2667 31.24 19.2667 32.8533 17.88 34.64C16.4933 36.4267 14.36 38.96 11.48 42.24H22.44L22 45.2H7.52V42.4C10.6133 38.8267 12.8667 36.12 14.28 34.28C15.72 32.44 16.72 30.8667 17.28 29.56C17.84 28.2267 18.12 26.8267 18.12 25.36C18.12 23.9467 17.76 22.8533 17.04 22.08C16.3467 21.3067 15.4 20.92 14.2 20.92C13.1867 20.92 12.3067 21.1467 11.56 21.6C10.8133 22.0533 10.04 22.7733 9.24 23.76L7 22.04C8.94667 19.3467 11.44 18 14.48 18Z" fill="#159947"/>
+          <path d="M35.272 27.648L31.744 33.456L35.824 40.2H34.312L30.64 34.08H28.96V40.2H27.616V27.648H28.96V33H30.664L33.88 27.648H35.272Z" fill="#159947"/>
+          <path d="M46.0767 27.648L42.5487 33.456L46.6287 40.2H45.1167L41.4447 34.08H39.7647V40.2H38.4207V27.648H39.7647V33H41.4687L44.6847 27.648H46.0767Z" fill="#159947"/>
+          <path d="M54.6494 33.384C55.5614 33.48 56.2654 33.784 56.7614 34.296C57.2574 34.808 57.5054 35.528 57.5054 36.456C57.5054 37.704 57.0894 38.64 56.2574 39.264C55.4254 39.888 54.3054 40.2 52.8974 40.2H49.2254V27.768C50.6974 27.512 51.8654 27.384 52.7294 27.384C54.0414 27.384 55.0574 27.68 55.7774 28.272C56.5134 28.864 56.8814 29.664 56.8814 30.672C56.8814 32.144 56.1374 33.048 54.6494 33.384ZM52.7534 28.488C52.1134 28.488 51.3854 28.544 50.5694 28.656V32.976H53.1614C53.9134 32.976 54.4974 32.792 54.9134 32.424C55.3294 32.04 55.5374 31.472 55.5374 30.72C55.5374 30 55.3054 29.448 54.8414 29.064C54.3774 28.68 53.6814 28.488 52.7534 28.488ZM52.8734 39.096C55.0334 39.096 56.1134 38.216 56.1134 36.456C56.1134 35.608 55.8814 34.992 55.4174 34.608C54.9534 34.224 54.2494 34.032 53.3054 34.032H50.5694V39.096H52.8734Z" fill="#159947"/>
+        </svg>
+        <svg class="filter__room" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="63" height="63" stroke="#1F5F5B"/>
+          <path d="M14.84 18C16.3067 18 17.5867 18.3067 18.68 18.92C19.7733 19.5067 20.6133 20.32 21.2 21.36C21.7867 22.3733 22.08 23.4933 22.08 24.72C22.08 26.4267 21.64 27.8133 20.76 28.88C19.88 29.92 18.6267 30.6267 17 31C18.76 31.16 20.1733 31.8 21.24 32.92C22.3067 34.04 22.84 35.6 22.84 37.6C22.84 39.12 22.4933 40.4933 21.8 41.72C21.1333 42.9467 20.16 43.92 18.88 44.64C17.6267 45.36 16.16 45.72 14.48 45.72C12.9333 45.72 11.5467 45.4267 10.32 44.84C9.12 44.2267 8.01333 43.3067 7 42.08L9.16 40.24C9.98667 41.1467 10.8 41.8133 11.6 42.24C12.4267 42.64 13.3467 42.84 14.36 42.84C15.8267 42.84 16.9867 42.3733 17.84 41.44C18.72 40.48 19.16 39.1733 19.16 37.52C19.16 35.76 18.72 34.4933 17.84 33.72C16.9867 32.92 15.7467 32.52 14.12 32.52H12.44L12.88 29.84H14C15.3333 29.84 16.4267 29.4267 17.28 28.6C18.16 27.7733 18.6 26.5867 18.6 25.04C18.6 23.7067 18.2267 22.6667 17.48 21.92C16.76 21.1733 15.76 20.8 14.48 20.8C13.5467 20.8 12.68 20.9867 11.88 21.36C11.1067 21.7333 10.32 22.32 9.52 23.12L7.64 21.2C9.72 19.0667 12.12 18 14.84 18Z" fill="#159947"/>
+          <path d="M35.552 27.648L32.024 33.456L36.104 40.2H34.592L30.92 34.08H29.24V40.2H27.896V27.648H29.24V33H30.944L34.16 27.648H35.552Z" fill="#159947"/>
+          <path d="M46.3567 27.648L42.8287 33.456L46.9087 40.2H45.3967L41.7247 34.08H40.0447V40.2H38.7007V27.648H40.0447V33H41.7487L44.9647 27.648H46.3567Z" fill="#159947"/>
+          <path d="M54.9294 33.384C55.8414 33.48 56.5454 33.784 57.0414 34.296C57.5374 34.808 57.7854 35.528 57.7854 36.456C57.7854 37.704 57.3694 38.64 56.5374 39.264C55.7054 39.888 54.5854 40.2 53.1774 40.2H49.5054V27.768C50.9774 27.512 52.1454 27.384 53.0094 27.384C54.3214 27.384 55.3374 27.68 56.0574 28.272C56.7934 28.864 57.1614 29.664 57.1614 30.672C57.1614 32.144 56.4174 33.048 54.9294 33.384ZM53.0334 28.488C52.3934 28.488 51.6654 28.544 50.8494 28.656V32.976H53.4414C54.1934 32.976 54.7774 32.792 55.1934 32.424C55.6094 32.04 55.8174 31.472 55.8174 30.72C55.8174 30 55.5854 29.448 55.1214 29.064C54.6574 28.68 53.9614 28.488 53.0334 28.488ZM53.1534 39.096C55.3134 39.096 56.3934 38.216 56.3934 36.456C56.3934 35.608 56.1614 34.992 55.6974 34.608C55.2334 34.224 54.5294 34.032 53.5854 34.032H50.8494V39.096H53.1534Z" fill="#159947"/>
+        </svg>
+      </div>
+      <div class="filter-range">
+        <h6 class="filter__title">Этаж</h6>
+        <div class="filter-range-body" id="slider-floor-1"></div>
+        <div class="filter-range__amounts">
+          <div class="filter-range__amount">с <input type="number" min="5" max="17" placeholder="5" class="floor-input-1"></div>
+          <div class="filter-range__amount">по <input type="number" min="5" max="17" placeholder="17" class="floor-input-1"></div>
+        </div>
+      </div>
+      <div class="filter-range">
+        <h6 class="filter__title">Площадь квартиры</h6>
+        <div class="filter-range-body" id="slider-square-1"></div>
+        <div class="filter-range__amounts">
+          <div class="filter-range__amount">от <input type="number" min="39.89" max="82.45" placeholder="39,89" class="square-input-1"></div>
+          <div class="filter-range__amount">до <input type="number" min="39.89" max="82.45" placeholder="82,45" class="square-input-1"></div>
+        </div>
+      </div>
+      <button class="text-btn filter__btn">
+        Применить
+        <svg class="">
+          <use xlink:href="img/sprite.svg#apply"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>

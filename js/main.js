@@ -27,14 +27,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions/mobile-check */ "./src/js/functions/mobile-check.js");
+/* harmony import */ var graph_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graph-modal */ "./node_modules/graph-modal/src/graph-modal.js");
 /* harmony import */ var graph_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! graph-tabs */ "./node_modules/graph-tabs/src/graph-tabs.js");
 // Данный файл - лишь собрание подключений готовых компонентов.
 // Рекомендуется создавать отдельный файл в папке components и подключать все там
 
 // Определение операционной системы на мобильных
-
-console.log((0,_functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__.mobileCheck)());
+// import { mobileCheck } from "./functions/mobile-check";
+// console.log(mobileCheck())
 
 // Определение ширины экрана
 // import { isMobile, isTablet, isDesktop } from './functions/check-viewport';
@@ -61,12 +61,15 @@ console.log((0,_functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__.mobileCheck)
 // import { enableScroll } from './functions/enable-scroll';
 
 // Реализация модального окна
-// import GraphModal from 'graph-modal';
-// const modal = new GraphModal();
+
+const modal = new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]();
 
 // Реализация табов
 
-const tabs = new graph_tabs__WEBPACK_IMPORTED_MODULE_1__["default"]('motion');
+const motion = document.querySelector('.motion');
+if (motion) {
+  const tabs = new graph_tabs__WEBPACK_IMPORTED_MODULE_1__["default"]('motion');
+}
 
 // Получение высоты шапки сайта (не забудьте вызвать функцию)
 // import { getHeaderHeight } from './functions/header-height';
@@ -148,6 +151,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor/focus-visible.js */ "./src/js/vendor/focus-visible.js");
 /* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _vendor_choices_min_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vendor/choices.min.js */ "./src/js/vendor/choices.min.js");
+/* harmony import */ var _vendor_choices_min_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_vendor_choices_min_js__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 /***/ }),
@@ -161,6 +167,9 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var imask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! imask */ "./node_modules/imask/esm/index.js");
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nouislider */ "./node_modules/nouislider/dist/nouislider.js");
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_1__);
+
 
 const phones = document.querySelectorAll('.phone');
 if (phones.length != 0) {
@@ -313,6 +322,380 @@ if (house1) {
       house1.classList.remove('active');
     });
   }
+}
+var floorSlider = document.querySelector('#slider-floor');
+if (floorSlider) {
+  nouislider__WEBPACK_IMPORTED_MODULE_1___default().create(floorSlider, {
+    start: [5, 17],
+    connect: true,
+    step: 1,
+    range: {
+      'min': 5,
+      'max': 17
+    }
+  });
+  const filterInputs = document.querySelectorAll('.floor-input');
+  floorSlider.noUiSlider.on('update', function (values, handle) {
+    filterInputs[handle].value = Math.round(values[handle]);
+  });
+  const setRangeSlider = (i, value) => {
+    let arr = [null, null];
+    arr[i] = value;
+    floorSlider.noUiSlider.set(arr);
+  };
+  filterInputs.forEach((el, index) => {
+    el.addEventListener('change', e => {
+      setRangeSlider(index, e.currentTarget.value);
+    });
+  });
+}
+var floorSliderMobile = document.querySelector('#slider-floor-1');
+if (floorSliderMobile) {
+  nouislider__WEBPACK_IMPORTED_MODULE_1___default().create(floorSliderMobile, {
+    start: [5, 17],
+    connect: true,
+    step: 1,
+    range: {
+      'min': 5,
+      'max': 17
+    }
+  });
+  const filterInputs = document.querySelectorAll('.floor-input-1');
+  floorSliderMobile.noUiSlider.on('update', function (values, handle) {
+    filterInputs[handle].value = Math.round(values[handle]);
+  });
+  const setRangeSlider = (i, value) => {
+    let arr = [null, null];
+    arr[i] = value;
+    floorSliderMobile.noUiSlider.set(arr);
+  };
+  filterInputs.forEach((el, index) => {
+    el.addEventListener('change', e => {
+      setRangeSlider(index, e.currentTarget.value);
+    });
+  });
+}
+var squareSlider = document.querySelector('#slider-square');
+if (squareSlider) {
+  nouislider__WEBPACK_IMPORTED_MODULE_1___default().create(squareSlider, {
+    start: [39.89, 82.45],
+    connect: true,
+    range: {
+      'min': 39.89,
+      'max': 82.45
+    }
+  });
+  const filterInputs = document.querySelectorAll('.square-input');
+  squareSlider.noUiSlider.on('update', function (values, handle) {
+    filterInputs[handle].value = values[handle];
+  });
+  const setRangeSlider = (i, value) => {
+    let arr = [null, null];
+    arr[i] = value;
+    squareSlider.noUiSlider.set(arr);
+  };
+  filterInputs.forEach((el, index) => {
+    el.addEventListener('change', e => {
+      setRangeSlider(index, e.currentTarget.value);
+    });
+  });
+}
+var squareSliderMobile = document.querySelector('#slider-square-1');
+if (squareSliderMobile) {
+  nouislider__WEBPACK_IMPORTED_MODULE_1___default().create(squareSliderMobile, {
+    start: [39.89, 82.45],
+    connect: true,
+    range: {
+      'min': 39.89,
+      'max': 82.45
+    }
+  });
+  const filterInputs = document.querySelectorAll('.square-input-1');
+  squareSliderMobile.noUiSlider.on('update', function (values, handle) {
+    filterInputs[handle].value = values[handle];
+  });
+  const setRangeSlider = (i, value) => {
+    let arr = [null, null];
+    arr[i] = value;
+    squareSliderMobile.noUiSlider.set(arr);
+  };
+  filterInputs.forEach((el, index) => {
+    el.addEventListener('change', e => {
+      setRangeSlider(index, e.currentTarget.value);
+    });
+  });
+}
+const filterRooms = document.querySelectorAll('.filter__room');
+if (filterRooms.length != 0) {
+  filterRooms.forEach(el => {
+    el.addEventListener('click', () => {
+      el.classList.toggle('active');
+    });
+  });
+}
+
+// Select
+const select = document.querySelector('.default');
+const defaultSelect = () => {
+  const choices = new Choices(select, {
+    searchEnabled: false,
+    shouldSort: false
+  });
+};
+if (select) {
+  defaultSelect();
+}
+const flatTabBtns = document.querySelectorAll('.flat-tabs__btn');
+if (flatTabBtns.length != 0) {
+  const flatTabs = document.querySelectorAll('.flat__item');
+  flatTabBtns.forEach(flatTabBtn => {
+    flatTabBtn.addEventListener('click', () => {
+      flatTabBtns.forEach(el => {
+        el.classList.remove('active');
+      });
+      flatTabs.forEach(el => {
+        el.classList.remove('active');
+      });
+      flatTabBtn.classList.add('active');
+      if (flatTabBtn.dataset.flat == 'list') {
+        flatTabs[0].classList.add('active');
+        document.querySelector('.flat-hat__sort').style.display = 'flex';
+      } else if (flatTabBtn.dataset.flat == 'scheme') {
+        flatTabs[1].classList.add('active');
+        document.querySelector('.flat-hat__sort').style.display = 'none';
+      }
+    });
+  });
+}
+
+//КОД ПРИБЛИЖЕНИЯ И ОТДАЛЕНИЯ
+var flatSchemes = document.querySelectorAll('.flat-scheme__img');
+if (flatSchemes.length != 0) {
+  const mobileOverlay = document.querySelector('.flat-scheme__overlay');
+  if (screenWidth < 768) {
+    mobileOverlay.classList.remove('hidden');
+    mobileOverlay.addEventListener('touchstart', () => {
+      mobileOverlay.classList.add('hidden');
+    });
+  }
+  const zoomInBtn = document.querySelector('.flat-scheme__zoom-in');
+  const zoomOutBtn = document.querySelector('.flat-scheme__zoom-out');
+  let block = document.querySelector('.flat-scheme__img');
+  var x = 0;
+  if (block.classList.contains('flat-scheme__img-citybox')) {
+    if (screenWidth >= 1200) {
+      x = 0.55;
+    } else if (screenWidth >= 768) {
+      x = 0.8;
+    } else if (screenWidth >= 640) {
+      x = 1;
+    } else if (screenWidth >= 420) {
+      x = 1.2;
+    } else if (screenWidth > 0) {
+      x = 1.3;
+    }
+  } else {
+    if (screenWidth >= 768) {
+      x = 0.8;
+    } else if (screenWidth >= 640) {
+      x = 1;
+    } else if (screenWidth >= 420) {
+      x = 1.2;
+    }
+  }
+
+  //КОД ПЕРЕМЕЩЕНИЯ
+  var blockmove = document.querySelector('.flat-scheme');
+  var left = 0,
+    tp = 0,
+    xx,
+    yy;
+  blockmove.ontouchstart = function (e) {
+    e.preventDefault();
+    xx = e.pageX;
+    yy = e.pageY;
+    function moveAt(e) {
+      block.style.left = left + e.pageX - xx + 'px';
+      block.style.top = tp + e.pageY - yy + 'px';
+    }
+    blockmove.ontouchmove = function (e) {
+      moveAt(e);
+    };
+    blockmove.touchend = blockmove.onmouseup = function (e) {
+      left = parseFloat(block.style.left);
+      tp = parseFloat(block.style.top);
+      blockmove.onmouseleave = null;
+      blockmove.onmousemove = null;
+      blockmove.onmouseup = null;
+    };
+  };
+  blockmove.onmousedown = function (e) {
+    e.preventDefault();
+    xx = e.pageX;
+    yy = e.pageY;
+    function moveAt(e) {
+      block.style.left = left + e.pageX - xx + 'px';
+      block.style.top = tp + e.pageY - yy + 'px';
+    }
+    blockmove.onmousemove = function (e) {
+      moveAt(e);
+    };
+    blockmove.onmouseleave = blockmove.onmouseup = function (e) {
+      left = parseFloat(block.style.left);
+      tp = parseFloat(block.style.top);
+      blockmove.onmouseleave = null;
+      blockmove.onmousemove = null;
+      blockmove.onmouseup = null;
+    };
+  };
+  block.onwheel = function (event) {
+    if (event.deltaY < 0 && x < 5) {
+      x += 0.1;
+      this.style.scale = x;
+    }
+    if (event.deltaY > 0 && x > 0.6) {
+      x -= 0.1;
+      this.style.scale = x;
+    }
+    return false;
+  };
+  zoomInBtn.addEventListener('click', () => {
+    if (x < 5) {
+      x += 0.4;
+      block.style.scale = x;
+    }
+  });
+  zoomOutBtn.addEventListener('click', () => {
+    if (x > 0.6) {
+      x -= 0.4;
+      block.style.scale = x;
+    }
+  });
+  const flatBtns = document.querySelectorAll('.zoom-item');
+  flatBtns.forEach(el => {
+    el.addEventListener('click', () => {
+      let flatId = el.getAttribute('data-tab');
+      let block = document.querySelector(flatId);
+      var x = 0;
+      if (screenWidth >= 768) {
+        x = 0.8;
+      } else if (screenWidth >= 640) {
+        x = 1;
+      } else if (screenWidth >= 420) {
+        x = 1.2;
+      }
+
+      //КОД ПЕРЕМЕЩЕНИЯ
+      var blockmove = document.querySelector('.flat-scheme');
+      var left = 0,
+        tp = 0,
+        xx,
+        yy;
+      blockmove.ontouchstart = function (e) {
+        e.preventDefault();
+        xx = e.pageX;
+        yy = e.pageY;
+        function moveAt(e) {
+          block.style.left = left + e.pageX - xx + 'px';
+          block.style.top = tp + e.pageY - yy + 'px';
+        }
+        blockmove.ontouchmove = function (e) {
+          moveAt(e);
+        };
+        blockmove.touchend = blockmove.onmouseup = function (e) {
+          left = parseFloat(block.style.left);
+          tp = parseFloat(block.style.top);
+          blockmove.onmouseleave = null;
+          blockmove.onmousemove = null;
+          blockmove.onmouseup = null;
+        };
+      };
+      blockmove.onmousedown = function (e) {
+        e.preventDefault();
+        xx = e.pageX;
+        yy = e.pageY;
+        function moveAt(e) {
+          block.style.left = left + e.pageX - xx + 'px';
+          block.style.top = tp + e.pageY - yy + 'px';
+        }
+        blockmove.onmousemove = function (e) {
+          moveAt(e);
+        };
+        blockmove.onmouseleave = blockmove.onmouseup = function (e) {
+          left = parseFloat(block.style.left);
+          tp = parseFloat(block.style.top);
+          blockmove.onmouseleave = null;
+          blockmove.onmousemove = null;
+          blockmove.onmouseup = null;
+        };
+      };
+      block.onwheel = function (event) {
+        if (event.deltaY < 0 && x < 5) {
+          x += 0.1;
+          this.style.scale = x;
+        }
+        if (event.deltaY > 0 && x > 0.6) {
+          x -= 0.1;
+          this.style.scale = x;
+        }
+        return false;
+      };
+      zoomInBtn.addEventListener('click', () => {
+        if (x < 5) {
+          x += 0.4;
+          block.style.scale = x;
+        }
+      });
+      zoomOutBtn.addEventListener('click', () => {
+        if (x > 0.6) {
+          x -= 0.4;
+          block.style.scale = x;
+        }
+      });
+    });
+  });
+}
+
+// Tabs main
+const houseBtns = document.querySelectorAll('.tab-btn');
+const houseCards = document.querySelectorAll('.tab-item');
+if (houseBtns) {
+  houseBtns.forEach(houseBtn => {
+    if (!houseBtn.classList.contains('unavailable')) {
+      houseBtn.addEventListener('click', () => {
+        let tabId = houseBtn.getAttribute('data-tab');
+        let currentTab = document.querySelector(tabId);
+        if (!houseBtn.classList.contains('active')) {
+          houseBtns.forEach(houseBtn => {
+            houseBtn.classList.remove('active');
+          });
+          houseCards.forEach(houseCard => {
+            houseCard.classList.remove('active');
+          });
+          houseBtn.classList.add('active');
+          currentTab.classList.add('active');
+        }
+      });
+    }
+  });
+}
+const cityboxes = document.querySelectorAll('.flat-scheme__img-citybox');
+if (cityboxes.length != 0) {
+  cityboxes.forEach(el => {
+    const paths = el.querySelectorAll('path');
+    paths.forEach(path => {
+      path.dataset.graphPath = 'popup-citybox';
+    });
+  });
+}
+const commerces = document.querySelectorAll('.flat-scheme__img-commerce');
+if (commerces.length != 0) {
+  commerces.forEach(el => {
+    const paths = el.querySelectorAll('path');
+    paths.forEach(path => {
+      path.dataset.graphPath = 'popup-commerce';
+    });
+  });
 }
 
 // Main popup action
@@ -498,31 +881,3631 @@ if (motionSwiper) {
 
 /***/ }),
 
-/***/ "./src/js/functions/mobile-check.js":
-/*!******************************************!*\
-  !*** ./src/js/functions/mobile-check.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./src/js/vendor/choices.min.js":
+/*!**************************************!*\
+  !*** ./src/js/vendor/choices.min.js ***!
+  \**************************************/
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "mobileCheck": () => (/* binding */ mobileCheck)
-/* harmony export */ });
-/* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./src/js/_vars.js");
+/*! For license information please see choices.min.js.LICENSE.txt */
+!function () {
+  "use strict";
 
-const mobileCheck = () => {
-  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  if (/android/i.test(userAgent)) {
-    _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.classList.add('page--android');
-    return "Android";
+  var e = {
+      282: function (e, t, i) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), t.clearChoices = t.activateChoices = t.filterChoices = t.addChoice = void 0;
+        var n = i(883);
+        t.addChoice = function (e) {
+          var t = e.value,
+            i = e.label,
+            s = e.id,
+            r = e.groupId,
+            o = e.disabled,
+            a = e.elementId,
+            c = e.customProperties,
+            l = e.placeholder,
+            h = e.keyCode;
+          return {
+            type: n.ACTION_TYPES.ADD_CHOICE,
+            value: t,
+            label: i,
+            id: s,
+            groupId: r,
+            disabled: o,
+            elementId: a,
+            customProperties: c,
+            placeholder: l,
+            keyCode: h
+          };
+        }, t.filterChoices = function (e) {
+          return {
+            type: n.ACTION_TYPES.FILTER_CHOICES,
+            results: e
+          };
+        }, t.activateChoices = function (e) {
+          return void 0 === e && (e = !0), {
+            type: n.ACTION_TYPES.ACTIVATE_CHOICES,
+            active: e
+          };
+        }, t.clearChoices = function () {
+          return {
+            type: n.ACTION_TYPES.CLEAR_CHOICES
+          };
+        };
+      },
+      783: function (e, t, i) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), t.addGroup = void 0;
+        var n = i(883);
+        t.addGroup = function (e) {
+          var t = e.value,
+            i = e.id,
+            s = e.active,
+            r = e.disabled;
+          return {
+            type: n.ACTION_TYPES.ADD_GROUP,
+            value: t,
+            id: i,
+            active: s,
+            disabled: r
+          };
+        };
+      },
+      464: function (e, t, i) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), t.highlightItem = t.removeItem = t.addItem = void 0;
+        var n = i(883);
+        t.addItem = function (e) {
+          var t = e.value,
+            i = e.label,
+            s = e.id,
+            r = e.choiceId,
+            o = e.groupId,
+            a = e.customProperties,
+            c = e.placeholder,
+            l = e.keyCode;
+          return {
+            type: n.ACTION_TYPES.ADD_ITEM,
+            value: t,
+            label: i,
+            id: s,
+            choiceId: r,
+            groupId: o,
+            customProperties: a,
+            placeholder: c,
+            keyCode: l
+          };
+        }, t.removeItem = function (e, t) {
+          return {
+            type: n.ACTION_TYPES.REMOVE_ITEM,
+            id: e,
+            choiceId: t
+          };
+        }, t.highlightItem = function (e, t) {
+          return {
+            type: n.ACTION_TYPES.HIGHLIGHT_ITEM,
+            id: e,
+            highlighted: t
+          };
+        };
+      },
+      137: function (e, t, i) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), t.setIsLoading = t.resetTo = t.clearAll = void 0;
+        var n = i(883);
+        t.clearAll = function () {
+          return {
+            type: n.ACTION_TYPES.CLEAR_ALL
+          };
+        }, t.resetTo = function (e) {
+          return {
+            type: n.ACTION_TYPES.RESET_TO,
+            state: e
+          };
+        }, t.setIsLoading = function (e) {
+          return {
+            type: n.ACTION_TYPES.SET_IS_LOADING,
+            isLoading: e
+          };
+        };
+      },
+      373: function (e, t, i) {
+        var n = this && this.__spreadArray || function (e, t, i) {
+            if (i || 2 === arguments.length) for (var n, s = 0, r = t.length; s < r; s++) !n && s in t || (n || (n = Array.prototype.slice.call(t, 0, s)), n[s] = t[s]);
+            return e.concat(n || Array.prototype.slice.call(t));
+          },
+          s = this && this.__importDefault || function (e) {
+            return e && e.__esModule ? e : {
+              default: e
+            };
+          };
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+        var r = s(i(996)),
+          o = s(i(221)),
+          a = i(282),
+          c = i(783),
+          l = i(464),
+          h = i(137),
+          u = i(520),
+          d = i(883),
+          p = i(789),
+          f = i(799),
+          m = i(655),
+          v = s(i(744)),
+          g = s(i(686)),
+          _ = "-ms-scroll-limit" in document.documentElement.style && "-ms-ime-align" in document.documentElement.style,
+          y = {},
+          E = function () {
+            function e(t, i) {
+              var s = this;
+              void 0 === t && (t = "[data-choice]"), void 0 === i && (i = {}), void 0 === i.allowHTML && console.warn("Deprecation warning: allowHTML will default to false in a future release. To render HTML in Choices, you will need to set it to true. Setting allowHTML will suppress this message."), this.config = r.default.all([p.DEFAULT_CONFIG, e.defaults.options, i], {
+                arrayMerge: function (e, t) {
+                  return n([], t, !0);
+                }
+              });
+              var o = (0, f.diff)(this.config, p.DEFAULT_CONFIG);
+              o.length && console.warn("Unknown config option(s) passed", o.join(", "));
+              var a = "string" == typeof t ? document.querySelector(t) : t;
+              if (!(a instanceof HTMLInputElement || a instanceof HTMLSelectElement)) throw TypeError("Expected one of the following types text|select-one|select-multiple");
+              if (this._isTextElement = a.type === d.TEXT_TYPE, this._isSelectOneElement = a.type === d.SELECT_ONE_TYPE, this._isSelectMultipleElement = a.type === d.SELECT_MULTIPLE_TYPE, this._isSelectElement = this._isSelectOneElement || this._isSelectMultipleElement, this.config.searchEnabled = this._isSelectMultipleElement || this.config.searchEnabled, ["auto", "always"].includes("".concat(this.config.renderSelectedChoices)) || (this.config.renderSelectedChoices = "auto"), i.addItemFilter && "function" != typeof i.addItemFilter) {
+                var c = i.addItemFilter instanceof RegExp ? i.addItemFilter : new RegExp(i.addItemFilter);
+                this.config.addItemFilter = c.test.bind(c);
+              }
+              if (this._isTextElement ? this.passedElement = new u.WrappedInput({
+                element: a,
+                classNames: this.config.classNames,
+                delimiter: this.config.delimiter
+              }) : this.passedElement = new u.WrappedSelect({
+                element: a,
+                classNames: this.config.classNames,
+                template: function (e) {
+                  return s._templates.option(e);
+                }
+              }), this.initialised = !1, this._store = new v.default(), this._initialState = m.defaultState, this._currentState = m.defaultState, this._prevState = m.defaultState, this._currentValue = "", this._canSearch = !!this.config.searchEnabled, this._isScrollingOnIe = !1, this._highlightPosition = 0, this._wasTap = !0, this._placeholderValue = this._generatePlaceholderValue(), this._baseId = (0, f.generateId)(this.passedElement.element, "choices-"), this._direction = this.passedElement.dir, !this._direction) {
+                var l = window.getComputedStyle(this.passedElement.element).direction;
+                l !== window.getComputedStyle(document.documentElement).direction && (this._direction = l);
+              }
+              if (this._idNames = {
+                itemChoice: "item-choice"
+              }, this._isSelectElement && (this._presetGroups = this.passedElement.optionGroups, this._presetOptions = this.passedElement.options), this._presetChoices = this.config.choices, this._presetItems = this.config.items, this.passedElement.value && this._isTextElement) {
+                var h = this.passedElement.value.split(this.config.delimiter);
+                this._presetItems = this._presetItems.concat(h);
+              }
+              if (this.passedElement.options && this.passedElement.options.forEach(function (e) {
+                s._presetChoices.push({
+                  value: e.value,
+                  label: e.innerHTML,
+                  selected: !!e.selected,
+                  disabled: e.disabled || e.parentNode.disabled,
+                  placeholder: "" === e.value || e.hasAttribute("placeholder"),
+                  customProperties: e.dataset["custom-properties"]
+                });
+              }), this._render = this._render.bind(this), this._onFocus = this._onFocus.bind(this), this._onBlur = this._onBlur.bind(this), this._onKeyUp = this._onKeyUp.bind(this), this._onKeyDown = this._onKeyDown.bind(this), this._onClick = this._onClick.bind(this), this._onTouchMove = this._onTouchMove.bind(this), this._onTouchEnd = this._onTouchEnd.bind(this), this._onMouseDown = this._onMouseDown.bind(this), this._onMouseOver = this._onMouseOver.bind(this), this._onFormReset = this._onFormReset.bind(this), this._onSelectKey = this._onSelectKey.bind(this), this._onEnterKey = this._onEnterKey.bind(this), this._onEscapeKey = this._onEscapeKey.bind(this), this._onDirectionKey = this._onDirectionKey.bind(this), this._onDeleteKey = this._onDeleteKey.bind(this), this.passedElement.isActive) return this.config.silent || console.warn("Trying to initialise Choices on element already initialised", {
+                element: t
+              }), void (this.initialised = !0);
+              this.init();
+            }
+            return Object.defineProperty(e, "defaults", {
+              get: function () {
+                return Object.preventExtensions({
+                  get options() {
+                    return y;
+                  },
+                  get templates() {
+                    return g.default;
+                  }
+                });
+              },
+              enumerable: !1,
+              configurable: !0
+            }), e.prototype.init = function () {
+              if (!this.initialised) {
+                this._createTemplates(), this._createElements(), this._createStructure(), this._store.subscribe(this._render), this._render(), this._addEventListeners(), (!this.config.addItems || this.passedElement.element.hasAttribute("disabled")) && this.disable(), this.initialised = !0;
+                var e = this.config.callbackOnInit;
+                e && "function" == typeof e && e.call(this);
+              }
+            }, e.prototype.destroy = function () {
+              this.initialised && (this._removeEventListeners(), this.passedElement.reveal(), this.containerOuter.unwrap(this.passedElement.element), this.clearStore(), this._isSelectElement && (this.passedElement.options = this._presetOptions), this._templates = g.default, this.initialised = !1);
+            }, e.prototype.enable = function () {
+              return this.passedElement.isDisabled && this.passedElement.enable(), this.containerOuter.isDisabled && (this._addEventListeners(), this.input.enable(), this.containerOuter.enable()), this;
+            }, e.prototype.disable = function () {
+              return this.passedElement.isDisabled || this.passedElement.disable(), this.containerOuter.isDisabled || (this._removeEventListeners(), this.input.disable(), this.containerOuter.disable()), this;
+            }, e.prototype.highlightItem = function (e, t) {
+              if (void 0 === t && (t = !0), !e || !e.id) return this;
+              var i = e.id,
+                n = e.groupId,
+                s = void 0 === n ? -1 : n,
+                r = e.value,
+                o = void 0 === r ? "" : r,
+                a = e.label,
+                c = void 0 === a ? "" : a,
+                h = s >= 0 ? this._store.getGroupById(s) : null;
+              return this._store.dispatch((0, l.highlightItem)(i, !0)), t && this.passedElement.triggerEvent(d.EVENTS.highlightItem, {
+                id: i,
+                value: o,
+                label: c,
+                groupValue: h && h.value ? h.value : null
+              }), this;
+            }, e.prototype.unhighlightItem = function (e) {
+              if (!e || !e.id) return this;
+              var t = e.id,
+                i = e.groupId,
+                n = void 0 === i ? -1 : i,
+                s = e.value,
+                r = void 0 === s ? "" : s,
+                o = e.label,
+                a = void 0 === o ? "" : o,
+                c = n >= 0 ? this._store.getGroupById(n) : null;
+              return this._store.dispatch((0, l.highlightItem)(t, !1)), this.passedElement.triggerEvent(d.EVENTS.highlightItem, {
+                id: t,
+                value: r,
+                label: a,
+                groupValue: c && c.value ? c.value : null
+              }), this;
+            }, e.prototype.highlightAll = function () {
+              var e = this;
+              return this._store.items.forEach(function (t) {
+                return e.highlightItem(t);
+              }), this;
+            }, e.prototype.unhighlightAll = function () {
+              var e = this;
+              return this._store.items.forEach(function (t) {
+                return e.unhighlightItem(t);
+              }), this;
+            }, e.prototype.removeActiveItemsByValue = function (e) {
+              var t = this;
+              return this._store.activeItems.filter(function (t) {
+                return t.value === e;
+              }).forEach(function (e) {
+                return t._removeItem(e);
+              }), this;
+            }, e.prototype.removeActiveItems = function (e) {
+              var t = this;
+              return this._store.activeItems.filter(function (t) {
+                return t.id !== e;
+              }).forEach(function (e) {
+                return t._removeItem(e);
+              }), this;
+            }, e.prototype.removeHighlightedItems = function (e) {
+              var t = this;
+              return void 0 === e && (e = !1), this._store.highlightedActiveItems.forEach(function (i) {
+                t._removeItem(i), e && t._triggerChange(i.value);
+              }), this;
+            }, e.prototype.showDropdown = function (e) {
+              var t = this;
+              return this.dropdown.isActive || requestAnimationFrame(function () {
+                t.dropdown.show(), t.containerOuter.open(t.dropdown.distanceFromTopWindow), !e && t._canSearch && t.input.focus(), t.passedElement.triggerEvent(d.EVENTS.showDropdown, {});
+              }), this;
+            }, e.prototype.hideDropdown = function (e) {
+              var t = this;
+              return this.dropdown.isActive ? (requestAnimationFrame(function () {
+                t.dropdown.hide(), t.containerOuter.close(), !e && t._canSearch && (t.input.removeActiveDescendant(), t.input.blur()), t.passedElement.triggerEvent(d.EVENTS.hideDropdown, {});
+              }), this) : this;
+            }, e.prototype.getValue = function (e) {
+              void 0 === e && (e = !1);
+              var t = this._store.activeItems.reduce(function (t, i) {
+                var n = e ? i.value : i;
+                return t.push(n), t;
+              }, []);
+              return this._isSelectOneElement ? t[0] : t;
+            }, e.prototype.setValue = function (e) {
+              var t = this;
+              return this.initialised ? (e.forEach(function (e) {
+                return t._setChoiceOrItem(e);
+              }), this) : this;
+            }, e.prototype.setChoiceByValue = function (e) {
+              var t = this;
+              return !this.initialised || this._isTextElement || (Array.isArray(e) ? e : [e]).forEach(function (e) {
+                return t._findAndSelectChoiceByValue(e);
+              }), this;
+            }, e.prototype.setChoices = function (e, t, i, n) {
+              var s = this;
+              if (void 0 === e && (e = []), void 0 === t && (t = "value"), void 0 === i && (i = "label"), void 0 === n && (n = !1), !this.initialised) throw new ReferenceError("setChoices was called on a non-initialized instance of Choices");
+              if (!this._isSelectElement) throw new TypeError("setChoices can't be used with INPUT based Choices");
+              if ("string" != typeof t || !t) throw new TypeError("value parameter must be a name of 'value' field in passed objects");
+              if (n && this.clearChoices(), "function" == typeof e) {
+                var r = e(this);
+                if ("function" == typeof Promise && r instanceof Promise) return new Promise(function (e) {
+                  return requestAnimationFrame(e);
+                }).then(function () {
+                  return s._handleLoadingState(!0);
+                }).then(function () {
+                  return r;
+                }).then(function (e) {
+                  return s.setChoices(e, t, i, n);
+                }).catch(function (e) {
+                  s.config.silent || console.error(e);
+                }).then(function () {
+                  return s._handleLoadingState(!1);
+                }).then(function () {
+                  return s;
+                });
+                if (!Array.isArray(r)) throw new TypeError(".setChoices first argument function must return either array of choices or Promise, got: ".concat(typeof r));
+                return this.setChoices(r, t, i, !1);
+              }
+              if (!Array.isArray(e)) throw new TypeError(".setChoices must be called either with array of choices with a function resulting into Promise of array of choices");
+              return this.containerOuter.removeLoadingState(), this._startLoading(), e.forEach(function (e) {
+                if (e.choices) s._addGroup({
+                  id: e.id ? parseInt("".concat(e.id), 10) : null,
+                  group: e,
+                  valueKey: t,
+                  labelKey: i
+                });else {
+                  var n = e;
+                  s._addChoice({
+                    value: n[t],
+                    label: n[i],
+                    isSelected: !!n.selected,
+                    isDisabled: !!n.disabled,
+                    placeholder: !!n.placeholder,
+                    customProperties: n.customProperties
+                  });
+                }
+              }), this._stopLoading(), this;
+            }, e.prototype.clearChoices = function () {
+              return this._store.dispatch((0, a.clearChoices)()), this;
+            }, e.prototype.clearStore = function () {
+              return this._store.dispatch((0, h.clearAll)()), this;
+            }, e.prototype.clearInput = function () {
+              var e = !this._isSelectOneElement;
+              return this.input.clear(e), !this._isTextElement && this._canSearch && (this._isSearching = !1, this._store.dispatch((0, a.activateChoices)(!0))), this;
+            }, e.prototype._render = function () {
+              if (!this._store.isLoading()) {
+                this._currentState = this._store.state;
+                var e = this._currentState.choices !== this._prevState.choices || this._currentState.groups !== this._prevState.groups || this._currentState.items !== this._prevState.items,
+                  t = this._isSelectElement,
+                  i = this._currentState.items !== this._prevState.items;
+                e && (t && this._renderChoices(), i && this._renderItems(), this._prevState = this._currentState);
+              }
+            }, e.prototype._renderChoices = function () {
+              var e = this,
+                t = this._store,
+                i = t.activeGroups,
+                n = t.activeChoices,
+                s = document.createDocumentFragment();
+              if (this.choiceList.clear(), this.config.resetScrollPosition && requestAnimationFrame(function () {
+                return e.choiceList.scrollToTop();
+              }), i.length >= 1 && !this._isSearching) {
+                var r = n.filter(function (e) {
+                  return !0 === e.placeholder && -1 === e.groupId;
+                });
+                r.length >= 1 && (s = this._createChoicesFragment(r, s)), s = this._createGroupsFragment(i, n, s);
+              } else n.length >= 1 && (s = this._createChoicesFragment(n, s));
+              if (s.childNodes && s.childNodes.length > 0) {
+                var o = this._store.activeItems,
+                  a = this._canAddItem(o, this.input.value);
+                if (a.response) this.choiceList.append(s), this._highlightChoice();else {
+                  var c = this._getTemplate("notice", a.notice);
+                  this.choiceList.append(c);
+                }
+              } else {
+                var l = void 0;
+                c = void 0, this._isSearching ? (c = "function" == typeof this.config.noResultsText ? this.config.noResultsText() : this.config.noResultsText, l = this._getTemplate("notice", c, "no-results")) : (c = "function" == typeof this.config.noChoicesText ? this.config.noChoicesText() : this.config.noChoicesText, l = this._getTemplate("notice", c, "no-choices")), this.choiceList.append(l);
+              }
+            }, e.prototype._renderItems = function () {
+              var e = this._store.activeItems || [];
+              this.itemList.clear();
+              var t = this._createItemsFragment(e);
+              t.childNodes && this.itemList.append(t);
+            }, e.prototype._createGroupsFragment = function (e, t, i) {
+              var n = this;
+              return void 0 === i && (i = document.createDocumentFragment()), this.config.shouldSort && e.sort(this.config.sorter), e.forEach(function (e) {
+                var s = function (e) {
+                  return t.filter(function (t) {
+                    return n._isSelectOneElement ? t.groupId === e.id : t.groupId === e.id && ("always" === n.config.renderSelectedChoices || !t.selected);
+                  });
+                }(e);
+                if (s.length >= 1) {
+                  var r = n._getTemplate("choiceGroup", e);
+                  i.appendChild(r), n._createChoicesFragment(s, i, !0);
+                }
+              }), i;
+            }, e.prototype._createChoicesFragment = function (e, t, i) {
+              var s = this;
+              void 0 === t && (t = document.createDocumentFragment()), void 0 === i && (i = !1);
+              var r = this.config,
+                o = r.renderSelectedChoices,
+                a = r.searchResultLimit,
+                c = r.renderChoiceLimit,
+                l = this._isSearching ? f.sortByScore : this.config.sorter,
+                h = function (e) {
+                  if ("auto" !== o || s._isSelectOneElement || !e.selected) {
+                    var i = s._getTemplate("choice", e, s.config.itemSelectText);
+                    t.appendChild(i);
+                  }
+                },
+                u = e;
+              "auto" !== o || this._isSelectOneElement || (u = e.filter(function (e) {
+                return !e.selected;
+              }));
+              var d = u.reduce(function (e, t) {
+                  return t.placeholder ? e.placeholderChoices.push(t) : e.normalChoices.push(t), e;
+                }, {
+                  placeholderChoices: [],
+                  normalChoices: []
+                }),
+                p = d.placeholderChoices,
+                m = d.normalChoices;
+              (this.config.shouldSort || this._isSearching) && m.sort(l);
+              var v = u.length,
+                g = this._isSelectOneElement ? n(n([], p, !0), m, !0) : m;
+              this._isSearching ? v = a : c && c > 0 && !i && (v = c);
+              for (var _ = 0; _ < v; _ += 1) g[_] && h(g[_]);
+              return t;
+            }, e.prototype._createItemsFragment = function (e, t) {
+              var i = this;
+              void 0 === t && (t = document.createDocumentFragment());
+              var n = this.config,
+                s = n.shouldSortItems,
+                r = n.sorter,
+                o = n.removeItemButton;
+              return s && !this._isSelectOneElement && e.sort(r), this._isTextElement ? this.passedElement.value = e.map(function (e) {
+                return e.value;
+              }).join(this.config.delimiter) : this.passedElement.options = e, e.forEach(function (e) {
+                var n = i._getTemplate("item", e, o);
+                t.appendChild(n);
+              }), t;
+            }, e.prototype._triggerChange = function (e) {
+              null != e && this.passedElement.triggerEvent(d.EVENTS.change, {
+                value: e
+              });
+            }, e.prototype._selectPlaceholderChoice = function (e) {
+              this._addItem({
+                value: e.value,
+                label: e.label,
+                choiceId: e.id,
+                groupId: e.groupId,
+                placeholder: e.placeholder
+              }), this._triggerChange(e.value);
+            }, e.prototype._handleButtonAction = function (e, t) {
+              if (e && t && this.config.removeItems && this.config.removeItemButton) {
+                var i = t.parentNode && t.parentNode.dataset.id,
+                  n = i && e.find(function (e) {
+                    return e.id === parseInt(i, 10);
+                  });
+                n && (this._removeItem(n), this._triggerChange(n.value), this._isSelectOneElement && this._store.placeholderChoice && this._selectPlaceholderChoice(this._store.placeholderChoice));
+              }
+            }, e.prototype._handleItemAction = function (e, t, i) {
+              var n = this;
+              if (void 0 === i && (i = !1), e && t && this.config.removeItems && !this._isSelectOneElement) {
+                var s = t.dataset.id;
+                e.forEach(function (e) {
+                  e.id !== parseInt("".concat(s), 10) || e.highlighted ? !i && e.highlighted && n.unhighlightItem(e) : n.highlightItem(e);
+                }), this.input.focus();
+              }
+            }, e.prototype._handleChoiceAction = function (e, t) {
+              if (e && t) {
+                var i = t.dataset.id,
+                  n = i && this._store.getChoiceById(i);
+                if (n) {
+                  var s = e[0] && e[0].keyCode ? e[0].keyCode : void 0,
+                    r = this.dropdown.isActive;
+                  n.keyCode = s, this.passedElement.triggerEvent(d.EVENTS.choice, {
+                    choice: n
+                  }), n.selected || n.disabled || this._canAddItem(e, n.value).response && (this._addItem({
+                    value: n.value,
+                    label: n.label,
+                    choiceId: n.id,
+                    groupId: n.groupId,
+                    customProperties: n.customProperties,
+                    placeholder: n.placeholder,
+                    keyCode: n.keyCode
+                  }), this._triggerChange(n.value)), this.clearInput(), r && this._isSelectOneElement && (this.hideDropdown(!0), this.containerOuter.focus());
+                }
+              }
+            }, e.prototype._handleBackspace = function (e) {
+              if (this.config.removeItems && e) {
+                var t = e[e.length - 1],
+                  i = e.some(function (e) {
+                    return e.highlighted;
+                  });
+                this.config.editItems && !i && t ? (this.input.value = t.value, this.input.setWidth(), this._removeItem(t), this._triggerChange(t.value)) : (i || this.highlightItem(t, !1), this.removeHighlightedItems(!0));
+              }
+            }, e.prototype._startLoading = function () {
+              this._store.dispatch((0, h.setIsLoading)(!0));
+            }, e.prototype._stopLoading = function () {
+              this._store.dispatch((0, h.setIsLoading)(!1));
+            }, e.prototype._handleLoadingState = function (e) {
+              void 0 === e && (e = !0);
+              var t = this.itemList.getChild(".".concat(this.config.classNames.placeholder));
+              e ? (this.disable(), this.containerOuter.addLoadingState(), this._isSelectOneElement ? t ? t.innerHTML = this.config.loadingText : (t = this._getTemplate("placeholder", this.config.loadingText)) && this.itemList.append(t) : this.input.placeholder = this.config.loadingText) : (this.enable(), this.containerOuter.removeLoadingState(), this._isSelectOneElement ? t && (t.innerHTML = this._placeholderValue || "") : this.input.placeholder = this._placeholderValue || "");
+            }, e.prototype._handleSearch = function (e) {
+              if (this.input.isFocussed) {
+                var t = this._store.choices,
+                  i = this.config,
+                  n = i.searchFloor,
+                  s = i.searchChoices,
+                  r = t.some(function (e) {
+                    return !e.active;
+                  });
+                if (null != e && e.length >= n) {
+                  var o = s ? this._searchChoices(e) : 0;
+                  this.passedElement.triggerEvent(d.EVENTS.search, {
+                    value: e,
+                    resultCount: o
+                  });
+                } else r && (this._isSearching = !1, this._store.dispatch((0, a.activateChoices)(!0)));
+              }
+            }, e.prototype._canAddItem = function (e, t) {
+              var i = !0,
+                n = "function" == typeof this.config.addItemText ? this.config.addItemText(t) : this.config.addItemText;
+              if (!this._isSelectOneElement) {
+                var s = (0, f.existsInArray)(e, t);
+                this.config.maxItemCount > 0 && this.config.maxItemCount <= e.length && (i = !1, n = "function" == typeof this.config.maxItemText ? this.config.maxItemText(this.config.maxItemCount) : this.config.maxItemText), !this.config.duplicateItemsAllowed && s && i && (i = !1, n = "function" == typeof this.config.uniqueItemText ? this.config.uniqueItemText(t) : this.config.uniqueItemText), this._isTextElement && this.config.addItems && i && "function" == typeof this.config.addItemFilter && !this.config.addItemFilter(t) && (i = !1, n = "function" == typeof this.config.customAddItemText ? this.config.customAddItemText(t) : this.config.customAddItemText);
+              }
+              return {
+                response: i,
+                notice: n
+              };
+            }, e.prototype._searchChoices = function (e) {
+              var t = "string" == typeof e ? e.trim() : e,
+                i = "string" == typeof this._currentValue ? this._currentValue.trim() : this._currentValue;
+              if (t.length < 1 && t === "".concat(i, " ")) return 0;
+              var s = this._store.searchableChoices,
+                r = t,
+                c = Object.assign(this.config.fuseOptions, {
+                  keys: n([], this.config.searchFields, !0),
+                  includeMatches: !0
+                }),
+                l = new o.default(s, c).search(r);
+              return this._currentValue = t, this._highlightPosition = 0, this._isSearching = !0, this._store.dispatch((0, a.filterChoices)(l)), l.length;
+            }, e.prototype._addEventListeners = function () {
+              var e = document.documentElement;
+              e.addEventListener("touchend", this._onTouchEnd, !0), this.containerOuter.element.addEventListener("keydown", this._onKeyDown, !0), this.containerOuter.element.addEventListener("mousedown", this._onMouseDown, !0), e.addEventListener("click", this._onClick, {
+                passive: !0
+              }), e.addEventListener("touchmove", this._onTouchMove, {
+                passive: !0
+              }), this.dropdown.element.addEventListener("mouseover", this._onMouseOver, {
+                passive: !0
+              }), this._isSelectOneElement && (this.containerOuter.element.addEventListener("focus", this._onFocus, {
+                passive: !0
+              }), this.containerOuter.element.addEventListener("blur", this._onBlur, {
+                passive: !0
+              })), this.input.element.addEventListener("keyup", this._onKeyUp, {
+                passive: !0
+              }), this.input.element.addEventListener("focus", this._onFocus, {
+                passive: !0
+              }), this.input.element.addEventListener("blur", this._onBlur, {
+                passive: !0
+              }), this.input.element.form && this.input.element.form.addEventListener("reset", this._onFormReset, {
+                passive: !0
+              }), this.input.addEventListeners();
+            }, e.prototype._removeEventListeners = function () {
+              var e = document.documentElement;
+              e.removeEventListener("touchend", this._onTouchEnd, !0), this.containerOuter.element.removeEventListener("keydown", this._onKeyDown, !0), this.containerOuter.element.removeEventListener("mousedown", this._onMouseDown, !0), e.removeEventListener("click", this._onClick), e.removeEventListener("touchmove", this._onTouchMove), this.dropdown.element.removeEventListener("mouseover", this._onMouseOver), this._isSelectOneElement && (this.containerOuter.element.removeEventListener("focus", this._onFocus), this.containerOuter.element.removeEventListener("blur", this._onBlur)), this.input.element.removeEventListener("keyup", this._onKeyUp), this.input.element.removeEventListener("focus", this._onFocus), this.input.element.removeEventListener("blur", this._onBlur), this.input.element.form && this.input.element.form.removeEventListener("reset", this._onFormReset), this.input.removeEventListeners();
+            }, e.prototype._onKeyDown = function (e) {
+              var t = e.keyCode,
+                i = this._store.activeItems,
+                n = this.input.isFocussed,
+                s = this.dropdown.isActive,
+                r = this.itemList.hasChildren(),
+                o = String.fromCharCode(t),
+                a = /[a-zA-Z0-9-_ ]/.test(o),
+                c = d.KEY_CODES.BACK_KEY,
+                l = d.KEY_CODES.DELETE_KEY,
+                h = d.KEY_CODES.ENTER_KEY,
+                u = d.KEY_CODES.A_KEY,
+                p = d.KEY_CODES.ESC_KEY,
+                f = d.KEY_CODES.UP_KEY,
+                m = d.KEY_CODES.DOWN_KEY,
+                v = d.KEY_CODES.PAGE_UP_KEY,
+                g = d.KEY_CODES.PAGE_DOWN_KEY;
+              switch (this._isTextElement || s || !a || (this.showDropdown(), this.input.isFocussed || (this.input.value += o.toLowerCase())), t) {
+                case u:
+                  return this._onSelectKey(e, r);
+                case h:
+                  return this._onEnterKey(e, i, s);
+                case p:
+                  return this._onEscapeKey(s);
+                case f:
+                case v:
+                case m:
+                case g:
+                  return this._onDirectionKey(e, s);
+                case l:
+                case c:
+                  return this._onDeleteKey(e, i, n);
+              }
+            }, e.prototype._onKeyUp = function (e) {
+              var t = e.target,
+                i = e.keyCode,
+                n = this.input.value,
+                s = this._store.activeItems,
+                r = this._canAddItem(s, n),
+                o = d.KEY_CODES.BACK_KEY,
+                c = d.KEY_CODES.DELETE_KEY;
+              if (this._isTextElement) {
+                if (r.notice && n) {
+                  var l = this._getTemplate("notice", r.notice);
+                  this.dropdown.element.innerHTML = l.outerHTML, this.showDropdown(!0);
+                } else this.hideDropdown(!0);
+              } else {
+                var h = (i === o || i === c) && t && !t.value,
+                  u = !this._isTextElement && this._isSearching,
+                  p = this._canSearch && r.response;
+                h && u ? (this._isSearching = !1, this._store.dispatch((0, a.activateChoices)(!0))) : p && this._handleSearch(this.input.rawValue);
+              }
+              this._canSearch = this.config.searchEnabled;
+            }, e.prototype._onSelectKey = function (e, t) {
+              var i = e.ctrlKey,
+                n = e.metaKey;
+              (i || n) && t && (this._canSearch = !1, this.config.removeItems && !this.input.value && this.input.element === document.activeElement && this.highlightAll());
+            }, e.prototype._onEnterKey = function (e, t, i) {
+              var n = e.target,
+                s = d.KEY_CODES.ENTER_KEY,
+                r = n && n.hasAttribute("data-button");
+              if (this._isTextElement && n && n.value) {
+                var o = this.input.value;
+                this._canAddItem(t, o).response && (this.hideDropdown(!0), this._addItem({
+                  value: o
+                }), this._triggerChange(o), this.clearInput());
+              }
+              if (r && (this._handleButtonAction(t, n), e.preventDefault()), i) {
+                var a = this.dropdown.getChild(".".concat(this.config.classNames.highlightedState));
+                a && (t[0] && (t[0].keyCode = s), this._handleChoiceAction(t, a)), e.preventDefault();
+              } else this._isSelectOneElement && (this.showDropdown(), e.preventDefault());
+            }, e.prototype._onEscapeKey = function (e) {
+              e && (this.hideDropdown(!0), this.containerOuter.focus());
+            }, e.prototype._onDirectionKey = function (e, t) {
+              var i = e.keyCode,
+                n = e.metaKey,
+                s = d.KEY_CODES.DOWN_KEY,
+                r = d.KEY_CODES.PAGE_UP_KEY,
+                o = d.KEY_CODES.PAGE_DOWN_KEY;
+              if (t || this._isSelectOneElement) {
+                this.showDropdown(), this._canSearch = !1;
+                var a = i === s || i === o ? 1 : -1,
+                  c = "[data-choice-selectable]",
+                  l = void 0;
+                if (n || i === o || i === r) l = a > 0 ? this.dropdown.element.querySelector("".concat(c, ":last-of-type")) : this.dropdown.element.querySelector(c);else {
+                  var h = this.dropdown.element.querySelector(".".concat(this.config.classNames.highlightedState));
+                  l = h ? (0, f.getAdjacentEl)(h, c, a) : this.dropdown.element.querySelector(c);
+                }
+                l && ((0, f.isScrolledIntoView)(l, this.choiceList.element, a) || this.choiceList.scrollToChildElement(l, a), this._highlightChoice(l)), e.preventDefault();
+              }
+            }, e.prototype._onDeleteKey = function (e, t, i) {
+              var n = e.target;
+              this._isSelectOneElement || n.value || !i || (this._handleBackspace(t), e.preventDefault());
+            }, e.prototype._onTouchMove = function () {
+              this._wasTap && (this._wasTap = !1);
+            }, e.prototype._onTouchEnd = function (e) {
+              var t = (e || e.touches[0]).target;
+              this._wasTap && this.containerOuter.element.contains(t) && ((t === this.containerOuter.element || t === this.containerInner.element) && (this._isTextElement ? this.input.focus() : this._isSelectMultipleElement && this.showDropdown()), e.stopPropagation()), this._wasTap = !0;
+            }, e.prototype._onMouseDown = function (e) {
+              var t = e.target;
+              if (t instanceof HTMLElement) {
+                if (_ && this.choiceList.element.contains(t)) {
+                  var i = this.choiceList.element.firstElementChild,
+                    n = "ltr" === this._direction ? e.offsetX >= i.offsetWidth : e.offsetX < i.offsetLeft;
+                  this._isScrollingOnIe = n;
+                }
+                if (t !== this.input.element) {
+                  var s = t.closest("[data-button],[data-item],[data-choice]");
+                  if (s instanceof HTMLElement) {
+                    var r = e.shiftKey,
+                      o = this._store.activeItems,
+                      a = s.dataset;
+                    "button" in a ? this._handleButtonAction(o, s) : "item" in a ? this._handleItemAction(o, s, r) : "choice" in a && this._handleChoiceAction(o, s);
+                  }
+                  e.preventDefault();
+                }
+              }
+            }, e.prototype._onMouseOver = function (e) {
+              var t = e.target;
+              t instanceof HTMLElement && "choice" in t.dataset && this._highlightChoice(t);
+            }, e.prototype._onClick = function (e) {
+              var t = e.target;
+              this.containerOuter.element.contains(t) ? this.dropdown.isActive || this.containerOuter.isDisabled ? this._isSelectOneElement && t !== this.input.element && !this.dropdown.element.contains(t) && this.hideDropdown() : this._isTextElement ? document.activeElement !== this.input.element && this.input.focus() : (this.showDropdown(), this.containerOuter.focus()) : (this._store.highlightedActiveItems.length > 0 && this.unhighlightAll(), this.containerOuter.removeFocusState(), this.hideDropdown(!0));
+            }, e.prototype._onFocus = function (e) {
+              var t,
+                i = this,
+                n = e.target;
+              n && this.containerOuter.element.contains(n) && ((t = {})[d.TEXT_TYPE] = function () {
+                n === i.input.element && i.containerOuter.addFocusState();
+              }, t[d.SELECT_ONE_TYPE] = function () {
+                i.containerOuter.addFocusState(), n === i.input.element && i.showDropdown(!0);
+              }, t[d.SELECT_MULTIPLE_TYPE] = function () {
+                n === i.input.element && (i.showDropdown(!0), i.containerOuter.addFocusState());
+              }, t)[this.passedElement.element.type]();
+            }, e.prototype._onBlur = function (e) {
+              var t,
+                i = this,
+                n = e.target;
+              if (n && this.containerOuter.element.contains(n) && !this._isScrollingOnIe) {
+                var s = this._store.activeItems.some(function (e) {
+                  return e.highlighted;
+                });
+                ((t = {})[d.TEXT_TYPE] = function () {
+                  n === i.input.element && (i.containerOuter.removeFocusState(), s && i.unhighlightAll(), i.hideDropdown(!0));
+                }, t[d.SELECT_ONE_TYPE] = function () {
+                  i.containerOuter.removeFocusState(), (n === i.input.element || n === i.containerOuter.element && !i._canSearch) && i.hideDropdown(!0);
+                }, t[d.SELECT_MULTIPLE_TYPE] = function () {
+                  n === i.input.element && (i.containerOuter.removeFocusState(), i.hideDropdown(!0), s && i.unhighlightAll());
+                }, t)[this.passedElement.element.type]();
+              } else this._isScrollingOnIe = !1, this.input.element.focus();
+            }, e.prototype._onFormReset = function () {
+              this._store.dispatch((0, h.resetTo)(this._initialState));
+            }, e.prototype._highlightChoice = function (e) {
+              var t = this;
+              void 0 === e && (e = null);
+              var i = Array.from(this.dropdown.element.querySelectorAll("[data-choice-selectable]"));
+              if (i.length) {
+                var n = e;
+                Array.from(this.dropdown.element.querySelectorAll(".".concat(this.config.classNames.highlightedState))).forEach(function (e) {
+                  e.classList.remove(t.config.classNames.highlightedState), e.setAttribute("aria-selected", "false");
+                }), n ? this._highlightPosition = i.indexOf(n) : (n = i.length > this._highlightPosition ? i[this._highlightPosition] : i[i.length - 1]) || (n = i[0]), n.classList.add(this.config.classNames.highlightedState), n.setAttribute("aria-selected", "true"), this.passedElement.triggerEvent(d.EVENTS.highlightChoice, {
+                  el: n
+                }), this.dropdown.isActive && (this.input.setActiveDescendant(n.id), this.containerOuter.setActiveDescendant(n.id));
+              }
+            }, e.prototype._addItem = function (e) {
+              var t = e.value,
+                i = e.label,
+                n = void 0 === i ? null : i,
+                s = e.choiceId,
+                r = void 0 === s ? -1 : s,
+                o = e.groupId,
+                a = void 0 === o ? -1 : o,
+                c = e.customProperties,
+                h = void 0 === c ? {} : c,
+                u = e.placeholder,
+                p = void 0 !== u && u,
+                f = e.keyCode,
+                m = void 0 === f ? -1 : f,
+                v = "string" == typeof t ? t.trim() : t,
+                g = this._store.items,
+                _ = n || v,
+                y = r || -1,
+                E = a >= 0 ? this._store.getGroupById(a) : null,
+                b = g ? g.length + 1 : 1;
+              this.config.prependValue && (v = this.config.prependValue + v.toString()), this.config.appendValue && (v += this.config.appendValue.toString()), this._store.dispatch((0, l.addItem)({
+                value: v,
+                label: _,
+                id: b,
+                choiceId: y,
+                groupId: a,
+                customProperties: h,
+                placeholder: p,
+                keyCode: m
+              })), this._isSelectOneElement && this.removeActiveItems(b), this.passedElement.triggerEvent(d.EVENTS.addItem, {
+                id: b,
+                value: v,
+                label: _,
+                customProperties: h,
+                groupValue: E && E.value ? E.value : null,
+                keyCode: m
+              });
+            }, e.prototype._removeItem = function (e) {
+              var t = e.id,
+                i = e.value,
+                n = e.label,
+                s = e.customProperties,
+                r = e.choiceId,
+                o = e.groupId,
+                a = o && o >= 0 ? this._store.getGroupById(o) : null;
+              t && r && (this._store.dispatch((0, l.removeItem)(t, r)), this.passedElement.triggerEvent(d.EVENTS.removeItem, {
+                id: t,
+                value: i,
+                label: n,
+                customProperties: s,
+                groupValue: a && a.value ? a.value : null
+              }));
+            }, e.prototype._addChoice = function (e) {
+              var t = e.value,
+                i = e.label,
+                n = void 0 === i ? null : i,
+                s = e.isSelected,
+                r = void 0 !== s && s,
+                o = e.isDisabled,
+                c = void 0 !== o && o,
+                l = e.groupId,
+                h = void 0 === l ? -1 : l,
+                u = e.customProperties,
+                d = void 0 === u ? {} : u,
+                p = e.placeholder,
+                f = void 0 !== p && p,
+                m = e.keyCode,
+                v = void 0 === m ? -1 : m;
+              if (null != t) {
+                var g = this._store.choices,
+                  _ = n || t,
+                  y = g ? g.length + 1 : 1,
+                  E = "".concat(this._baseId, "-").concat(this._idNames.itemChoice, "-").concat(y);
+                this._store.dispatch((0, a.addChoice)({
+                  id: y,
+                  groupId: h,
+                  elementId: E,
+                  value: t,
+                  label: _,
+                  disabled: c,
+                  customProperties: d,
+                  placeholder: f,
+                  keyCode: v
+                })), r && this._addItem({
+                  value: t,
+                  label: _,
+                  choiceId: y,
+                  customProperties: d,
+                  placeholder: f,
+                  keyCode: v
+                });
+              }
+            }, e.prototype._addGroup = function (e) {
+              var t = this,
+                i = e.group,
+                n = e.id,
+                s = e.valueKey,
+                r = void 0 === s ? "value" : s,
+                o = e.labelKey,
+                a = void 0 === o ? "label" : o,
+                l = (0, f.isType)("Object", i) ? i.choices : Array.from(i.getElementsByTagName("OPTION")),
+                h = n || Math.floor(new Date().valueOf() * Math.random()),
+                u = !!i.disabled && i.disabled;
+              l ? (this._store.dispatch((0, c.addGroup)({
+                value: i.label,
+                id: h,
+                active: !0,
+                disabled: u
+              })), l.forEach(function (e) {
+                var i = e.disabled || e.parentNode && e.parentNode.disabled;
+                t._addChoice({
+                  value: e[r],
+                  label: (0, f.isType)("Object", e) ? e[a] : e.innerHTML,
+                  isSelected: e.selected,
+                  isDisabled: i,
+                  groupId: h,
+                  customProperties: e.customProperties,
+                  placeholder: e.placeholder
+                });
+              })) : this._store.dispatch((0, c.addGroup)({
+                value: i.label,
+                id: i.id,
+                active: !1,
+                disabled: i.disabled
+              }));
+            }, e.prototype._getTemplate = function (e) {
+              for (var t, i = [], s = 1; s < arguments.length; s++) i[s - 1] = arguments[s];
+              return (t = this._templates[e]).call.apply(t, n([this, this.config], i, !1));
+            }, e.prototype._createTemplates = function () {
+              var e = this.config.callbackOnCreateTemplates,
+                t = {};
+              e && "function" == typeof e && (t = e.call(this, f.strToEl)), this._templates = (0, r.default)(g.default, t);
+            }, e.prototype._createElements = function () {
+              this.containerOuter = new u.Container({
+                element: this._getTemplate("containerOuter", this._direction, this._isSelectElement, this._isSelectOneElement, this.config.searchEnabled, this.passedElement.element.type, this.config.labelId),
+                classNames: this.config.classNames,
+                type: this.passedElement.element.type,
+                position: this.config.position
+              }), this.containerInner = new u.Container({
+                element: this._getTemplate("containerInner"),
+                classNames: this.config.classNames,
+                type: this.passedElement.element.type,
+                position: this.config.position
+              }), this.input = new u.Input({
+                element: this._getTemplate("input", this._placeholderValue),
+                classNames: this.config.classNames,
+                type: this.passedElement.element.type,
+                preventPaste: !this.config.paste
+              }), this.choiceList = new u.List({
+                element: this._getTemplate("choiceList", this._isSelectOneElement)
+              }), this.itemList = new u.List({
+                element: this._getTemplate("itemList", this._isSelectOneElement)
+              }), this.dropdown = new u.Dropdown({
+                element: this._getTemplate("dropdown"),
+                classNames: this.config.classNames,
+                type: this.passedElement.element.type
+              });
+            }, e.prototype._createStructure = function () {
+              this.passedElement.conceal(), this.containerInner.wrap(this.passedElement.element), this.containerOuter.wrap(this.containerInner.element), this._isSelectOneElement ? this.input.placeholder = this.config.searchPlaceholderValue || "" : this._placeholderValue && (this.input.placeholder = this._placeholderValue, this.input.setWidth()), this.containerOuter.element.appendChild(this.containerInner.element), this.containerOuter.element.appendChild(this.dropdown.element), this.containerInner.element.appendChild(this.itemList.element), this._isTextElement || this.dropdown.element.appendChild(this.choiceList.element), this._isSelectOneElement ? this.config.searchEnabled && this.dropdown.element.insertBefore(this.input.element, this.dropdown.element.firstChild) : this.containerInner.element.appendChild(this.input.element), this._isSelectElement && (this._highlightPosition = 0, this._isSearching = !1, this._startLoading(), this._presetGroups.length ? this._addPredefinedGroups(this._presetGroups) : this._addPredefinedChoices(this._presetChoices), this._stopLoading()), this._isTextElement && this._addPredefinedItems(this._presetItems);
+            }, e.prototype._addPredefinedGroups = function (e) {
+              var t = this,
+                i = this.passedElement.placeholderOption;
+              i && i.parentNode && "SELECT" === i.parentNode.tagName && this._addChoice({
+                value: i.value,
+                label: i.innerHTML,
+                isSelected: i.selected,
+                isDisabled: i.disabled,
+                placeholder: !0
+              }), e.forEach(function (e) {
+                return t._addGroup({
+                  group: e,
+                  id: e.id || null
+                });
+              });
+            }, e.prototype._addPredefinedChoices = function (e) {
+              var t = this;
+              this.config.shouldSort && e.sort(this.config.sorter);
+              var i = e.some(function (e) {
+                  return e.selected;
+                }),
+                n = e.findIndex(function (e) {
+                  return void 0 === e.disabled || !e.disabled;
+                });
+              e.forEach(function (e, s) {
+                var r = e.value,
+                  o = void 0 === r ? "" : r,
+                  a = e.label,
+                  c = e.customProperties,
+                  l = e.placeholder;
+                if (t._isSelectElement) {
+                  if (e.choices) t._addGroup({
+                    group: e,
+                    id: e.id || null
+                  });else {
+                    var h = !(!t._isSelectOneElement || i || s !== n) || e.selected,
+                      u = e.disabled;
+                    t._addChoice({
+                      value: o,
+                      label: a,
+                      isSelected: !!h,
+                      isDisabled: !!u,
+                      placeholder: !!l,
+                      customProperties: c
+                    });
+                  }
+                } else t._addChoice({
+                  value: o,
+                  label: a,
+                  isSelected: !!e.selected,
+                  isDisabled: !!e.disabled,
+                  placeholder: !!e.placeholder,
+                  customProperties: c
+                });
+              });
+            }, e.prototype._addPredefinedItems = function (e) {
+              var t = this;
+              e.forEach(function (e) {
+                "object" == typeof e && e.value && t._addItem({
+                  value: e.value,
+                  label: e.label,
+                  choiceId: e.id,
+                  customProperties: e.customProperties,
+                  placeholder: e.placeholder
+                }), "string" == typeof e && t._addItem({
+                  value: e
+                });
+              });
+            }, e.prototype._setChoiceOrItem = function (e) {
+              var t = this;
+              ({
+                object: function () {
+                  e.value && (t._isTextElement ? t._addItem({
+                    value: e.value,
+                    label: e.label,
+                    choiceId: e.id,
+                    customProperties: e.customProperties,
+                    placeholder: e.placeholder
+                  }) : t._addChoice({
+                    value: e.value,
+                    label: e.label,
+                    isSelected: !0,
+                    isDisabled: !1,
+                    customProperties: e.customProperties,
+                    placeholder: e.placeholder
+                  }));
+                },
+                string: function () {
+                  t._isTextElement ? t._addItem({
+                    value: e
+                  }) : t._addChoice({
+                    value: e,
+                    label: e,
+                    isSelected: !0,
+                    isDisabled: !1
+                  });
+                }
+              })[(0, f.getType)(e).toLowerCase()]();
+            }, e.prototype._findAndSelectChoiceByValue = function (e) {
+              var t = this,
+                i = this._store.choices.find(function (i) {
+                  return t.config.valueComparer(i.value, e);
+                });
+              i && !i.selected && this._addItem({
+                value: i.value,
+                label: i.label,
+                choiceId: i.id,
+                groupId: i.groupId,
+                customProperties: i.customProperties,
+                placeholder: i.placeholder,
+                keyCode: i.keyCode
+              });
+            }, e.prototype._generatePlaceholderValue = function () {
+              if (this._isSelectElement && this.passedElement.placeholderOption) {
+                var e = this.passedElement.placeholderOption;
+                return e ? e.text : null;
+              }
+              var t = this.config,
+                i = t.placeholder,
+                n = t.placeholderValue,
+                s = this.passedElement.element.dataset;
+              if (i) {
+                if (n) return n;
+                if (s.placeholder) return s.placeholder;
+              }
+              return null;
+            }, e;
+          }();
+        t.default = E;
+      },
+      613: function (e, t, i) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+        var n = i(799),
+          s = i(883),
+          r = function () {
+            function e(e) {
+              var t = e.element,
+                i = e.type,
+                n = e.classNames,
+                s = e.position;
+              this.element = t, this.classNames = n, this.type = i, this.position = s, this.isOpen = !1, this.isFlipped = !1, this.isFocussed = !1, this.isDisabled = !1, this.isLoading = !1, this._onFocus = this._onFocus.bind(this), this._onBlur = this._onBlur.bind(this);
+            }
+            return e.prototype.addEventListeners = function () {
+              this.element.addEventListener("focus", this._onFocus), this.element.addEventListener("blur", this._onBlur);
+            }, e.prototype.removeEventListeners = function () {
+              this.element.removeEventListener("focus", this._onFocus), this.element.removeEventListener("blur", this._onBlur);
+            }, e.prototype.shouldFlip = function (e) {
+              if ("number" != typeof e) return !1;
+              var t = !1;
+              return "auto" === this.position ? t = !window.matchMedia("(min-height: ".concat(e + 1, "px)")).matches : "top" === this.position && (t = !0), t;
+            }, e.prototype.setActiveDescendant = function (e) {
+              this.element.setAttribute("aria-activedescendant", e);
+            }, e.prototype.removeActiveDescendant = function () {
+              this.element.removeAttribute("aria-activedescendant");
+            }, e.prototype.open = function (e) {
+              this.element.classList.add(this.classNames.openState), this.element.setAttribute("aria-expanded", "true"), this.isOpen = !0, this.shouldFlip(e) && (this.element.classList.add(this.classNames.flippedState), this.isFlipped = !0);
+            }, e.prototype.close = function () {
+              this.element.classList.remove(this.classNames.openState), this.element.setAttribute("aria-expanded", "false"), this.removeActiveDescendant(), this.isOpen = !1, this.isFlipped && (this.element.classList.remove(this.classNames.flippedState), this.isFlipped = !1);
+            }, e.prototype.focus = function () {
+              this.isFocussed || this.element.focus();
+            }, e.prototype.addFocusState = function () {
+              this.element.classList.add(this.classNames.focusState);
+            }, e.prototype.removeFocusState = function () {
+              this.element.classList.remove(this.classNames.focusState);
+            }, e.prototype.enable = function () {
+              this.element.classList.remove(this.classNames.disabledState), this.element.removeAttribute("aria-disabled"), this.type === s.SELECT_ONE_TYPE && this.element.setAttribute("tabindex", "0"), this.isDisabled = !1;
+            }, e.prototype.disable = function () {
+              this.element.classList.add(this.classNames.disabledState), this.element.setAttribute("aria-disabled", "true"), this.type === s.SELECT_ONE_TYPE && this.element.setAttribute("tabindex", "-1"), this.isDisabled = !0;
+            }, e.prototype.wrap = function (e) {
+              (0, n.wrap)(e, this.element);
+            }, e.prototype.unwrap = function (e) {
+              this.element.parentNode && (this.element.parentNode.insertBefore(e, this.element), this.element.parentNode.removeChild(this.element));
+            }, e.prototype.addLoadingState = function () {
+              this.element.classList.add(this.classNames.loadingState), this.element.setAttribute("aria-busy", "true"), this.isLoading = !0;
+            }, e.prototype.removeLoadingState = function () {
+              this.element.classList.remove(this.classNames.loadingState), this.element.removeAttribute("aria-busy"), this.isLoading = !1;
+            }, e.prototype._onFocus = function () {
+              this.isFocussed = !0;
+            }, e.prototype._onBlur = function () {
+              this.isFocussed = !1;
+            }, e;
+          }();
+        t.default = r;
+      },
+      217: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+        var i = function () {
+          function e(e) {
+            var t = e.element,
+              i = e.type,
+              n = e.classNames;
+            this.element = t, this.classNames = n, this.type = i, this.isActive = !1;
+          }
+          return Object.defineProperty(e.prototype, "distanceFromTopWindow", {
+            get: function () {
+              return this.element.getBoundingClientRect().bottom;
+            },
+            enumerable: !1,
+            configurable: !0
+          }), e.prototype.getChild = function (e) {
+            return this.element.querySelector(e);
+          }, e.prototype.show = function () {
+            return this.element.classList.add(this.classNames.activeState), this.element.setAttribute("aria-expanded", "true"), this.isActive = !0, this;
+          }, e.prototype.hide = function () {
+            return this.element.classList.remove(this.classNames.activeState), this.element.setAttribute("aria-expanded", "false"), this.isActive = !1, this;
+          }, e;
+        }();
+        t.default = i;
+      },
+      520: function (e, t, i) {
+        var n = this && this.__importDefault || function (e) {
+          return e && e.__esModule ? e : {
+            default: e
+          };
+        };
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), t.WrappedSelect = t.WrappedInput = t.List = t.Input = t.Container = t.Dropdown = void 0;
+        var s = n(i(217));
+        t.Dropdown = s.default;
+        var r = n(i(613));
+        t.Container = r.default;
+        var o = n(i(11));
+        t.Input = o.default;
+        var a = n(i(624));
+        t.List = a.default;
+        var c = n(i(541));
+        t.WrappedInput = c.default;
+        var l = n(i(982));
+        t.WrappedSelect = l.default;
+      },
+      11: function (e, t, i) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+        var n = i(799),
+          s = i(883),
+          r = function () {
+            function e(e) {
+              var t = e.element,
+                i = e.type,
+                n = e.classNames,
+                s = e.preventPaste;
+              this.element = t, this.type = i, this.classNames = n, this.preventPaste = s, this.isFocussed = this.element.isEqualNode(document.activeElement), this.isDisabled = t.disabled, this._onPaste = this._onPaste.bind(this), this._onInput = this._onInput.bind(this), this._onFocus = this._onFocus.bind(this), this._onBlur = this._onBlur.bind(this);
+            }
+            return Object.defineProperty(e.prototype, "placeholder", {
+              set: function (e) {
+                this.element.placeholder = e;
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "value", {
+              get: function () {
+                return (0, n.sanitise)(this.element.value);
+              },
+              set: function (e) {
+                this.element.value = e;
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "rawValue", {
+              get: function () {
+                return this.element.value;
+              },
+              enumerable: !1,
+              configurable: !0
+            }), e.prototype.addEventListeners = function () {
+              this.element.addEventListener("paste", this._onPaste), this.element.addEventListener("input", this._onInput, {
+                passive: !0
+              }), this.element.addEventListener("focus", this._onFocus, {
+                passive: !0
+              }), this.element.addEventListener("blur", this._onBlur, {
+                passive: !0
+              });
+            }, e.prototype.removeEventListeners = function () {
+              this.element.removeEventListener("input", this._onInput), this.element.removeEventListener("paste", this._onPaste), this.element.removeEventListener("focus", this._onFocus), this.element.removeEventListener("blur", this._onBlur);
+            }, e.prototype.enable = function () {
+              this.element.removeAttribute("disabled"), this.isDisabled = !1;
+            }, e.prototype.disable = function () {
+              this.element.setAttribute("disabled", ""), this.isDisabled = !0;
+            }, e.prototype.focus = function () {
+              this.isFocussed || this.element.focus();
+            }, e.prototype.blur = function () {
+              this.isFocussed && this.element.blur();
+            }, e.prototype.clear = function (e) {
+              return void 0 === e && (e = !0), this.element.value && (this.element.value = ""), e && this.setWidth(), this;
+            }, e.prototype.setWidth = function () {
+              var e = this.element,
+                t = e.style,
+                i = e.value,
+                n = e.placeholder;
+              t.minWidth = "".concat(n.length + 1, "ch"), t.width = "".concat(i.length + 1, "ch");
+            }, e.prototype.setActiveDescendant = function (e) {
+              this.element.setAttribute("aria-activedescendant", e);
+            }, e.prototype.removeActiveDescendant = function () {
+              this.element.removeAttribute("aria-activedescendant");
+            }, e.prototype._onInput = function () {
+              this.type !== s.SELECT_ONE_TYPE && this.setWidth();
+            }, e.prototype._onPaste = function (e) {
+              this.preventPaste && e.preventDefault();
+            }, e.prototype._onFocus = function () {
+              this.isFocussed = !0;
+            }, e.prototype._onBlur = function () {
+              this.isFocussed = !1;
+            }, e;
+          }();
+        t.default = r;
+      },
+      624: function (e, t, i) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+        var n = i(883),
+          s = function () {
+            function e(e) {
+              var t = e.element;
+              this.element = t, this.scrollPos = this.element.scrollTop, this.height = this.element.offsetHeight;
+            }
+            return e.prototype.clear = function () {
+              this.element.innerHTML = "";
+            }, e.prototype.append = function (e) {
+              this.element.appendChild(e);
+            }, e.prototype.getChild = function (e) {
+              return this.element.querySelector(e);
+            }, e.prototype.hasChildren = function () {
+              return this.element.hasChildNodes();
+            }, e.prototype.scrollToTop = function () {
+              this.element.scrollTop = 0;
+            }, e.prototype.scrollToChildElement = function (e, t) {
+              var i = this;
+              if (e) {
+                var n = this.element.offsetHeight,
+                  s = this.element.scrollTop + n,
+                  r = e.offsetHeight,
+                  o = e.offsetTop + r,
+                  a = t > 0 ? this.element.scrollTop + o - s : e.offsetTop;
+                requestAnimationFrame(function () {
+                  i._animateScroll(a, t);
+                });
+              }
+            }, e.prototype._scrollDown = function (e, t, i) {
+              var n = (i - e) / t,
+                s = n > 1 ? n : 1;
+              this.element.scrollTop = e + s;
+            }, e.prototype._scrollUp = function (e, t, i) {
+              var n = (e - i) / t,
+                s = n > 1 ? n : 1;
+              this.element.scrollTop = e - s;
+            }, e.prototype._animateScroll = function (e, t) {
+              var i = this,
+                s = n.SCROLLING_SPEED,
+                r = this.element.scrollTop,
+                o = !1;
+              t > 0 ? (this._scrollDown(r, s, e), r < e && (o = !0)) : (this._scrollUp(r, s, e), r > e && (o = !0)), o && requestAnimationFrame(function () {
+                i._animateScroll(e, t);
+              });
+            }, e;
+          }();
+        t.default = s;
+      },
+      730: function (e, t, i) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+        var n = i(799),
+          s = function () {
+            function e(e) {
+              var t = e.element,
+                i = e.classNames;
+              if (this.element = t, this.classNames = i, !(t instanceof HTMLInputElement || t instanceof HTMLSelectElement)) throw new TypeError("Invalid element passed");
+              this.isDisabled = !1;
+            }
+            return Object.defineProperty(e.prototype, "isActive", {
+              get: function () {
+                return "active" === this.element.dataset.choice;
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "dir", {
+              get: function () {
+                return this.element.dir;
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "value", {
+              get: function () {
+                return this.element.value;
+              },
+              set: function (e) {
+                this.element.value = e;
+              },
+              enumerable: !1,
+              configurable: !0
+            }), e.prototype.conceal = function () {
+              this.element.classList.add(this.classNames.input), this.element.hidden = !0, this.element.tabIndex = -1;
+              var e = this.element.getAttribute("style");
+              e && this.element.setAttribute("data-choice-orig-style", e), this.element.setAttribute("data-choice", "active");
+            }, e.prototype.reveal = function () {
+              this.element.classList.remove(this.classNames.input), this.element.hidden = !1, this.element.removeAttribute("tabindex");
+              var e = this.element.getAttribute("data-choice-orig-style");
+              e ? (this.element.removeAttribute("data-choice-orig-style"), this.element.setAttribute("style", e)) : this.element.removeAttribute("style"), this.element.removeAttribute("data-choice"), this.element.value = this.element.value;
+            }, e.prototype.enable = function () {
+              this.element.removeAttribute("disabled"), this.element.disabled = !1, this.isDisabled = !1;
+            }, e.prototype.disable = function () {
+              this.element.setAttribute("disabled", ""), this.element.disabled = !0, this.isDisabled = !0;
+            }, e.prototype.triggerEvent = function (e, t) {
+              (0, n.dispatchEvent)(this.element, e, t);
+            }, e;
+          }();
+        t.default = s;
+      },
+      541: function (e, t, i) {
+        var n,
+          s = this && this.__extends || (n = function (e, t) {
+            return n = Object.setPrototypeOf || {
+              __proto__: []
+            } instanceof Array && function (e, t) {
+              e.__proto__ = t;
+            } || function (e, t) {
+              for (var i in t) Object.prototype.hasOwnProperty.call(t, i) && (e[i] = t[i]);
+            }, n(e, t);
+          }, function (e, t) {
+            if ("function" != typeof t && null !== t) throw new TypeError("Class extends value " + String(t) + " is not a constructor or null");
+            function i() {
+              this.constructor = e;
+            }
+            n(e, t), e.prototype = null === t ? Object.create(t) : (i.prototype = t.prototype, new i());
+          }),
+          r = this && this.__importDefault || function (e) {
+            return e && e.__esModule ? e : {
+              default: e
+            };
+          };
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+        var o = function (e) {
+          function t(t) {
+            var i = t.element,
+              n = t.classNames,
+              s = t.delimiter,
+              r = e.call(this, {
+                element: i,
+                classNames: n
+              }) || this;
+            return r.delimiter = s, r;
+          }
+          return s(t, e), Object.defineProperty(t.prototype, "value", {
+            get: function () {
+              return this.element.value;
+            },
+            set: function (e) {
+              this.element.setAttribute("value", e), this.element.value = e;
+            },
+            enumerable: !1,
+            configurable: !0
+          }), t;
+        }(r(i(730)).default);
+        t.default = o;
+      },
+      982: function (e, t, i) {
+        var n,
+          s = this && this.__extends || (n = function (e, t) {
+            return n = Object.setPrototypeOf || {
+              __proto__: []
+            } instanceof Array && function (e, t) {
+              e.__proto__ = t;
+            } || function (e, t) {
+              for (var i in t) Object.prototype.hasOwnProperty.call(t, i) && (e[i] = t[i]);
+            }, n(e, t);
+          }, function (e, t) {
+            if ("function" != typeof t && null !== t) throw new TypeError("Class extends value " + String(t) + " is not a constructor or null");
+            function i() {
+              this.constructor = e;
+            }
+            n(e, t), e.prototype = null === t ? Object.create(t) : (i.prototype = t.prototype, new i());
+          }),
+          r = this && this.__importDefault || function (e) {
+            return e && e.__esModule ? e : {
+              default: e
+            };
+          };
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+        var o = function (e) {
+          function t(t) {
+            var i = t.element,
+              n = t.classNames,
+              s = t.template,
+              r = e.call(this, {
+                element: i,
+                classNames: n
+              }) || this;
+            return r.template = s, r;
+          }
+          return s(t, e), Object.defineProperty(t.prototype, "placeholderOption", {
+            get: function () {
+              return this.element.querySelector('option[value=""]') || this.element.querySelector("option[placeholder]");
+            },
+            enumerable: !1,
+            configurable: !0
+          }), Object.defineProperty(t.prototype, "optionGroups", {
+            get: function () {
+              return Array.from(this.element.getElementsByTagName("OPTGROUP"));
+            },
+            enumerable: !1,
+            configurable: !0
+          }), Object.defineProperty(t.prototype, "options", {
+            get: function () {
+              return Array.from(this.element.options);
+            },
+            set: function (e) {
+              var t = this,
+                i = document.createDocumentFragment();
+              e.forEach(function (e) {
+                return n = e, s = t.template(n), void i.appendChild(s);
+                var n, s;
+              }), this.appendDocFragment(i);
+            },
+            enumerable: !1,
+            configurable: !0
+          }), t.prototype.appendDocFragment = function (e) {
+            this.element.innerHTML = "", this.element.appendChild(e);
+          }, t;
+        }(r(i(730)).default);
+        t.default = o;
+      },
+      883: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), t.SCROLLING_SPEED = t.SELECT_MULTIPLE_TYPE = t.SELECT_ONE_TYPE = t.TEXT_TYPE = t.KEY_CODES = t.ACTION_TYPES = t.EVENTS = void 0, t.EVENTS = {
+          showDropdown: "showDropdown",
+          hideDropdown: "hideDropdown",
+          change: "change",
+          choice: "choice",
+          search: "search",
+          addItem: "addItem",
+          removeItem: "removeItem",
+          highlightItem: "highlightItem",
+          highlightChoice: "highlightChoice",
+          unhighlightItem: "unhighlightItem"
+        }, t.ACTION_TYPES = {
+          ADD_CHOICE: "ADD_CHOICE",
+          FILTER_CHOICES: "FILTER_CHOICES",
+          ACTIVATE_CHOICES: "ACTIVATE_CHOICES",
+          CLEAR_CHOICES: "CLEAR_CHOICES",
+          ADD_GROUP: "ADD_GROUP",
+          ADD_ITEM: "ADD_ITEM",
+          REMOVE_ITEM: "REMOVE_ITEM",
+          HIGHLIGHT_ITEM: "HIGHLIGHT_ITEM",
+          CLEAR_ALL: "CLEAR_ALL",
+          RESET_TO: "RESET_TO",
+          SET_IS_LOADING: "SET_IS_LOADING"
+        }, t.KEY_CODES = {
+          BACK_KEY: 46,
+          DELETE_KEY: 8,
+          ENTER_KEY: 13,
+          A_KEY: 65,
+          ESC_KEY: 27,
+          UP_KEY: 38,
+          DOWN_KEY: 40,
+          PAGE_UP_KEY: 33,
+          PAGE_DOWN_KEY: 34
+        }, t.TEXT_TYPE = "text", t.SELECT_ONE_TYPE = "select-one", t.SELECT_MULTIPLE_TYPE = "select-multiple", t.SCROLLING_SPEED = 4;
+      },
+      789: function (e, t, i) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), t.DEFAULT_CONFIG = t.DEFAULT_CLASSNAMES = void 0;
+        var n = i(799);
+        t.DEFAULT_CLASSNAMES = {
+          containerOuter: "choices",
+          containerInner: "choices__inner",
+          input: "choices__input",
+          inputCloned: "choices__input--cloned",
+          list: "choices__list",
+          listItems: "choices__list--multiple",
+          listSingle: "choices__list--single",
+          listDropdown: "choices__list--dropdown",
+          item: "choices__item",
+          itemSelectable: "choices__item--selectable",
+          itemDisabled: "choices__item--disabled",
+          itemChoice: "choices__item--choice",
+          placeholder: "choices__placeholder",
+          group: "choices__group",
+          groupHeading: "choices__heading",
+          button: "choices__button",
+          activeState: "is-active",
+          focusState: "is-focused",
+          openState: "is-open",
+          disabledState: "is-disabled",
+          highlightedState: "is-highlighted",
+          selectedState: "is-selected",
+          flippedState: "is-flipped",
+          loadingState: "is-loading",
+          noResults: "has-no-results",
+          noChoices: "has-no-choices"
+        }, t.DEFAULT_CONFIG = {
+          items: [],
+          choices: [],
+          silent: !1,
+          renderChoiceLimit: -1,
+          maxItemCount: -1,
+          addItems: !0,
+          addItemFilter: null,
+          removeItems: !0,
+          removeItemButton: !1,
+          editItems: !1,
+          allowHTML: !0,
+          duplicateItemsAllowed: !0,
+          delimiter: ",",
+          paste: !0,
+          searchEnabled: !0,
+          searchChoices: !0,
+          searchFloor: 1,
+          searchResultLimit: 4,
+          searchFields: ["label", "value"],
+          position: "auto",
+          resetScrollPosition: !0,
+          shouldSort: !0,
+          shouldSortItems: !1,
+          sorter: n.sortByAlpha,
+          placeholder: !0,
+          placeholderValue: null,
+          searchPlaceholderValue: null,
+          prependValue: null,
+          appendValue: null,
+          renderSelectedChoices: "auto",
+          loadingText: "Loading...",
+          noResultsText: "No results found",
+          noChoicesText: "No choices to choose from",
+          itemSelectText: "Press to select",
+          uniqueItemText: "Only unique values can be added",
+          customAddItemText: "Only values matching specific conditions can be added",
+          addItemText: function (e) {
+            return 'Press Enter to add <b>"'.concat((0, n.sanitise)(e), '"</b>');
+          },
+          maxItemText: function (e) {
+            return "Only ".concat(e, " values can be added");
+          },
+          valueComparer: function (e, t) {
+            return e === t;
+          },
+          fuseOptions: {
+            includeScore: !0
+          },
+          labelId: "",
+          callbackOnInit: null,
+          callbackOnCreateTemplates: null,
+          classNames: t.DEFAULT_CLASSNAMES
+        };
+      },
+      18: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      978: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      948: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      359: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      285: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      533: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      187: function (e, t, i) {
+        var n = this && this.__createBinding || (Object.create ? function (e, t, i, n) {
+            void 0 === n && (n = i), Object.defineProperty(e, n, {
+              enumerable: !0,
+              get: function () {
+                return t[i];
+              }
+            });
+          } : function (e, t, i, n) {
+            void 0 === n && (n = i), e[n] = t[i];
+          }),
+          s = this && this.__exportStar || function (e, t) {
+            for (var i in e) "default" === i || Object.prototype.hasOwnProperty.call(t, i) || n(t, e, i);
+          };
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), s(i(18), t), s(i(978), t), s(i(948), t), s(i(359), t), s(i(285), t), s(i(533), t), s(i(287), t), s(i(132), t), s(i(837), t), s(i(598), t), s(i(369), t), s(i(37), t), s(i(47), t), s(i(923), t), s(i(876), t);
+      },
+      287: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      132: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      837: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      598: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      37: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      369: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      47: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      923: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      876: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+      },
+      799: function (e, t) {
+        var i;
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), t.diff = t.cloneObject = t.existsInArray = t.dispatchEvent = t.sortByScore = t.sortByAlpha = t.strToEl = t.sanitise = t.isScrolledIntoView = t.getAdjacentEl = t.wrap = t.isType = t.getType = t.generateId = t.generateChars = t.getRandomNumber = void 0, t.getRandomNumber = function (e, t) {
+          return Math.floor(Math.random() * (t - e) + e);
+        }, t.generateChars = function (e) {
+          return Array.from({
+            length: e
+          }, function () {
+            return (0, t.getRandomNumber)(0, 36).toString(36);
+          }).join("");
+        }, t.generateId = function (e, i) {
+          var n = e.id || e.name && "".concat(e.name, "-").concat((0, t.generateChars)(2)) || (0, t.generateChars)(4);
+          return n = n.replace(/(:|\.|\[|\]|,)/g, ""), "".concat(i, "-").concat(n);
+        }, t.getType = function (e) {
+          return Object.prototype.toString.call(e).slice(8, -1);
+        }, t.isType = function (e, i) {
+          return null != i && (0, t.getType)(i) === e;
+        }, t.wrap = function (e, t) {
+          return void 0 === t && (t = document.createElement("div")), e.parentNode && (e.nextSibling ? e.parentNode.insertBefore(t, e.nextSibling) : e.parentNode.appendChild(t)), t.appendChild(e);
+        }, t.getAdjacentEl = function (e, t, i) {
+          void 0 === i && (i = 1);
+          for (var n = "".concat(i > 0 ? "next" : "previous", "ElementSibling"), s = e[n]; s;) {
+            if (s.matches(t)) return s;
+            s = s[n];
+          }
+          return s;
+        }, t.isScrolledIntoView = function (e, t, i) {
+          return void 0 === i && (i = 1), !!e && (i > 0 ? t.scrollTop + t.offsetHeight >= e.offsetTop + e.offsetHeight : e.offsetTop >= t.scrollTop);
+        }, t.sanitise = function (e) {
+          return "string" != typeof e ? e : e.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+        }, t.strToEl = (i = document.createElement("div"), function (e) {
+          var t = e.trim();
+          i.innerHTML = t;
+          for (var n = i.children[0]; i.firstChild;) i.removeChild(i.firstChild);
+          return n;
+        }), t.sortByAlpha = function (e, t) {
+          var i = e.value,
+            n = e.label,
+            s = void 0 === n ? i : n,
+            r = t.value,
+            o = t.label,
+            a = void 0 === o ? r : o;
+          return s.localeCompare(a, [], {
+            sensitivity: "base",
+            ignorePunctuation: !0,
+            numeric: !0
+          });
+        }, t.sortByScore = function (e, t) {
+          var i = e.score,
+            n = void 0 === i ? 0 : i,
+            s = t.score;
+          return n - (void 0 === s ? 0 : s);
+        }, t.dispatchEvent = function (e, t, i) {
+          void 0 === i && (i = null);
+          var n = new CustomEvent(t, {
+            detail: i,
+            bubbles: !0,
+            cancelable: !0
+          });
+          return e.dispatchEvent(n);
+        }, t.existsInArray = function (e, t, i) {
+          return void 0 === i && (i = "value"), e.some(function (e) {
+            return "string" == typeof t ? e[i] === t.trim() : e[i] === t;
+          });
+        }, t.cloneObject = function (e) {
+          return JSON.parse(JSON.stringify(e));
+        }, t.diff = function (e, t) {
+          var i = Object.keys(e).sort(),
+            n = Object.keys(t).sort();
+          return i.filter(function (e) {
+            return n.indexOf(e) < 0;
+          });
+        };
+      },
+      273: function (e, t) {
+        var i = this && this.__spreadArray || function (e, t, i) {
+          if (i || 2 === arguments.length) for (var n, s = 0, r = t.length; s < r; s++) !n && s in t || (n || (n = Array.prototype.slice.call(t, 0, s)), n[s] = t[s]);
+          return e.concat(n || Array.prototype.slice.call(t));
+        };
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), t.defaultState = void 0, t.defaultState = [], t.default = function (e, n) {
+          switch (void 0 === e && (e = t.defaultState), void 0 === n && (n = {}), n.type) {
+            case "ADD_CHOICE":
+              var s = n,
+                r = {
+                  id: s.id,
+                  elementId: s.elementId,
+                  groupId: s.groupId,
+                  value: s.value,
+                  label: s.label || s.value,
+                  disabled: s.disabled || !1,
+                  selected: !1,
+                  active: !0,
+                  score: 9999,
+                  customProperties: s.customProperties,
+                  placeholder: s.placeholder || !1
+                };
+              return i(i([], e, !0), [r], !1);
+            case "ADD_ITEM":
+              var o = n;
+              return o.choiceId > -1 ? e.map(function (e) {
+                var t = e;
+                return t.id === parseInt("".concat(o.choiceId), 10) && (t.selected = !0), t;
+              }) : e;
+            case "REMOVE_ITEM":
+              var a = n;
+              return a.choiceId && a.choiceId > -1 ? e.map(function (e) {
+                var t = e;
+                return t.id === parseInt("".concat(a.choiceId), 10) && (t.selected = !1), t;
+              }) : e;
+            case "FILTER_CHOICES":
+              var c = n;
+              return e.map(function (e) {
+                var t = e;
+                return t.active = c.results.some(function (e) {
+                  var i = e.item,
+                    n = e.score;
+                  return i.id === t.id && (t.score = n, !0);
+                }), t;
+              });
+            case "ACTIVATE_CHOICES":
+              var l = n;
+              return e.map(function (e) {
+                var t = e;
+                return t.active = l.active, t;
+              });
+            case "CLEAR_CHOICES":
+              return t.defaultState;
+            default:
+              return e;
+          }
+        };
+      },
+      871: function (e, t) {
+        var i = this && this.__spreadArray || function (e, t, i) {
+          if (i || 2 === arguments.length) for (var n, s = 0, r = t.length; s < r; s++) !n && s in t || (n || (n = Array.prototype.slice.call(t, 0, s)), n[s] = t[s]);
+          return e.concat(n || Array.prototype.slice.call(t));
+        };
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), t.defaultState = void 0, t.defaultState = [], t.default = function (e, n) {
+          switch (void 0 === e && (e = t.defaultState), void 0 === n && (n = {}), n.type) {
+            case "ADD_GROUP":
+              var s = n;
+              return i(i([], e, !0), [{
+                id: s.id,
+                value: s.value,
+                active: s.active,
+                disabled: s.disabled
+              }], !1);
+            case "CLEAR_CHOICES":
+              return [];
+            default:
+              return e;
+          }
+        };
+      },
+      655: function (e, t, i) {
+        var n = this && this.__importDefault || function (e) {
+          return e && e.__esModule ? e : {
+            default: e
+          };
+        };
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), t.defaultState = void 0;
+        var s = i(857),
+          r = n(i(52)),
+          o = n(i(871)),
+          a = n(i(273)),
+          c = n(i(502)),
+          l = i(799);
+        t.defaultState = {
+          groups: [],
+          items: [],
+          choices: [],
+          loading: !1
+        };
+        var h = (0, s.combineReducers)({
+          items: r.default,
+          groups: o.default,
+          choices: a.default,
+          loading: c.default
+        });
+        t.default = function (e, i) {
+          var n = e;
+          if ("CLEAR_ALL" === i.type) n = t.defaultState;else if ("RESET_TO" === i.type) return (0, l.cloneObject)(i.state);
+          return h(n, i);
+        };
+      },
+      52: function (e, t) {
+        var i = this && this.__spreadArray || function (e, t, i) {
+          if (i || 2 === arguments.length) for (var n, s = 0, r = t.length; s < r; s++) !n && s in t || (n || (n = Array.prototype.slice.call(t, 0, s)), n[s] = t[s]);
+          return e.concat(n || Array.prototype.slice.call(t));
+        };
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), t.defaultState = void 0, t.defaultState = [], t.default = function (e, n) {
+          switch (void 0 === e && (e = t.defaultState), void 0 === n && (n = {}), n.type) {
+            case "ADD_ITEM":
+              var s = n;
+              return i(i([], e, !0), [{
+                id: s.id,
+                choiceId: s.choiceId,
+                groupId: s.groupId,
+                value: s.value,
+                label: s.label,
+                active: !0,
+                highlighted: !1,
+                customProperties: s.customProperties,
+                placeholder: s.placeholder || !1,
+                keyCode: null
+              }], !1).map(function (e) {
+                var t = e;
+                return t.highlighted = !1, t;
+              });
+            case "REMOVE_ITEM":
+              return e.map(function (e) {
+                var t = e;
+                return t.id === n.id && (t.active = !1), t;
+              });
+            case "HIGHLIGHT_ITEM":
+              var r = n;
+              return e.map(function (e) {
+                var t = e;
+                return t.id === r.id && (t.highlighted = r.highlighted), t;
+              });
+            default:
+              return e;
+          }
+        };
+      },
+      502: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        }), t.defaultState = void 0, t.defaultState = !1, t.default = function (e, i) {
+          return void 0 === e && (e = t.defaultState), void 0 === i && (i = {}), "SET_IS_LOADING" === i.type ? i.isLoading : e;
+        };
+      },
+      744: function (e, t, i) {
+        var n = this && this.__spreadArray || function (e, t, i) {
+            if (i || 2 === arguments.length) for (var n, s = 0, r = t.length; s < r; s++) !n && s in t || (n || (n = Array.prototype.slice.call(t, 0, s)), n[s] = t[s]);
+            return e.concat(n || Array.prototype.slice.call(t));
+          },
+          s = this && this.__importDefault || function (e) {
+            return e && e.__esModule ? e : {
+              default: e
+            };
+          };
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+        var r = i(857),
+          o = s(i(655)),
+          a = function () {
+            function e() {
+              this._store = (0, r.createStore)(o.default, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+            }
+            return e.prototype.subscribe = function (e) {
+              this._store.subscribe(e);
+            }, e.prototype.dispatch = function (e) {
+              this._store.dispatch(e);
+            }, Object.defineProperty(e.prototype, "state", {
+              get: function () {
+                return this._store.getState();
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "items", {
+              get: function () {
+                return this.state.items;
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "activeItems", {
+              get: function () {
+                return this.items.filter(function (e) {
+                  return !0 === e.active;
+                });
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "highlightedActiveItems", {
+              get: function () {
+                return this.items.filter(function (e) {
+                  return e.active && e.highlighted;
+                });
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "choices", {
+              get: function () {
+                return this.state.choices;
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "activeChoices", {
+              get: function () {
+                return this.choices.filter(function (e) {
+                  return !0 === e.active;
+                });
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "selectableChoices", {
+              get: function () {
+                return this.choices.filter(function (e) {
+                  return !0 !== e.disabled;
+                });
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "searchableChoices", {
+              get: function () {
+                return this.selectableChoices.filter(function (e) {
+                  return !0 !== e.placeholder;
+                });
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "placeholderChoice", {
+              get: function () {
+                return n([], this.choices, !0).reverse().find(function (e) {
+                  return !0 === e.placeholder;
+                });
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "groups", {
+              get: function () {
+                return this.state.groups;
+              },
+              enumerable: !1,
+              configurable: !0
+            }), Object.defineProperty(e.prototype, "activeGroups", {
+              get: function () {
+                var e = this.groups,
+                  t = this.choices;
+                return e.filter(function (e) {
+                  var i = !0 === e.active && !1 === e.disabled,
+                    n = t.some(function (e) {
+                      return !0 === e.active && !1 === e.disabled;
+                    });
+                  return i && n;
+                }, []);
+              },
+              enumerable: !1,
+              configurable: !0
+            }), e.prototype.isLoading = function () {
+              return this.state.loading;
+            }, e.prototype.getChoiceById = function (e) {
+              return this.activeChoices.find(function (t) {
+                return t.id === parseInt(e, 10);
+              });
+            }, e.prototype.getGroupById = function (e) {
+              return this.groups.find(function (t) {
+                return t.id === e;
+              });
+            }, e;
+          }();
+        t.default = a;
+      },
+      686: function (e, t) {
+        Object.defineProperty(t, "__esModule", {
+          value: !0
+        });
+        var i = {
+          containerOuter: function (e, t, i, n, s, r, o) {
+            var a = e.classNames.containerOuter,
+              c = Object.assign(document.createElement("div"), {
+                className: a
+              });
+            return c.dataset.type = r, t && (c.dir = t), n && (c.tabIndex = 0), i && (c.setAttribute("role", s ? "combobox" : "listbox"), s && c.setAttribute("aria-autocomplete", "list")), c.setAttribute("aria-haspopup", "true"), c.setAttribute("aria-expanded", "false"), o && c.setAttribute("aria-labeledby", o), c;
+          },
+          containerInner: function (e) {
+            var t = e.classNames.containerInner;
+            return Object.assign(document.createElement("div"), {
+              className: t
+            });
+          },
+          itemList: function (e, t) {
+            var i = e.classNames,
+              n = i.list,
+              s = i.listSingle,
+              r = i.listItems;
+            return Object.assign(document.createElement("div"), {
+              className: "".concat(n, " ").concat(t ? s : r)
+            });
+          },
+          placeholder: function (e, t) {
+            var i,
+              n = e.allowHTML,
+              s = e.classNames.placeholder;
+            return Object.assign(document.createElement("div"), ((i = {
+              className: s
+            })[n ? "innerHTML" : "innerText"] = t, i));
+          },
+          item: function (e, t, i) {
+            var n,
+              s,
+              r = e.allowHTML,
+              o = e.classNames,
+              a = o.item,
+              c = o.button,
+              l = o.highlightedState,
+              h = o.itemSelectable,
+              u = o.placeholder,
+              d = t.id,
+              p = t.value,
+              f = t.label,
+              m = t.customProperties,
+              v = t.active,
+              g = t.disabled,
+              _ = t.highlighted,
+              y = t.placeholder,
+              E = Object.assign(document.createElement("div"), ((n = {
+                className: a
+              })[r ? "innerHTML" : "innerText"] = f, n));
+            if (Object.assign(E.dataset, {
+              item: "",
+              id: d,
+              value: p,
+              customProperties: m
+            }), v && E.setAttribute("aria-selected", "true"), g && E.setAttribute("aria-disabled", "true"), y && E.classList.add(u), E.classList.add(_ ? l : h), i) {
+              g && E.classList.remove(h), E.dataset.deletable = "";
+              var b = "Remove item",
+                S = Object.assign(document.createElement("button"), ((s = {
+                  type: "button",
+                  className: c
+                })[r ? "innerHTML" : "innerText"] = b, s));
+              S.setAttribute("aria-label", "".concat(b, ": '").concat(p, "'")), S.dataset.button = "", E.appendChild(S);
+            }
+            return E;
+          },
+          choiceList: function (e, t) {
+            var i = e.classNames.list,
+              n = Object.assign(document.createElement("div"), {
+                className: i
+              });
+            return t || n.setAttribute("aria-multiselectable", "true"), n.setAttribute("role", "listbox"), n;
+          },
+          choiceGroup: function (e, t) {
+            var i,
+              n = e.allowHTML,
+              s = e.classNames,
+              r = s.group,
+              o = s.groupHeading,
+              a = s.itemDisabled,
+              c = t.id,
+              l = t.value,
+              h = t.disabled,
+              u = Object.assign(document.createElement("div"), {
+                className: "".concat(r, " ").concat(h ? a : "")
+              });
+            return u.setAttribute("role", "group"), Object.assign(u.dataset, {
+              group: "",
+              id: c,
+              value: l
+            }), h && u.setAttribute("aria-disabled", "true"), u.appendChild(Object.assign(document.createElement("div"), ((i = {
+              className: o
+            })[n ? "innerHTML" : "innerText"] = l, i))), u;
+          },
+          choice: function (e, t, i) {
+            var n,
+              s = e.allowHTML,
+              r = e.classNames,
+              o = r.item,
+              a = r.itemChoice,
+              c = r.itemSelectable,
+              l = r.selectedState,
+              h = r.itemDisabled,
+              u = r.placeholder,
+              d = t.id,
+              p = t.value,
+              f = t.label,
+              m = t.groupId,
+              v = t.elementId,
+              g = t.disabled,
+              _ = t.selected,
+              y = t.placeholder,
+              E = Object.assign(document.createElement("div"), ((n = {
+                id: v
+              })[s ? "innerHTML" : "innerText"] = f, n.className = "".concat(o, " ").concat(a), n));
+            return _ && E.classList.add(l), y && E.classList.add(u), E.setAttribute("role", m && m > 0 ? "treeitem" : "option"), Object.assign(E.dataset, {
+              choice: "",
+              id: d,
+              value: p,
+              selectText: i
+            }), g ? (E.classList.add(h), E.dataset.choiceDisabled = "", E.setAttribute("aria-disabled", "true")) : (E.classList.add(c), E.dataset.choiceSelectable = ""), E;
+          },
+          input: function (e, t) {
+            var i = e.classNames,
+              n = i.input,
+              s = i.inputCloned,
+              r = Object.assign(document.createElement("input"), {
+                type: "search",
+                name: "search_terms",
+                className: "".concat(n, " ").concat(s),
+                autocomplete: "off",
+                autocapitalize: "off",
+                spellcheck: !1
+              });
+            return r.setAttribute("role", "textbox"), r.setAttribute("aria-autocomplete", "list"), r.setAttribute("aria-label", t), r;
+          },
+          dropdown: function (e) {
+            var t = e.classNames,
+              i = t.list,
+              n = t.listDropdown,
+              s = document.createElement("div");
+            return s.classList.add(i, n), s.setAttribute("aria-expanded", "false"), s;
+          },
+          notice: function (e, t, i) {
+            var n,
+              s = e.allowHTML,
+              r = e.classNames,
+              o = r.item,
+              a = r.itemChoice,
+              c = r.noResults,
+              l = r.noChoices;
+            void 0 === i && (i = "");
+            var h = [o, a];
+            return "no-choices" === i ? h.push(l) : "no-results" === i && h.push(c), Object.assign(document.createElement("div"), ((n = {})[s ? "innerHTML" : "innerText"] = t, n.className = h.join(" "), n));
+          },
+          option: function (e) {
+            var t = e.label,
+              i = e.value,
+              n = e.customProperties,
+              s = e.active,
+              r = e.disabled,
+              o = new Option(t, i, !1, s);
+            return n && (o.dataset.customProperties = "".concat(n)), o.disabled = !!r, o;
+          }
+        };
+        t.default = i;
+      },
+      996: function (e) {
+        var t = function (e) {
+            return function (e) {
+              return !!e && "object" == typeof e;
+            }(e) && !function (e) {
+              var t = Object.prototype.toString.call(e);
+              return "[object RegExp]" === t || "[object Date]" === t || function (e) {
+                return e.$$typeof === i;
+              }(e);
+            }(e);
+          },
+          i = "function" == typeof Symbol && Symbol.for ? Symbol.for("react.element") : 60103;
+        function n(e, t) {
+          return !1 !== t.clone && t.isMergeableObject(e) ? a((i = e, Array.isArray(i) ? [] : {}), e, t) : e;
+          var i;
+        }
+        function s(e, t, i) {
+          return e.concat(t).map(function (e) {
+            return n(e, i);
+          });
+        }
+        function r(e) {
+          return Object.keys(e).concat(function (e) {
+            return Object.getOwnPropertySymbols ? Object.getOwnPropertySymbols(e).filter(function (t) {
+              return e.propertyIsEnumerable(t);
+            }) : [];
+          }(e));
+        }
+        function o(e, t) {
+          try {
+            return t in e;
+          } catch (e) {
+            return !1;
+          }
+        }
+        function a(e, i, c) {
+          (c = c || {}).arrayMerge = c.arrayMerge || s, c.isMergeableObject = c.isMergeableObject || t, c.cloneUnlessOtherwiseSpecified = n;
+          var l = Array.isArray(i);
+          return l === Array.isArray(e) ? l ? c.arrayMerge(e, i, c) : function (e, t, i) {
+            var s = {};
+            return i.isMergeableObject(e) && r(e).forEach(function (t) {
+              s[t] = n(e[t], i);
+            }), r(t).forEach(function (r) {
+              (function (e, t) {
+                return o(e, t) && !(Object.hasOwnProperty.call(e, t) && Object.propertyIsEnumerable.call(e, t));
+              })(e, r) || (o(e, r) && i.isMergeableObject(t[r]) ? s[r] = function (e, t) {
+                if (!t.customMerge) return a;
+                var i = t.customMerge(e);
+                return "function" == typeof i ? i : a;
+              }(r, i)(e[r], t[r], i) : s[r] = n(t[r], i));
+            }), s;
+          }(e, i, c) : n(i, c);
+        }
+        a.all = function (e, t) {
+          if (!Array.isArray(e)) throw new Error("first argument should be an array");
+          return e.reduce(function (e, i) {
+            return a(e, i, t);
+          }, {});
+        };
+        var c = a;
+        e.exports = c;
+      },
+      221: function (e, t, i) {
+        function n(e) {
+          return Array.isArray ? Array.isArray(e) : "[object Array]" === l(e);
+        }
+        function s(e) {
+          return "string" == typeof e;
+        }
+        function r(e) {
+          return "number" == typeof e;
+        }
+        function o(e) {
+          return "object" == typeof e;
+        }
+        function a(e) {
+          return null != e;
+        }
+        function c(e) {
+          return !e.trim().length;
+        }
+        function l(e) {
+          return null == e ? void 0 === e ? "[object Undefined]" : "[object Null]" : Object.prototype.toString.call(e);
+        }
+        i.r(t), i.d(t, {
+          default: function () {
+            return R;
+          }
+        });
+        const h = Object.prototype.hasOwnProperty;
+        class u {
+          constructor(e) {
+            this._keys = [], this._keyMap = {};
+            let t = 0;
+            e.forEach(e => {
+              let i = d(e);
+              t += i.weight, this._keys.push(i), this._keyMap[i.id] = i, t += i.weight;
+            }), this._keys.forEach(e => {
+              e.weight /= t;
+            });
+          }
+          get(e) {
+            return this._keyMap[e];
+          }
+          keys() {
+            return this._keys;
+          }
+          toJSON() {
+            return JSON.stringify(this._keys);
+          }
+        }
+        function d(e) {
+          let t = null,
+            i = null,
+            r = null,
+            o = 1;
+          if (s(e) || n(e)) r = e, t = p(e), i = f(e);else {
+            if (!h.call(e, "name")) throw new Error("Missing name property in key");
+            const n = e.name;
+            if (r = n, h.call(e, "weight") && (o = e.weight, o <= 0)) throw new Error((e => `Property 'weight' in key '${e}' must be a positive integer`)(n));
+            t = p(n), i = f(n);
+          }
+          return {
+            path: t,
+            id: i,
+            weight: o,
+            src: r
+          };
+        }
+        function p(e) {
+          return n(e) ? e : e.split(".");
+        }
+        function f(e) {
+          return n(e) ? e.join(".") : e;
+        }
+        var m = {
+          isCaseSensitive: !1,
+          includeScore: !1,
+          keys: [],
+          shouldSort: !0,
+          sortFn: (e, t) => e.score === t.score ? e.idx < t.idx ? -1 : 1 : e.score < t.score ? -1 : 1,
+          includeMatches: !1,
+          findAllMatches: !1,
+          minMatchCharLength: 1,
+          location: 0,
+          threshold: .6,
+          distance: 100,
+          useExtendedSearch: !1,
+          getFn: function (e, t) {
+            let i = [],
+              c = !1;
+            const h = (e, t, u) => {
+              if (a(e)) if (t[u]) {
+                const d = e[t[u]];
+                if (!a(d)) return;
+                if (u === t.length - 1 && (s(d) || r(d) || function (e) {
+                  return !0 === e || !1 === e || function (e) {
+                    return o(e) && null !== e;
+                  }(e) && "[object Boolean]" == l(e);
+                }(d))) i.push(function (e) {
+                  return null == e ? "" : function (e) {
+                    if ("string" == typeof e) return e;
+                    let t = e + "";
+                    return "0" == t && 1 / e == -1 / 0 ? "-0" : t;
+                  }(e);
+                }(d));else if (n(d)) {
+                  c = !0;
+                  for (let e = 0, i = d.length; e < i; e += 1) h(d[e], t, u + 1);
+                } else t.length && h(d, t, u + 1);
+              } else i.push(e);
+            };
+            return h(e, s(t) ? t.split(".") : t, 0), c ? i : i[0];
+          },
+          ignoreLocation: !1,
+          ignoreFieldNorm: !1,
+          fieldNormWeight: 1
+        };
+        const v = /[^ ]+/g;
+        class g {
+          constructor() {
+            let {
+              getFn: e = m.getFn,
+              fieldNormWeight: t = m.fieldNormWeight
+            } = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+            this.norm = function () {
+              let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+              let t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3;
+              const i = new Map(),
+                n = Math.pow(10, t);
+              return {
+                get(t) {
+                  const s = t.match(v).length;
+                  if (i.has(s)) return i.get(s);
+                  const r = 1 / Math.pow(s, .5 * e),
+                    o = parseFloat(Math.round(r * n) / n);
+                  return i.set(s, o), o;
+                },
+                clear() {
+                  i.clear();
+                }
+              };
+            }(t, 3), this.getFn = e, this.isCreated = !1, this.setIndexRecords();
+          }
+          setSources() {
+            let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+            this.docs = e;
+          }
+          setIndexRecords() {
+            let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+            this.records = e;
+          }
+          setKeys() {
+            let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+            this.keys = e, this._keysMap = {}, e.forEach((e, t) => {
+              this._keysMap[e.id] = t;
+            });
+          }
+          create() {
+            !this.isCreated && this.docs.length && (this.isCreated = !0, s(this.docs[0]) ? this.docs.forEach((e, t) => {
+              this._addString(e, t);
+            }) : this.docs.forEach((e, t) => {
+              this._addObject(e, t);
+            }), this.norm.clear());
+          }
+          add(e) {
+            const t = this.size();
+            s(e) ? this._addString(e, t) : this._addObject(e, t);
+          }
+          removeAt(e) {
+            this.records.splice(e, 1);
+            for (let t = e, i = this.size(); t < i; t += 1) this.records[t].i -= 1;
+          }
+          getValueForItemAtKeyId(e, t) {
+            return e[this._keysMap[t]];
+          }
+          size() {
+            return this.records.length;
+          }
+          _addString(e, t) {
+            if (!a(e) || c(e)) return;
+            let i = {
+              v: e,
+              i: t,
+              n: this.norm.get(e)
+            };
+            this.records.push(i);
+          }
+          _addObject(e, t) {
+            let i = {
+              i: t,
+              $: {}
+            };
+            this.keys.forEach((t, r) => {
+              let o = this.getFn(e, t.path);
+              if (a(o)) if (n(o)) {
+                let e = [];
+                const t = [{
+                  nestedArrIndex: -1,
+                  value: o
+                }];
+                for (; t.length;) {
+                  const {
+                    nestedArrIndex: i,
+                    value: r
+                  } = t.pop();
+                  if (a(r)) if (s(r) && !c(r)) {
+                    let t = {
+                      v: r,
+                      i: i,
+                      n: this.norm.get(r)
+                    };
+                    e.push(t);
+                  } else n(r) && r.forEach((e, i) => {
+                    t.push({
+                      nestedArrIndex: i,
+                      value: e
+                    });
+                  });
+                }
+                i.$[r] = e;
+              } else if (!c(o)) {
+                let e = {
+                  v: o,
+                  n: this.norm.get(o)
+                };
+                i.$[r] = e;
+              }
+            }), this.records.push(i);
+          }
+          toJSON() {
+            return {
+              keys: this.keys,
+              records: this.records
+            };
+          }
+        }
+        function _(e, t) {
+          let {
+            getFn: i = m.getFn,
+            fieldNormWeight: n = m.fieldNormWeight
+          } = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+          const s = new g({
+            getFn: i,
+            fieldNormWeight: n
+          });
+          return s.setKeys(e.map(d)), s.setSources(t), s.create(), s;
+        }
+        function y(e) {
+          let {
+            errors: t = 0,
+            currentLocation: i = 0,
+            expectedLocation: n = 0,
+            distance: s = m.distance,
+            ignoreLocation: r = m.ignoreLocation
+          } = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+          const o = t / e.length;
+          if (r) return o;
+          const a = Math.abs(n - i);
+          return s ? o + a / s : a ? 1 : o;
+        }
+        const E = 32;
+        function b(e) {
+          let t = {};
+          for (let i = 0, n = e.length; i < n; i += 1) {
+            const s = e.charAt(i);
+            t[s] = (t[s] || 0) | 1 << n - i - 1;
+          }
+          return t;
+        }
+        class S {
+          constructor(e) {
+            let {
+              location: t = m.location,
+              threshold: i = m.threshold,
+              distance: n = m.distance,
+              includeMatches: s = m.includeMatches,
+              findAllMatches: r = m.findAllMatches,
+              minMatchCharLength: o = m.minMatchCharLength,
+              isCaseSensitive: a = m.isCaseSensitive,
+              ignoreLocation: c = m.ignoreLocation
+            } = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            if (this.options = {
+              location: t,
+              threshold: i,
+              distance: n,
+              includeMatches: s,
+              findAllMatches: r,
+              minMatchCharLength: o,
+              isCaseSensitive: a,
+              ignoreLocation: c
+            }, this.pattern = a ? e : e.toLowerCase(), this.chunks = [], !this.pattern.length) return;
+            const l = (e, t) => {
+                this.chunks.push({
+                  pattern: e,
+                  alphabet: b(e),
+                  startIndex: t
+                });
+              },
+              h = this.pattern.length;
+            if (h > E) {
+              let e = 0;
+              const t = h % E,
+                i = h - t;
+              for (; e < i;) l(this.pattern.substr(e, E), e), e += E;
+              if (t) {
+                const e = h - E;
+                l(this.pattern.substr(e), e);
+              }
+            } else l(this.pattern, 0);
+          }
+          searchIn(e) {
+            const {
+              isCaseSensitive: t,
+              includeMatches: i
+            } = this.options;
+            if (t || (e = e.toLowerCase()), this.pattern === e) {
+              let t = {
+                isMatch: !0,
+                score: 0
+              };
+              return i && (t.indices = [[0, e.length - 1]]), t;
+            }
+            const {
+              location: n,
+              distance: s,
+              threshold: r,
+              findAllMatches: o,
+              minMatchCharLength: a,
+              ignoreLocation: c
+            } = this.options;
+            let l = [],
+              h = 0,
+              u = !1;
+            this.chunks.forEach(_ref => {
+              let {
+                pattern: t,
+                alphabet: d,
+                startIndex: p
+              } = _ref;
+              const {
+                isMatch: f,
+                score: v,
+                indices: g
+              } = function (e, t, i) {
+                let {
+                  location: n = m.location,
+                  distance: s = m.distance,
+                  threshold: r = m.threshold,
+                  findAllMatches: o = m.findAllMatches,
+                  minMatchCharLength: a = m.minMatchCharLength,
+                  includeMatches: c = m.includeMatches,
+                  ignoreLocation: l = m.ignoreLocation
+                } = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+                if (t.length > E) throw new Error("Pattern length exceeds max of 32.");
+                const h = t.length,
+                  u = e.length,
+                  d = Math.max(0, Math.min(n, u));
+                let p = r,
+                  f = d;
+                const v = a > 1 || c,
+                  g = v ? Array(u) : [];
+                let _;
+                for (; (_ = e.indexOf(t, f)) > -1;) {
+                  let e = y(t, {
+                    currentLocation: _,
+                    expectedLocation: d,
+                    distance: s,
+                    ignoreLocation: l
+                  });
+                  if (p = Math.min(e, p), f = _ + h, v) {
+                    let e = 0;
+                    for (; e < h;) g[_ + e] = 1, e += 1;
+                  }
+                }
+                f = -1;
+                let b = [],
+                  S = 1,
+                  I = h + u;
+                const O = 1 << h - 1;
+                for (let n = 0; n < h; n += 1) {
+                  let r = 0,
+                    a = I;
+                  for (; r < a;) y(t, {
+                    errors: n,
+                    currentLocation: d + a,
+                    expectedLocation: d,
+                    distance: s,
+                    ignoreLocation: l
+                  }) <= p ? r = a : I = a, a = Math.floor((I - r) / 2 + r);
+                  I = a;
+                  let c = Math.max(1, d - a + 1),
+                    m = o ? u : Math.min(d + a, u) + h,
+                    _ = Array(m + 2);
+                  _[m + 1] = (1 << n) - 1;
+                  for (let r = m; r >= c; r -= 1) {
+                    let o = r - 1,
+                      a = i[e.charAt(o)];
+                    if (v && (g[o] = +!!a), _[r] = (_[r + 1] << 1 | 1) & a, n && (_[r] |= (b[r + 1] | b[r]) << 1 | 1 | b[r + 1]), _[r] & O && (S = y(t, {
+                      errors: n,
+                      currentLocation: o,
+                      expectedLocation: d,
+                      distance: s,
+                      ignoreLocation: l
+                    }), S <= p)) {
+                      if (p = S, f = o, f <= d) break;
+                      c = Math.max(1, 2 * d - f);
+                    }
+                  }
+                  if (y(t, {
+                    errors: n + 1,
+                    currentLocation: d,
+                    expectedLocation: d,
+                    distance: s,
+                    ignoreLocation: l
+                  }) > p) break;
+                  b = _;
+                }
+                const C = {
+                  isMatch: f >= 0,
+                  score: Math.max(.001, S)
+                };
+                if (v) {
+                  const e = function () {
+                    let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+                    let t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : m.minMatchCharLength;
+                    let i = [],
+                      n = -1,
+                      s = -1,
+                      r = 0;
+                    for (let o = e.length; r < o; r += 1) {
+                      let o = e[r];
+                      o && -1 === n ? n = r : o || -1 === n || (s = r - 1, s - n + 1 >= t && i.push([n, s]), n = -1);
+                    }
+                    return e[r - 1] && r - n >= t && i.push([n, r - 1]), i;
+                  }(g, a);
+                  e.length ? c && (C.indices = e) : C.isMatch = !1;
+                }
+                return C;
+              }(e, t, d, {
+                location: n + p,
+                distance: s,
+                threshold: r,
+                findAllMatches: o,
+                minMatchCharLength: a,
+                includeMatches: i,
+                ignoreLocation: c
+              });
+              f && (u = !0), h += v, f && g && (l = [...l, ...g]);
+            });
+            let d = {
+              isMatch: u,
+              score: u ? h / this.chunks.length : 1
+            };
+            return u && i && (d.indices = l), d;
+          }
+        }
+        class I {
+          constructor(e) {
+            this.pattern = e;
+          }
+          static isMultiMatch(e) {
+            return O(e, this.multiRegex);
+          }
+          static isSingleMatch(e) {
+            return O(e, this.singleRegex);
+          }
+          search() {}
+        }
+        function O(e, t) {
+          const i = e.match(t);
+          return i ? i[1] : null;
+        }
+        class C extends I {
+          constructor(e) {
+            let {
+              location: t = m.location,
+              threshold: i = m.threshold,
+              distance: n = m.distance,
+              includeMatches: s = m.includeMatches,
+              findAllMatches: r = m.findAllMatches,
+              minMatchCharLength: o = m.minMatchCharLength,
+              isCaseSensitive: a = m.isCaseSensitive,
+              ignoreLocation: c = m.ignoreLocation
+            } = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            super(e), this._bitapSearch = new S(e, {
+              location: t,
+              threshold: i,
+              distance: n,
+              includeMatches: s,
+              findAllMatches: r,
+              minMatchCharLength: o,
+              isCaseSensitive: a,
+              ignoreLocation: c
+            });
+          }
+          static get type() {
+            return "fuzzy";
+          }
+          static get multiRegex() {
+            return /^"(.*)"$/;
+          }
+          static get singleRegex() {
+            return /^(.*)$/;
+          }
+          search(e) {
+            return this._bitapSearch.searchIn(e);
+          }
+        }
+        class T extends I {
+          constructor(e) {
+            super(e);
+          }
+          static get type() {
+            return "include";
+          }
+          static get multiRegex() {
+            return /^'"(.*)"$/;
+          }
+          static get singleRegex() {
+            return /^'(.*)$/;
+          }
+          search(e) {
+            let t,
+              i = 0;
+            const n = [],
+              s = this.pattern.length;
+            for (; (t = e.indexOf(this.pattern, i)) > -1;) i = t + s, n.push([t, i - 1]);
+            const r = !!n.length;
+            return {
+              isMatch: r,
+              score: r ? 0 : 1,
+              indices: n
+            };
+          }
+        }
+        const L = [class extends I {
+            constructor(e) {
+              super(e);
+            }
+            static get type() {
+              return "exact";
+            }
+            static get multiRegex() {
+              return /^="(.*)"$/;
+            }
+            static get singleRegex() {
+              return /^=(.*)$/;
+            }
+            search(e) {
+              const t = e === this.pattern;
+              return {
+                isMatch: t,
+                score: t ? 0 : 1,
+                indices: [0, this.pattern.length - 1]
+              };
+            }
+          }, T, class extends I {
+            constructor(e) {
+              super(e);
+            }
+            static get type() {
+              return "prefix-exact";
+            }
+            static get multiRegex() {
+              return /^\^"(.*)"$/;
+            }
+            static get singleRegex() {
+              return /^\^(.*)$/;
+            }
+            search(e) {
+              const t = e.startsWith(this.pattern);
+              return {
+                isMatch: t,
+                score: t ? 0 : 1,
+                indices: [0, this.pattern.length - 1]
+              };
+            }
+          }, class extends I {
+            constructor(e) {
+              super(e);
+            }
+            static get type() {
+              return "inverse-prefix-exact";
+            }
+            static get multiRegex() {
+              return /^!\^"(.*)"$/;
+            }
+            static get singleRegex() {
+              return /^!\^(.*)$/;
+            }
+            search(e) {
+              const t = !e.startsWith(this.pattern);
+              return {
+                isMatch: t,
+                score: t ? 0 : 1,
+                indices: [0, e.length - 1]
+              };
+            }
+          }, class extends I {
+            constructor(e) {
+              super(e);
+            }
+            static get type() {
+              return "inverse-suffix-exact";
+            }
+            static get multiRegex() {
+              return /^!"(.*)"\$$/;
+            }
+            static get singleRegex() {
+              return /^!(.*)\$$/;
+            }
+            search(e) {
+              const t = !e.endsWith(this.pattern);
+              return {
+                isMatch: t,
+                score: t ? 0 : 1,
+                indices: [0, e.length - 1]
+              };
+            }
+          }, class extends I {
+            constructor(e) {
+              super(e);
+            }
+            static get type() {
+              return "suffix-exact";
+            }
+            static get multiRegex() {
+              return /^"(.*)"\$$/;
+            }
+            static get singleRegex() {
+              return /^(.*)\$$/;
+            }
+            search(e) {
+              const t = e.endsWith(this.pattern);
+              return {
+                isMatch: t,
+                score: t ? 0 : 1,
+                indices: [e.length - this.pattern.length, e.length - 1]
+              };
+            }
+          }, class extends I {
+            constructor(e) {
+              super(e);
+            }
+            static get type() {
+              return "inverse-exact";
+            }
+            static get multiRegex() {
+              return /^!"(.*)"$/;
+            }
+            static get singleRegex() {
+              return /^!(.*)$/;
+            }
+            search(e) {
+              const t = -1 === e.indexOf(this.pattern);
+              return {
+                isMatch: t,
+                score: t ? 0 : 1,
+                indices: [0, e.length - 1]
+              };
+            }
+          }, C],
+          w = L.length,
+          A = / +(?=([^\"]*\"[^\"]*\")*[^\"]*$)/,
+          M = new Set([C.type, T.type]);
+        const P = [];
+        function x(e, t) {
+          for (let i = 0, n = P.length; i < n; i += 1) {
+            let n = P[i];
+            if (n.condition(e, t)) return new n(e, t);
+          }
+          return new S(e, t);
+        }
+        const N = "$and",
+          D = e => !(!e.$and && !e.$or),
+          j = e => ({
+            [N]: Object.keys(e).map(t => ({
+              [t]: e[t]
+            }))
+          });
+        function F(e, t) {
+          let {
+            auto: i = !0
+          } = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+          const r = e => {
+            let a = Object.keys(e);
+            const c = (e => !!e.$path)(e);
+            if (!c && a.length > 1 && !D(e)) return r(j(e));
+            if ((e => !n(e) && o(e) && !D(e))(e)) {
+              const n = c ? e.$path : a[0],
+                r = c ? e.$val : e[n];
+              if (!s(r)) throw new Error((e => `Invalid value for key ${e}`)(n));
+              const o = {
+                keyId: f(n),
+                pattern: r
+              };
+              return i && (o.searcher = x(r, t)), o;
+            }
+            let l = {
+              children: [],
+              operator: a[0]
+            };
+            return a.forEach(t => {
+              const i = e[t];
+              n(i) && i.forEach(e => {
+                l.children.push(r(e));
+              });
+            }), l;
+          };
+          return D(e) || (e = j(e)), r(e);
+        }
+        function k(e, t) {
+          const i = e.matches;
+          t.matches = [], a(i) && i.forEach(e => {
+            if (!a(e.indices) || !e.indices.length) return;
+            const {
+              indices: i,
+              value: n
+            } = e;
+            let s = {
+              indices: i,
+              value: n
+            };
+            e.key && (s.key = e.key.src), e.idx > -1 && (s.refIndex = e.idx), t.matches.push(s);
+          });
+        }
+        function K(e, t) {
+          t.score = e.score;
+        }
+        class R {
+          constructor(e) {
+            let t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            let i = arguments.length > 2 ? arguments[2] : undefined;
+            this.options = {
+              ...m,
+              ...t
+            }, this.options.useExtendedSearch, this._keyStore = new u(this.options.keys), this.setCollection(e, i);
+          }
+          setCollection(e, t) {
+            if (this._docs = e, t && !(t instanceof g)) throw new Error("Incorrect 'index' type");
+            this._myIndex = t || _(this.options.keys, this._docs, {
+              getFn: this.options.getFn,
+              fieldNormWeight: this.options.fieldNormWeight
+            });
+          }
+          add(e) {
+            a(e) && (this._docs.push(e), this._myIndex.add(e));
+          }
+          remove() {
+            let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : () => !1;
+            const t = [];
+            for (let i = 0, n = this._docs.length; i < n; i += 1) {
+              const s = this._docs[i];
+              e(s, i) && (this.removeAt(i), i -= 1, n -= 1, t.push(s));
+            }
+            return t;
+          }
+          removeAt(e) {
+            this._docs.splice(e, 1), this._myIndex.removeAt(e);
+          }
+          getIndex() {
+            return this._myIndex;
+          }
+          search(e) {
+            let {
+              limit: t = -1
+            } = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            const {
+              includeMatches: i,
+              includeScore: n,
+              shouldSort: o,
+              sortFn: a,
+              ignoreFieldNorm: c
+            } = this.options;
+            let l = s(e) ? s(this._docs[0]) ? this._searchStringList(e) : this._searchObjectList(e) : this._searchLogical(e);
+            return function (e, _ref2) {
+              let {
+                ignoreFieldNorm: t = m.ignoreFieldNorm
+              } = _ref2;
+              e.forEach(e => {
+                let i = 1;
+                e.matches.forEach(_ref3 => {
+                  let {
+                    key: e,
+                    norm: n,
+                    score: s
+                  } = _ref3;
+                  const r = e ? e.weight : null;
+                  i *= Math.pow(0 === s && r ? Number.EPSILON : s, (r || 1) * (t ? 1 : n));
+                }), e.score = i;
+              });
+            }(l, {
+              ignoreFieldNorm: c
+            }), o && l.sort(a), r(t) && t > -1 && (l = l.slice(0, t)), function (e, t) {
+              let {
+                includeMatches: i = m.includeMatches,
+                includeScore: n = m.includeScore
+              } = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+              const s = [];
+              return i && s.push(k), n && s.push(K), e.map(e => {
+                const {
+                    idx: i
+                  } = e,
+                  n = {
+                    item: t[i],
+                    refIndex: i
+                  };
+                return s.length && s.forEach(t => {
+                  t(e, n);
+                }), n;
+              });
+            }(l, this._docs, {
+              includeMatches: i,
+              includeScore: n
+            });
+          }
+          _searchStringList(e) {
+            const t = x(e, this.options),
+              {
+                records: i
+              } = this._myIndex,
+              n = [];
+            return i.forEach(_ref4 => {
+              let {
+                v: e,
+                i: i,
+                n: s
+              } = _ref4;
+              if (!a(e)) return;
+              const {
+                isMatch: r,
+                score: o,
+                indices: c
+              } = t.searchIn(e);
+              r && n.push({
+                item: e,
+                idx: i,
+                matches: [{
+                  score: o,
+                  value: e,
+                  norm: s,
+                  indices: c
+                }]
+              });
+            }), n;
+          }
+          _searchLogical(e) {
+            const t = F(e, this.options),
+              i = (e, t, n) => {
+                if (!e.children) {
+                  const {
+                      keyId: i,
+                      searcher: s
+                    } = e,
+                    r = this._findMatches({
+                      key: this._keyStore.get(i),
+                      value: this._myIndex.getValueForItemAtKeyId(t, i),
+                      searcher: s
+                    });
+                  return r && r.length ? [{
+                    idx: n,
+                    item: t,
+                    matches: r
+                  }] : [];
+                }
+                const s = [];
+                for (let r = 0, o = e.children.length; r < o; r += 1) {
+                  const o = e.children[r],
+                    a = i(o, t, n);
+                  if (a.length) s.push(...a);else if (e.operator === N) return [];
+                }
+                return s;
+              },
+              n = this._myIndex.records,
+              s = {},
+              r = [];
+            return n.forEach(_ref5 => {
+              let {
+                $: e,
+                i: n
+              } = _ref5;
+              if (a(e)) {
+                let o = i(t, e, n);
+                o.length && (s[n] || (s[n] = {
+                  idx: n,
+                  item: e,
+                  matches: []
+                }, r.push(s[n])), o.forEach(_ref6 => {
+                  let {
+                    matches: e
+                  } = _ref6;
+                  s[n].matches.push(...e);
+                }));
+              }
+            }), r;
+          }
+          _searchObjectList(e) {
+            const t = x(e, this.options),
+              {
+                keys: i,
+                records: n
+              } = this._myIndex,
+              s = [];
+            return n.forEach(_ref7 => {
+              let {
+                $: e,
+                i: n
+              } = _ref7;
+              if (!a(e)) return;
+              let r = [];
+              i.forEach((i, n) => {
+                r.push(...this._findMatches({
+                  key: i,
+                  value: e[n],
+                  searcher: t
+                }));
+              }), r.length && s.push({
+                idx: n,
+                item: e,
+                matches: r
+              });
+            }), s;
+          }
+          _findMatches(_ref8) {
+            let {
+              key: e,
+              value: t,
+              searcher: i
+            } = _ref8;
+            if (!a(t)) return [];
+            let s = [];
+            if (n(t)) t.forEach(_ref9 => {
+              let {
+                v: t,
+                i: n,
+                n: r
+              } = _ref9;
+              if (!a(t)) return;
+              const {
+                isMatch: o,
+                score: c,
+                indices: l
+              } = i.searchIn(t);
+              o && s.push({
+                score: c,
+                key: e,
+                value: t,
+                idx: n,
+                norm: r,
+                indices: l
+              });
+            });else {
+              const {
+                  v: n,
+                  n: r
+                } = t,
+                {
+                  isMatch: o,
+                  score: a,
+                  indices: c
+                } = i.searchIn(n);
+              o && s.push({
+                score: a,
+                key: e,
+                value: n,
+                norm: r,
+                indices: c
+              });
+            }
+            return s;
+          }
+        }
+        R.version = "6.5.3", R.createIndex = _, R.parseIndex = function (e) {
+          let {
+            getFn: t = m.getFn,
+            fieldNormWeight: i = m.fieldNormWeight
+          } = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+          const {
+              keys: n,
+              records: s
+            } = e,
+            r = new g({
+              getFn: t,
+              fieldNormWeight: i
+            });
+          return r.setKeys(n), r.setIndexRecords(s), r;
+        }, R.config = m, R.parseQuery = F, function () {
+          P.push(...arguments);
+        }(class {
+          constructor(e) {
+            let {
+              isCaseSensitive: t = m.isCaseSensitive,
+              includeMatches: i = m.includeMatches,
+              minMatchCharLength: n = m.minMatchCharLength,
+              ignoreLocation: s = m.ignoreLocation,
+              findAllMatches: r = m.findAllMatches,
+              location: o = m.location,
+              threshold: a = m.threshold,
+              distance: c = m.distance
+            } = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            this.query = null, this.options = {
+              isCaseSensitive: t,
+              includeMatches: i,
+              minMatchCharLength: n,
+              findAllMatches: r,
+              ignoreLocation: s,
+              location: o,
+              threshold: a,
+              distance: c
+            }, this.pattern = t ? e : e.toLowerCase(), this.query = function (e) {
+              let t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+              return e.split("|").map(e => {
+                let i = e.trim().split(A).filter(e => e && !!e.trim()),
+                  n = [];
+                for (let e = 0, s = i.length; e < s; e += 1) {
+                  const s = i[e];
+                  let r = !1,
+                    o = -1;
+                  for (; !r && ++o < w;) {
+                    const e = L[o];
+                    let i = e.isMultiMatch(s);
+                    i && (n.push(new e(i, t)), r = !0);
+                  }
+                  if (!r) for (o = -1; ++o < w;) {
+                    const e = L[o];
+                    let i = e.isSingleMatch(s);
+                    if (i) {
+                      n.push(new e(i, t));
+                      break;
+                    }
+                  }
+                }
+                return n;
+              });
+            }(this.pattern, this.options);
+          }
+          static condition(e, t) {
+            return t.useExtendedSearch;
+          }
+          searchIn(e) {
+            const t = this.query;
+            if (!t) return {
+              isMatch: !1,
+              score: 1
+            };
+            const {
+              includeMatches: i,
+              isCaseSensitive: n
+            } = this.options;
+            e = n ? e : e.toLowerCase();
+            let s = 0,
+              r = [],
+              o = 0;
+            for (let n = 0, a = t.length; n < a; n += 1) {
+              const a = t[n];
+              r.length = 0, s = 0;
+              for (let t = 0, n = a.length; t < n; t += 1) {
+                const n = a[t],
+                  {
+                    isMatch: c,
+                    indices: l,
+                    score: h
+                  } = n.search(e);
+                if (!c) {
+                  o = 0, s = 0, r.length = 0;
+                  break;
+                }
+                if (s += 1, o += h, i) {
+                  const e = n.constructor.type;
+                  M.has(e) ? r = [...r, ...l] : r.push(l);
+                }
+              }
+              if (s) {
+                let e = {
+                  isMatch: !0,
+                  score: o / s
+                };
+                return i && (e.indices = r), e;
+              }
+            }
+            return {
+              isMatch: !1,
+              score: 1
+            };
+          }
+        });
+      },
+      857: function (e, t, i) {
+        function n(e, t, i) {
+          return t in e ? Object.defineProperty(e, t, {
+            value: i,
+            enumerable: !0,
+            configurable: !0,
+            writable: !0
+          }) : e[t] = i, e;
+        }
+        function s(e, t) {
+          var i = Object.keys(e);
+          if (Object.getOwnPropertySymbols) {
+            var n = Object.getOwnPropertySymbols(e);
+            t && (n = n.filter(function (t) {
+              return Object.getOwnPropertyDescriptor(e, t).enumerable;
+            })), i.push.apply(i, n);
+          }
+          return i;
+        }
+        function r(e) {
+          for (var t = 1; t < arguments.length; t++) {
+            var i = null != arguments[t] ? arguments[t] : {};
+            t % 2 ? s(Object(i), !0).forEach(function (t) {
+              n(e, t, i[t]);
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(i)) : s(Object(i)).forEach(function (t) {
+              Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(i, t));
+            });
+          }
+          return e;
+        }
+        function o(e) {
+          return "Minified Redux error #" + e + "; visit https://redux.js.org/Errors?code=" + e + " for the full message or use the non-minified dev environment for full errors. ";
+        }
+        i.r(t), i.d(t, {
+          __DO_NOT_USE__ActionTypes: function () {
+            return l;
+          },
+          applyMiddleware: function () {
+            return v;
+          },
+          bindActionCreators: function () {
+            return f;
+          },
+          combineReducers: function () {
+            return d;
+          },
+          compose: function () {
+            return m;
+          },
+          createStore: function () {
+            return u;
+          }
+        });
+        var a = "function" == typeof Symbol && Symbol.observable || "@@observable",
+          c = function () {
+            return Math.random().toString(36).substring(7).split("").join(".");
+          },
+          l = {
+            INIT: "@@redux/INIT" + c(),
+            REPLACE: "@@redux/REPLACE" + c(),
+            PROBE_UNKNOWN_ACTION: function () {
+              return "@@redux/PROBE_UNKNOWN_ACTION" + c();
+            }
+          };
+        function h(e) {
+          if ("object" != typeof e || null === e) return !1;
+          for (var t = e; null !== Object.getPrototypeOf(t);) t = Object.getPrototypeOf(t);
+          return Object.getPrototypeOf(e) === t;
+        }
+        function u(e, t, i) {
+          var n;
+          if ("function" == typeof t && "function" == typeof i || "function" == typeof i && "function" == typeof arguments[3]) throw new Error(o(0));
+          if ("function" == typeof t && void 0 === i && (i = t, t = void 0), void 0 !== i) {
+            if ("function" != typeof i) throw new Error(o(1));
+            return i(u)(e, t);
+          }
+          if ("function" != typeof e) throw new Error(o(2));
+          var s = e,
+            r = t,
+            c = [],
+            d = c,
+            p = !1;
+          function f() {
+            d === c && (d = c.slice());
+          }
+          function m() {
+            if (p) throw new Error(o(3));
+            return r;
+          }
+          function v(e) {
+            if ("function" != typeof e) throw new Error(o(4));
+            if (p) throw new Error(o(5));
+            var t = !0;
+            return f(), d.push(e), function () {
+              if (t) {
+                if (p) throw new Error(o(6));
+                t = !1, f();
+                var i = d.indexOf(e);
+                d.splice(i, 1), c = null;
+              }
+            };
+          }
+          function g(e) {
+            if (!h(e)) throw new Error(o(7));
+            if (void 0 === e.type) throw new Error(o(8));
+            if (p) throw new Error(o(9));
+            try {
+              p = !0, r = s(r, e);
+            } finally {
+              p = !1;
+            }
+            for (var t = c = d, i = 0; i < t.length; i++) (0, t[i])();
+            return e;
+          }
+          function _(e) {
+            if ("function" != typeof e) throw new Error(o(10));
+            s = e, g({
+              type: l.REPLACE
+            });
+          }
+          function y() {
+            var e,
+              t = v;
+            return (e = {
+              subscribe: function (e) {
+                if ("object" != typeof e || null === e) throw new Error(o(11));
+                function i() {
+                  e.next && e.next(m());
+                }
+                return i(), {
+                  unsubscribe: t(i)
+                };
+              }
+            })[a] = function () {
+              return this;
+            }, e;
+          }
+          return g({
+            type: l.INIT
+          }), (n = {
+            dispatch: g,
+            subscribe: v,
+            getState: m,
+            replaceReducer: _
+          })[a] = y, n;
+        }
+        function d(e) {
+          for (var t = Object.keys(e), i = {}, n = 0; n < t.length; n++) {
+            var s = t[n];
+            "function" == typeof e[s] && (i[s] = e[s]);
+          }
+          var r,
+            a = Object.keys(i);
+          try {
+            !function (e) {
+              Object.keys(e).forEach(function (t) {
+                var i = e[t];
+                if (void 0 === i(void 0, {
+                  type: l.INIT
+                })) throw new Error(o(12));
+                if (void 0 === i(void 0, {
+                  type: l.PROBE_UNKNOWN_ACTION()
+                })) throw new Error(o(13));
+              });
+            }(i);
+          } catch (e) {
+            r = e;
+          }
+          return function (e, t) {
+            if (void 0 === e && (e = {}), r) throw r;
+            for (var n = !1, s = {}, c = 0; c < a.length; c++) {
+              var l = a[c],
+                h = i[l],
+                u = e[l],
+                d = h(u, t);
+              if (void 0 === d) throw t && t.type, new Error(o(14));
+              s[l] = d, n = n || d !== u;
+            }
+            return (n = n || a.length !== Object.keys(e).length) ? s : e;
+          };
+        }
+        function p(e, t) {
+          return function () {
+            return t(e.apply(this, arguments));
+          };
+        }
+        function f(e, t) {
+          if ("function" == typeof e) return p(e, t);
+          if ("object" != typeof e || null === e) throw new Error(o(16));
+          var i = {};
+          for (var n in e) {
+            var s = e[n];
+            "function" == typeof s && (i[n] = p(s, t));
+          }
+          return i;
+        }
+        function m() {
+          for (var e = arguments.length, t = new Array(e), i = 0; i < e; i++) t[i] = arguments[i];
+          return 0 === t.length ? function (e) {
+            return e;
+          } : 1 === t.length ? t[0] : t.reduce(function (e, t) {
+            return function () {
+              return e(t.apply(void 0, arguments));
+            };
+          });
+        }
+        function v() {
+          for (var e = arguments.length, t = new Array(e), i = 0; i < e; i++) t[i] = arguments[i];
+          return function (e) {
+            return function () {
+              var i = e.apply(void 0, arguments),
+                n = function () {
+                  throw new Error(o(15));
+                },
+                s = {
+                  getState: i.getState,
+                  dispatch: function () {
+                    return n.apply(void 0, arguments);
+                  }
+                },
+                a = t.map(function (e) {
+                  return e(s);
+                });
+              return n = m.apply(void 0, a)(i.dispatch), r(r({}, i), {}, {
+                dispatch: n
+              });
+            };
+          };
+        }
+      }
+    },
+    t = {};
+  function i(n) {
+    var s = t[n];
+    if (void 0 !== s) return s.exports;
+    var r = t[n] = {
+      exports: {}
+    };
+    return e[n].call(r.exports, r, r.exports, i), r.exports;
   }
-  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-    _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.classList.add('page--ios');
-    return "iOS";
-  }
-  return "unknown";
-};
+  i.n = function (e) {
+    var t = e && e.__esModule ? function () {
+      return e.default;
+    } : function () {
+      return e;
+    };
+    return i.d(t, {
+      a: t
+    }), t;
+  }, i.d = function (e, t) {
+    for (var n in t) i.o(t, n) && !i.o(e, n) && Object.defineProperty(e, n, {
+      enumerable: !0,
+      get: t[n]
+    });
+  }, i.o = function (e, t) {
+    return Object.prototype.hasOwnProperty.call(e, t);
+  }, i.r = function (e) {
+    "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+      value: "Module"
+    }), Object.defineProperty(e, "__esModule", {
+      value: !0
+    });
+  };
+  var n,
+    s,
+    r = {};
+  n = i(373), s = i.n(n), i(187), i(883), i(789), i(686), r.default = s(), window.Choices = r.default;
+}();
 
 /***/ }),
 
@@ -811,6 +4794,208 @@ if (typeof document !== 'undefined') {
   // coordination is required to use the polyfill in the top-level document:
   applyFocusVisiblePolyfill(document);
 }
+
+/***/ }),
+
+/***/ "./node_modules/graph-modal/src/graph-modal.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/graph-modal/src/graph-modal.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ GraphModal)
+/* harmony export */ });
+class GraphModal {
+  constructor(options) {
+    let defaultOptions = {
+      isOpen: () => {},
+      isClose: () => {},
+    }
+    this.options = Object.assign(defaultOptions, options);
+    this.modal = document.querySelector('.graph-modal');
+    this.speed = 300;
+    this.animation = 'fade';
+    this._reOpen = false;
+    this._nextContainer = false;
+    this.modalContainer = false;
+    this.isOpen = false;
+    this.previousActiveElement = false;
+    this._focusElements = [
+      'a[href]',
+      'input',
+      'select',
+      'textarea',
+      'button',
+      'iframe',
+      '[contenteditable]',
+      '[tabindex]:not([tabindex^="-"])'
+    ];
+    this._fixBlocks = document.querySelectorAll('.fix-block');
+    this.events();
+  }
+
+  events() {
+    if (this.modal) {
+      document.addEventListener('click', function (e) {
+        const clickedElement = e.target.closest(`[data-graph-path]`);
+        if (clickedElement) {
+          let target = clickedElement.dataset.graphPath;
+          let animation = clickedElement.dataset.graphAnimation;
+          let speed = clickedElement.dataset.graphSpeed;
+          this.animation = animation ? animation : 'fade';
+          this.speed = speed ? parseInt(speed) : 300;
+          this._nextContainer = document.querySelector(`[data-graph-target="${target}"]`);
+          this.open();
+          return;
+        }
+
+        if (e.target.closest('.js-modal-close')) {
+          this.close();
+          return;
+        }
+      }.bind(this));
+
+      window.addEventListener('keydown', function (e) {
+        if (e.keyCode == 27 && this.isOpen) {
+          this.close();
+        }
+
+        if (e.which == 9 && this.isOpen) {
+          this.focusCatch(e);
+          return;
+        }
+      }.bind(this));
+
+      document.addEventListener('click', function (e) {
+        if (e.target.classList.contains('graph-modal') && e.target.classList.contains("is-open")) {
+          this.close();
+        }
+      }.bind(this));
+    }
+
+  }
+
+  open(selector) {
+    this.previousActiveElement = document.activeElement;
+
+    if (this.isOpen) {
+      this.reOpen = true;
+      this.close();
+      return;
+    }
+
+    this.modalContainer = this._nextContainer;
+
+    if (selector) {
+      this.modalContainer = document.querySelector(`[data-graph-target="${selector}"]`);
+    }
+    
+    this.modalContainer.scrollTo(0, 0)
+
+    this.modal.style.setProperty('--transition-time', `${this.speed / 1000}s`);
+    this.modal.classList.add('is-open');
+
+    document.body.style.scrollBehavior = 'auto';
+    document.documentElement.style.scrollBehavior = 'auto';
+
+    this.disableScroll();
+
+    this.modalContainer.classList.add('graph-modal-open');
+    this.modalContainer.classList.add(this.animation);
+
+    setTimeout(() => {
+      this.options.isOpen(this);
+      this.modalContainer.classList.add('animate-open');
+      this.isOpen = true;
+      this.focusTrap();
+    }, this.speed);
+  }
+
+  close() {
+    if (this.modalContainer) {
+      this.modalContainer.classList.remove('animate-open');
+      this.modalContainer.classList.remove(this.animation);
+      this.modal.classList.remove('is-open');
+      this.modalContainer.classList.remove('graph-modal-open');
+
+      this.enableScroll();
+
+      document.body.style.scrollBehavior = 'auto';
+      document.documentElement.style.scrollBehavior = 'auto';
+
+      this.options.isClose(this);
+      this.isOpen = false;
+      this.focusTrap();
+
+      if (this.reOpen) {
+        this.reOpen = false;
+        this.open();
+      }
+    }
+  }
+
+  focusCatch(e) {
+    const nodes = this.modalContainer.querySelectorAll(this._focusElements);
+    const nodesArray = Array.prototype.slice.call(nodes);
+    const focusedItemIndex = nodesArray.indexOf(document.activeElement)
+    if (e.shiftKey && focusedItemIndex === 0) {
+      nodesArray[nodesArray.length - 1].focus();
+      e.preventDefault();
+    }
+    if (!e.shiftKey && focusedItemIndex === nodesArray.length - 1) {
+      nodesArray[0].focus();
+      e.preventDefault();
+    }
+  }
+
+  focusTrap() {
+    const nodes = this.modalContainer.querySelectorAll(this._focusElements);
+    if (this.isOpen) {
+      if (nodes.length) nodes[0].focus();
+    } else {
+      this.previousActiveElement.focus();
+    }
+  }
+
+  disableScroll() {
+    let pagePosition = window.scrollY;
+    this.lockPadding();
+    document.body.classList.add('disable-scroll');
+    document.body.dataset.position = pagePosition;
+    document.body.style.top = -pagePosition + 'px';
+  }
+
+  enableScroll() {
+    let pagePosition = parseInt(document.body.dataset.position, 10);
+    this.unlockPadding();
+    document.body.style.top = 'auto';
+    document.body.classList.remove('disable-scroll');
+    window.scrollTo({
+      top: pagePosition,
+      left: 0
+    });
+    document.body.removeAttribute('data-position');
+  }
+
+  lockPadding() {
+    let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+    this._fixBlocks.forEach((el) => {
+      el.style.paddingRight = paddingOffset;
+    });
+    document.body.style.paddingRight = paddingOffset;
+  }
+
+  unlockPadding() {
+    this._fixBlocks.forEach((el) => {
+      el.style.paddingRight = '0px';
+    });
+    document.body.style.paddingRight = '0px';
+  }
+}
+
 
 /***/ }),
 
@@ -6289,6 +10474,2297 @@ var MaskedRegExp = /*#__PURE__*/function (_Masked) {
 _core_holder_js__WEBPACK_IMPORTED_MODULE_2__["default"].MaskedRegExp = MaskedRegExp;
 
 
+
+
+/***/ }),
+
+/***/ "./node_modules/nouislider/dist/nouislider.js":
+/*!****************************************************!*\
+  !*** ./node_modules/nouislider/dist/nouislider.js ***!
+  \****************************************************/
+/***/ (function(__unused_webpack_module, exports) {
+
+(function (global, factory) {
+     true ? factory(exports) :
+    0;
+})(this, (function (exports) { 'use strict';
+
+    exports.PipsMode = void 0;
+    (function (PipsMode) {
+        PipsMode["Range"] = "range";
+        PipsMode["Steps"] = "steps";
+        PipsMode["Positions"] = "positions";
+        PipsMode["Count"] = "count";
+        PipsMode["Values"] = "values";
+    })(exports.PipsMode || (exports.PipsMode = {}));
+    exports.PipsType = void 0;
+    (function (PipsType) {
+        PipsType[PipsType["None"] = -1] = "None";
+        PipsType[PipsType["NoValue"] = 0] = "NoValue";
+        PipsType[PipsType["LargeValue"] = 1] = "LargeValue";
+        PipsType[PipsType["SmallValue"] = 2] = "SmallValue";
+    })(exports.PipsType || (exports.PipsType = {}));
+    //region Helper Methods
+    function isValidFormatter(entry) {
+        return isValidPartialFormatter(entry) && typeof entry.from === "function";
+    }
+    function isValidPartialFormatter(entry) {
+        // partial formatters only need a to function and not a from function
+        return typeof entry === "object" && typeof entry.to === "function";
+    }
+    function removeElement(el) {
+        el.parentElement.removeChild(el);
+    }
+    function isSet(value) {
+        return value !== null && value !== undefined;
+    }
+    // Bindable version
+    function preventDefault(e) {
+        e.preventDefault();
+    }
+    // Removes duplicates from an array.
+    function unique(array) {
+        return array.filter(function (a) {
+            return !this[a] ? (this[a] = true) : false;
+        }, {});
+    }
+    // Round a value to the closest 'to'.
+    function closest(value, to) {
+        return Math.round(value / to) * to;
+    }
+    // Current position of an element relative to the document.
+    function offset(elem, orientation) {
+        var rect = elem.getBoundingClientRect();
+        var doc = elem.ownerDocument;
+        var docElem = doc.documentElement;
+        var pageOffset = getPageOffset(doc);
+        // getBoundingClientRect contains left scroll in Chrome on Android.
+        // I haven't found a feature detection that proves this. Worst case
+        // scenario on mis-match: the 'tap' feature on horizontal sliders breaks.
+        if (/webkit.*Chrome.*Mobile/i.test(navigator.userAgent)) {
+            pageOffset.x = 0;
+        }
+        return orientation ? rect.top + pageOffset.y - docElem.clientTop : rect.left + pageOffset.x - docElem.clientLeft;
+    }
+    // Checks whether a value is numerical.
+    function isNumeric(a) {
+        return typeof a === "number" && !isNaN(a) && isFinite(a);
+    }
+    // Sets a class and removes it after [duration] ms.
+    function addClassFor(element, className, duration) {
+        if (duration > 0) {
+            addClass(element, className);
+            setTimeout(function () {
+                removeClass(element, className);
+            }, duration);
+        }
+    }
+    // Limits a value to 0 - 100
+    function limit(a) {
+        return Math.max(Math.min(a, 100), 0);
+    }
+    // Wraps a variable as an array, if it isn't one yet.
+    // Note that an input array is returned by reference!
+    function asArray(a) {
+        return Array.isArray(a) ? a : [a];
+    }
+    // Counts decimals
+    function countDecimals(numStr) {
+        numStr = String(numStr);
+        var pieces = numStr.split(".");
+        return pieces.length > 1 ? pieces[1].length : 0;
+    }
+    // http://youmightnotneedjquery.com/#add_class
+    function addClass(el, className) {
+        if (el.classList && !/\s/.test(className)) {
+            el.classList.add(className);
+        }
+        else {
+            el.className += " " + className;
+        }
+    }
+    // http://youmightnotneedjquery.com/#remove_class
+    function removeClass(el, className) {
+        if (el.classList && !/\s/.test(className)) {
+            el.classList.remove(className);
+        }
+        else {
+            el.className = el.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " ");
+        }
+    }
+    // https://plainjs.com/javascript/attributes/adding-removing-and-testing-for-classes-9/
+    function hasClass(el, className) {
+        return el.classList ? el.classList.contains(className) : new RegExp("\\b" + className + "\\b").test(el.className);
+    }
+    // https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY#Notes
+    function getPageOffset(doc) {
+        var supportPageOffset = window.pageXOffset !== undefined;
+        var isCSS1Compat = (doc.compatMode || "") === "CSS1Compat";
+        var x = supportPageOffset
+            ? window.pageXOffset
+            : isCSS1Compat
+                ? doc.documentElement.scrollLeft
+                : doc.body.scrollLeft;
+        var y = supportPageOffset
+            ? window.pageYOffset
+            : isCSS1Compat
+                ? doc.documentElement.scrollTop
+                : doc.body.scrollTop;
+        return {
+            x: x,
+            y: y,
+        };
+    }
+    // we provide a function to compute constants instead
+    // of accessing window.* as soon as the module needs it
+    // so that we do not compute anything if not needed
+    function getActions() {
+        // Determine the events to bind. IE11 implements pointerEvents without
+        // a prefix, which breaks compatibility with the IE10 implementation.
+        return window.navigator.pointerEnabled
+            ? {
+                start: "pointerdown",
+                move: "pointermove",
+                end: "pointerup",
+            }
+            : window.navigator.msPointerEnabled
+                ? {
+                    start: "MSPointerDown",
+                    move: "MSPointerMove",
+                    end: "MSPointerUp",
+                }
+                : {
+                    start: "mousedown touchstart",
+                    move: "mousemove touchmove",
+                    end: "mouseup touchend",
+                };
+    }
+    // https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
+    // Issue #785
+    function getSupportsPassive() {
+        var supportsPassive = false;
+        /* eslint-disable */
+        try {
+            var opts = Object.defineProperty({}, "passive", {
+                get: function () {
+                    supportsPassive = true;
+                },
+            });
+            // @ts-ignore
+            window.addEventListener("test", null, opts);
+        }
+        catch (e) { }
+        /* eslint-enable */
+        return supportsPassive;
+    }
+    function getSupportsTouchActionNone() {
+        return window.CSS && CSS.supports && CSS.supports("touch-action", "none");
+    }
+    //endregion
+    //region Range Calculation
+    // Determine the size of a sub-range in relation to a full range.
+    function subRangeRatio(pa, pb) {
+        return 100 / (pb - pa);
+    }
+    // (percentage) How many percent is this value of this range?
+    function fromPercentage(range, value, startRange) {
+        return (value * 100) / (range[startRange + 1] - range[startRange]);
+    }
+    // (percentage) Where is this value on this range?
+    function toPercentage(range, value) {
+        return fromPercentage(range, range[0] < 0 ? value + Math.abs(range[0]) : value - range[0], 0);
+    }
+    // (value) How much is this percentage on this range?
+    function isPercentage(range, value) {
+        return (value * (range[1] - range[0])) / 100 + range[0];
+    }
+    function getJ(value, arr) {
+        var j = 1;
+        while (value >= arr[j]) {
+            j += 1;
+        }
+        return j;
+    }
+    // (percentage) Input a value, find where, on a scale of 0-100, it applies.
+    function toStepping(xVal, xPct, value) {
+        if (value >= xVal.slice(-1)[0]) {
+            return 100;
+        }
+        var j = getJ(value, xVal);
+        var va = xVal[j - 1];
+        var vb = xVal[j];
+        var pa = xPct[j - 1];
+        var pb = xPct[j];
+        return pa + toPercentage([va, vb], value) / subRangeRatio(pa, pb);
+    }
+    // (value) Input a percentage, find where it is on the specified range.
+    function fromStepping(xVal, xPct, value) {
+        // There is no range group that fits 100
+        if (value >= 100) {
+            return xVal.slice(-1)[0];
+        }
+        var j = getJ(value, xPct);
+        var va = xVal[j - 1];
+        var vb = xVal[j];
+        var pa = xPct[j - 1];
+        var pb = xPct[j];
+        return isPercentage([va, vb], (value - pa) * subRangeRatio(pa, pb));
+    }
+    // (percentage) Get the step that applies at a certain value.
+    function getStep(xPct, xSteps, snap, value) {
+        if (value === 100) {
+            return value;
+        }
+        var j = getJ(value, xPct);
+        var a = xPct[j - 1];
+        var b = xPct[j];
+        // If 'snap' is set, steps are used as fixed points on the slider.
+        if (snap) {
+            // Find the closest position, a or b.
+            if (value - a > (b - a) / 2) {
+                return b;
+            }
+            return a;
+        }
+        if (!xSteps[j - 1]) {
+            return value;
+        }
+        return xPct[j - 1] + closest(value - xPct[j - 1], xSteps[j - 1]);
+    }
+    //endregion
+    //region Spectrum
+    var Spectrum = /** @class */ (function () {
+        function Spectrum(entry, snap, singleStep) {
+            this.xPct = [];
+            this.xVal = [];
+            this.xSteps = [];
+            this.xNumSteps = [];
+            this.xHighestCompleteStep = [];
+            this.xSteps = [singleStep || false];
+            this.xNumSteps = [false];
+            this.snap = snap;
+            var index;
+            var ordered = [];
+            // Map the object keys to an array.
+            Object.keys(entry).forEach(function (index) {
+                ordered.push([asArray(entry[index]), index]);
+            });
+            // Sort all entries by value (numeric sort).
+            ordered.sort(function (a, b) {
+                return a[0][0] - b[0][0];
+            });
+            // Convert all entries to subranges.
+            for (index = 0; index < ordered.length; index++) {
+                this.handleEntryPoint(ordered[index][1], ordered[index][0]);
+            }
+            // Store the actual step values.
+            // xSteps is sorted in the same order as xPct and xVal.
+            this.xNumSteps = this.xSteps.slice(0);
+            // Convert all numeric steps to the percentage of the subrange they represent.
+            for (index = 0; index < this.xNumSteps.length; index++) {
+                this.handleStepPoint(index, this.xNumSteps[index]);
+            }
+        }
+        Spectrum.prototype.getDistance = function (value) {
+            var distances = [];
+            for (var index = 0; index < this.xNumSteps.length - 1; index++) {
+                distances[index] = fromPercentage(this.xVal, value, index);
+            }
+            return distances;
+        };
+        // Calculate the percentual distance over the whole scale of ranges.
+        // direction: 0 = backwards / 1 = forwards
+        Spectrum.prototype.getAbsoluteDistance = function (value, distances, direction) {
+            var xPct_index = 0;
+            // Calculate range where to start calculation
+            if (value < this.xPct[this.xPct.length - 1]) {
+                while (value > this.xPct[xPct_index + 1]) {
+                    xPct_index++;
+                }
+            }
+            else if (value === this.xPct[this.xPct.length - 1]) {
+                xPct_index = this.xPct.length - 2;
+            }
+            // If looking backwards and the value is exactly at a range separator then look one range further
+            if (!direction && value === this.xPct[xPct_index + 1]) {
+                xPct_index++;
+            }
+            if (distances === null) {
+                distances = [];
+            }
+            var start_factor;
+            var rest_factor = 1;
+            var rest_rel_distance = distances[xPct_index];
+            var range_pct = 0;
+            var rel_range_distance = 0;
+            var abs_distance_counter = 0;
+            var range_counter = 0;
+            // Calculate what part of the start range the value is
+            if (direction) {
+                start_factor = (value - this.xPct[xPct_index]) / (this.xPct[xPct_index + 1] - this.xPct[xPct_index]);
+            }
+            else {
+                start_factor = (this.xPct[xPct_index + 1] - value) / (this.xPct[xPct_index + 1] - this.xPct[xPct_index]);
+            }
+            // Do until the complete distance across ranges is calculated
+            while (rest_rel_distance > 0) {
+                // Calculate the percentage of total range
+                range_pct = this.xPct[xPct_index + 1 + range_counter] - this.xPct[xPct_index + range_counter];
+                // Detect if the margin, padding or limit is larger then the current range and calculate
+                if (distances[xPct_index + range_counter] * rest_factor + 100 - start_factor * 100 > 100) {
+                    // If larger then take the percentual distance of the whole range
+                    rel_range_distance = range_pct * start_factor;
+                    // Rest factor of relative percentual distance still to be calculated
+                    rest_factor = (rest_rel_distance - 100 * start_factor) / distances[xPct_index + range_counter];
+                    // Set start factor to 1 as for next range it does not apply.
+                    start_factor = 1;
+                }
+                else {
+                    // If smaller or equal then take the percentual distance of the calculate percentual part of that range
+                    rel_range_distance = ((distances[xPct_index + range_counter] * range_pct) / 100) * rest_factor;
+                    // No rest left as the rest fits in current range
+                    rest_factor = 0;
+                }
+                if (direction) {
+                    abs_distance_counter = abs_distance_counter - rel_range_distance;
+                    // Limit range to first range when distance becomes outside of minimum range
+                    if (this.xPct.length + range_counter >= 1) {
+                        range_counter--;
+                    }
+                }
+                else {
+                    abs_distance_counter = abs_distance_counter + rel_range_distance;
+                    // Limit range to last range when distance becomes outside of maximum range
+                    if (this.xPct.length - range_counter >= 1) {
+                        range_counter++;
+                    }
+                }
+                // Rest of relative percentual distance still to be calculated
+                rest_rel_distance = distances[xPct_index + range_counter] * rest_factor;
+            }
+            return value + abs_distance_counter;
+        };
+        Spectrum.prototype.toStepping = function (value) {
+            value = toStepping(this.xVal, this.xPct, value);
+            return value;
+        };
+        Spectrum.prototype.fromStepping = function (value) {
+            return fromStepping(this.xVal, this.xPct, value);
+        };
+        Spectrum.prototype.getStep = function (value) {
+            value = getStep(this.xPct, this.xSteps, this.snap, value);
+            return value;
+        };
+        Spectrum.prototype.getDefaultStep = function (value, isDown, size) {
+            var j = getJ(value, this.xPct);
+            // When at the top or stepping down, look at the previous sub-range
+            if (value === 100 || (isDown && value === this.xPct[j - 1])) {
+                j = Math.max(j - 1, 1);
+            }
+            return (this.xVal[j] - this.xVal[j - 1]) / size;
+        };
+        Spectrum.prototype.getNearbySteps = function (value) {
+            var j = getJ(value, this.xPct);
+            return {
+                stepBefore: {
+                    startValue: this.xVal[j - 2],
+                    step: this.xNumSteps[j - 2],
+                    highestStep: this.xHighestCompleteStep[j - 2],
+                },
+                thisStep: {
+                    startValue: this.xVal[j - 1],
+                    step: this.xNumSteps[j - 1],
+                    highestStep: this.xHighestCompleteStep[j - 1],
+                },
+                stepAfter: {
+                    startValue: this.xVal[j],
+                    step: this.xNumSteps[j],
+                    highestStep: this.xHighestCompleteStep[j],
+                },
+            };
+        };
+        Spectrum.prototype.countStepDecimals = function () {
+            var stepDecimals = this.xNumSteps.map(countDecimals);
+            return Math.max.apply(null, stepDecimals);
+        };
+        Spectrum.prototype.hasNoSize = function () {
+            return this.xVal[0] === this.xVal[this.xVal.length - 1];
+        };
+        // Outside testing
+        Spectrum.prototype.convert = function (value) {
+            return this.getStep(this.toStepping(value));
+        };
+        Spectrum.prototype.handleEntryPoint = function (index, value) {
+            var percentage;
+            // Covert min/max syntax to 0 and 100.
+            if (index === "min") {
+                percentage = 0;
+            }
+            else if (index === "max") {
+                percentage = 100;
+            }
+            else {
+                percentage = parseFloat(index);
+            }
+            // Check for correct input.
+            if (!isNumeric(percentage) || !isNumeric(value[0])) {
+                throw new Error("noUiSlider: 'range' value isn't numeric.");
+            }
+            // Store values.
+            this.xPct.push(percentage);
+            this.xVal.push(value[0]);
+            var value1 = Number(value[1]);
+            // NaN will evaluate to false too, but to keep
+            // logging clear, set step explicitly. Make sure
+            // not to override the 'step' setting with false.
+            if (!percentage) {
+                if (!isNaN(value1)) {
+                    this.xSteps[0] = value1;
+                }
+            }
+            else {
+                this.xSteps.push(isNaN(value1) ? false : value1);
+            }
+            this.xHighestCompleteStep.push(0);
+        };
+        Spectrum.prototype.handleStepPoint = function (i, n) {
+            // Ignore 'false' stepping.
+            if (!n) {
+                return;
+            }
+            // Step over zero-length ranges (#948);
+            if (this.xVal[i] === this.xVal[i + 1]) {
+                this.xSteps[i] = this.xHighestCompleteStep[i] = this.xVal[i];
+                return;
+            }
+            // Factor to range ratio
+            this.xSteps[i] =
+                fromPercentage([this.xVal[i], this.xVal[i + 1]], n, 0) / subRangeRatio(this.xPct[i], this.xPct[i + 1]);
+            var totalSteps = (this.xVal[i + 1] - this.xVal[i]) / this.xNumSteps[i];
+            var highestStep = Math.ceil(Number(totalSteps.toFixed(3)) - 1);
+            var step = this.xVal[i] + this.xNumSteps[i] * highestStep;
+            this.xHighestCompleteStep[i] = step;
+        };
+        return Spectrum;
+    }());
+    //endregion
+    //region Options
+    /*	Every input option is tested and parsed. This will prevent
+        endless validation in internal methods. These tests are
+        structured with an item for every option available. An
+        option can be marked as required by setting the 'r' flag.
+        The testing function is provided with three arguments:
+            - The provided value for the option;
+            - A reference to the options object;
+            - The name for the option;
+
+        The testing function returns false when an error is detected,
+        or true when everything is OK. It can also modify the option
+        object, to make sure all values can be correctly looped elsewhere. */
+    //region Defaults
+    var defaultFormatter = {
+        to: function (value) {
+            return value === undefined ? "" : value.toFixed(2);
+        },
+        from: Number,
+    };
+    var cssClasses = {
+        target: "target",
+        base: "base",
+        origin: "origin",
+        handle: "handle",
+        handleLower: "handle-lower",
+        handleUpper: "handle-upper",
+        touchArea: "touch-area",
+        horizontal: "horizontal",
+        vertical: "vertical",
+        background: "background",
+        connect: "connect",
+        connects: "connects",
+        ltr: "ltr",
+        rtl: "rtl",
+        textDirectionLtr: "txt-dir-ltr",
+        textDirectionRtl: "txt-dir-rtl",
+        draggable: "draggable",
+        drag: "state-drag",
+        tap: "state-tap",
+        active: "active",
+        tooltip: "tooltip",
+        pips: "pips",
+        pipsHorizontal: "pips-horizontal",
+        pipsVertical: "pips-vertical",
+        marker: "marker",
+        markerHorizontal: "marker-horizontal",
+        markerVertical: "marker-vertical",
+        markerNormal: "marker-normal",
+        markerLarge: "marker-large",
+        markerSub: "marker-sub",
+        value: "value",
+        valueHorizontal: "value-horizontal",
+        valueVertical: "value-vertical",
+        valueNormal: "value-normal",
+        valueLarge: "value-large",
+        valueSub: "value-sub",
+    };
+    // Namespaces of internal event listeners
+    var INTERNAL_EVENT_NS = {
+        tooltips: ".__tooltips",
+        aria: ".__aria",
+    };
+    //endregion
+    function testStep(parsed, entry) {
+        if (!isNumeric(entry)) {
+            throw new Error("noUiSlider: 'step' is not numeric.");
+        }
+        // The step option can still be used to set stepping
+        // for linear sliders. Overwritten if set in 'range'.
+        parsed.singleStep = entry;
+    }
+    function testKeyboardPageMultiplier(parsed, entry) {
+        if (!isNumeric(entry)) {
+            throw new Error("noUiSlider: 'keyboardPageMultiplier' is not numeric.");
+        }
+        parsed.keyboardPageMultiplier = entry;
+    }
+    function testKeyboardMultiplier(parsed, entry) {
+        if (!isNumeric(entry)) {
+            throw new Error("noUiSlider: 'keyboardMultiplier' is not numeric.");
+        }
+        parsed.keyboardMultiplier = entry;
+    }
+    function testKeyboardDefaultStep(parsed, entry) {
+        if (!isNumeric(entry)) {
+            throw new Error("noUiSlider: 'keyboardDefaultStep' is not numeric.");
+        }
+        parsed.keyboardDefaultStep = entry;
+    }
+    function testRange(parsed, entry) {
+        // Filter incorrect input.
+        if (typeof entry !== "object" || Array.isArray(entry)) {
+            throw new Error("noUiSlider: 'range' is not an object.");
+        }
+        // Catch missing start or end.
+        if (entry.min === undefined || entry.max === undefined) {
+            throw new Error("noUiSlider: Missing 'min' or 'max' in 'range'.");
+        }
+        parsed.spectrum = new Spectrum(entry, parsed.snap || false, parsed.singleStep);
+    }
+    function testStart(parsed, entry) {
+        entry = asArray(entry);
+        // Validate input. Values aren't tested, as the public .val method
+        // will always provide a valid location.
+        if (!Array.isArray(entry) || !entry.length) {
+            throw new Error("noUiSlider: 'start' option is incorrect.");
+        }
+        // Store the number of handles.
+        parsed.handles = entry.length;
+        // When the slider is initialized, the .val method will
+        // be called with the start options.
+        parsed.start = entry;
+    }
+    function testSnap(parsed, entry) {
+        if (typeof entry !== "boolean") {
+            throw new Error("noUiSlider: 'snap' option must be a boolean.");
+        }
+        // Enforce 100% stepping within subranges.
+        parsed.snap = entry;
+    }
+    function testAnimate(parsed, entry) {
+        if (typeof entry !== "boolean") {
+            throw new Error("noUiSlider: 'animate' option must be a boolean.");
+        }
+        // Enforce 100% stepping within subranges.
+        parsed.animate = entry;
+    }
+    function testAnimationDuration(parsed, entry) {
+        if (typeof entry !== "number") {
+            throw new Error("noUiSlider: 'animationDuration' option must be a number.");
+        }
+        parsed.animationDuration = entry;
+    }
+    function testConnect(parsed, entry) {
+        var connect = [false];
+        var i;
+        // Map legacy options
+        if (entry === "lower") {
+            entry = [true, false];
+        }
+        else if (entry === "upper") {
+            entry = [false, true];
+        }
+        // Handle boolean options
+        if (entry === true || entry === false) {
+            for (i = 1; i < parsed.handles; i++) {
+                connect.push(entry);
+            }
+            connect.push(false);
+        }
+        // Reject invalid input
+        else if (!Array.isArray(entry) || !entry.length || entry.length !== parsed.handles + 1) {
+            throw new Error("noUiSlider: 'connect' option doesn't match handle count.");
+        }
+        else {
+            connect = entry;
+        }
+        parsed.connect = connect;
+    }
+    function testOrientation(parsed, entry) {
+        // Set orientation to an a numerical value for easy
+        // array selection.
+        switch (entry) {
+            case "horizontal":
+                parsed.ort = 0;
+                break;
+            case "vertical":
+                parsed.ort = 1;
+                break;
+            default:
+                throw new Error("noUiSlider: 'orientation' option is invalid.");
+        }
+    }
+    function testMargin(parsed, entry) {
+        if (!isNumeric(entry)) {
+            throw new Error("noUiSlider: 'margin' option must be numeric.");
+        }
+        // Issue #582
+        if (entry === 0) {
+            return;
+        }
+        parsed.margin = parsed.spectrum.getDistance(entry);
+    }
+    function testLimit(parsed, entry) {
+        if (!isNumeric(entry)) {
+            throw new Error("noUiSlider: 'limit' option must be numeric.");
+        }
+        parsed.limit = parsed.spectrum.getDistance(entry);
+        if (!parsed.limit || parsed.handles < 2) {
+            throw new Error("noUiSlider: 'limit' option is only supported on linear sliders with 2 or more handles.");
+        }
+    }
+    function testPadding(parsed, entry) {
+        var index;
+        if (!isNumeric(entry) && !Array.isArray(entry)) {
+            throw new Error("noUiSlider: 'padding' option must be numeric or array of exactly 2 numbers.");
+        }
+        if (Array.isArray(entry) && !(entry.length === 2 || isNumeric(entry[0]) || isNumeric(entry[1]))) {
+            throw new Error("noUiSlider: 'padding' option must be numeric or array of exactly 2 numbers.");
+        }
+        if (entry === 0) {
+            return;
+        }
+        if (!Array.isArray(entry)) {
+            entry = [entry, entry];
+        }
+        // 'getDistance' returns false for invalid values.
+        parsed.padding = [parsed.spectrum.getDistance(entry[0]), parsed.spectrum.getDistance(entry[1])];
+        for (index = 0; index < parsed.spectrum.xNumSteps.length - 1; index++) {
+            // last "range" can't contain step size as it is purely an endpoint.
+            if (parsed.padding[0][index] < 0 || parsed.padding[1][index] < 0) {
+                throw new Error("noUiSlider: 'padding' option must be a positive number(s).");
+            }
+        }
+        var totalPadding = entry[0] + entry[1];
+        var firstValue = parsed.spectrum.xVal[0];
+        var lastValue = parsed.spectrum.xVal[parsed.spectrum.xVal.length - 1];
+        if (totalPadding / (lastValue - firstValue) > 1) {
+            throw new Error("noUiSlider: 'padding' option must not exceed 100% of the range.");
+        }
+    }
+    function testDirection(parsed, entry) {
+        // Set direction as a numerical value for easy parsing.
+        // Invert connection for RTL sliders, so that the proper
+        // handles get the connect/background classes.
+        switch (entry) {
+            case "ltr":
+                parsed.dir = 0;
+                break;
+            case "rtl":
+                parsed.dir = 1;
+                break;
+            default:
+                throw new Error("noUiSlider: 'direction' option was not recognized.");
+        }
+    }
+    function testBehaviour(parsed, entry) {
+        // Make sure the input is a string.
+        if (typeof entry !== "string") {
+            throw new Error("noUiSlider: 'behaviour' must be a string containing options.");
+        }
+        // Check if the string contains any keywords.
+        // None are required.
+        var tap = entry.indexOf("tap") >= 0;
+        var drag = entry.indexOf("drag") >= 0;
+        var fixed = entry.indexOf("fixed") >= 0;
+        var snap = entry.indexOf("snap") >= 0;
+        var hover = entry.indexOf("hover") >= 0;
+        var unconstrained = entry.indexOf("unconstrained") >= 0;
+        var dragAll = entry.indexOf("drag-all") >= 0;
+        var smoothSteps = entry.indexOf("smooth-steps") >= 0;
+        if (fixed) {
+            if (parsed.handles !== 2) {
+                throw new Error("noUiSlider: 'fixed' behaviour must be used with 2 handles");
+            }
+            // Use margin to enforce fixed state
+            testMargin(parsed, parsed.start[1] - parsed.start[0]);
+        }
+        if (unconstrained && (parsed.margin || parsed.limit)) {
+            throw new Error("noUiSlider: 'unconstrained' behaviour cannot be used with margin or limit");
+        }
+        parsed.events = {
+            tap: tap || snap,
+            drag: drag,
+            dragAll: dragAll,
+            smoothSteps: smoothSteps,
+            fixed: fixed,
+            snap: snap,
+            hover: hover,
+            unconstrained: unconstrained,
+        };
+    }
+    function testTooltips(parsed, entry) {
+        if (entry === false) {
+            return;
+        }
+        if (entry === true || isValidPartialFormatter(entry)) {
+            parsed.tooltips = [];
+            for (var i = 0; i < parsed.handles; i++) {
+                parsed.tooltips.push(entry);
+            }
+        }
+        else {
+            entry = asArray(entry);
+            if (entry.length !== parsed.handles) {
+                throw new Error("noUiSlider: must pass a formatter for all handles.");
+            }
+            entry.forEach(function (formatter) {
+                if (typeof formatter !== "boolean" && !isValidPartialFormatter(formatter)) {
+                    throw new Error("noUiSlider: 'tooltips' must be passed a formatter or 'false'.");
+                }
+            });
+            parsed.tooltips = entry;
+        }
+    }
+    function testHandleAttributes(parsed, entry) {
+        if (entry.length !== parsed.handles) {
+            throw new Error("noUiSlider: must pass a attributes for all handles.");
+        }
+        parsed.handleAttributes = entry;
+    }
+    function testAriaFormat(parsed, entry) {
+        if (!isValidPartialFormatter(entry)) {
+            throw new Error("noUiSlider: 'ariaFormat' requires 'to' method.");
+        }
+        parsed.ariaFormat = entry;
+    }
+    function testFormat(parsed, entry) {
+        if (!isValidFormatter(entry)) {
+            throw new Error("noUiSlider: 'format' requires 'to' and 'from' methods.");
+        }
+        parsed.format = entry;
+    }
+    function testKeyboardSupport(parsed, entry) {
+        if (typeof entry !== "boolean") {
+            throw new Error("noUiSlider: 'keyboardSupport' option must be a boolean.");
+        }
+        parsed.keyboardSupport = entry;
+    }
+    function testDocumentElement(parsed, entry) {
+        // This is an advanced option. Passed values are used without validation.
+        parsed.documentElement = entry;
+    }
+    function testCssPrefix(parsed, entry) {
+        if (typeof entry !== "string" && entry !== false) {
+            throw new Error("noUiSlider: 'cssPrefix' must be a string or `false`.");
+        }
+        parsed.cssPrefix = entry;
+    }
+    function testCssClasses(parsed, entry) {
+        if (typeof entry !== "object") {
+            throw new Error("noUiSlider: 'cssClasses' must be an object.");
+        }
+        if (typeof parsed.cssPrefix === "string") {
+            parsed.cssClasses = {};
+            Object.keys(entry).forEach(function (key) {
+                parsed.cssClasses[key] = parsed.cssPrefix + entry[key];
+            });
+        }
+        else {
+            parsed.cssClasses = entry;
+        }
+    }
+    // Test all developer settings and parse to assumption-safe values.
+    function testOptions(options) {
+        // To prove a fix for #537, freeze options here.
+        // If the object is modified, an error will be thrown.
+        // Object.freeze(options);
+        var parsed = {
+            margin: null,
+            limit: null,
+            padding: null,
+            animate: true,
+            animationDuration: 300,
+            ariaFormat: defaultFormatter,
+            format: defaultFormatter,
+        };
+        // Tests are executed in the order they are presented here.
+        var tests = {
+            step: { r: false, t: testStep },
+            keyboardPageMultiplier: { r: false, t: testKeyboardPageMultiplier },
+            keyboardMultiplier: { r: false, t: testKeyboardMultiplier },
+            keyboardDefaultStep: { r: false, t: testKeyboardDefaultStep },
+            start: { r: true, t: testStart },
+            connect: { r: true, t: testConnect },
+            direction: { r: true, t: testDirection },
+            snap: { r: false, t: testSnap },
+            animate: { r: false, t: testAnimate },
+            animationDuration: { r: false, t: testAnimationDuration },
+            range: { r: true, t: testRange },
+            orientation: { r: false, t: testOrientation },
+            margin: { r: false, t: testMargin },
+            limit: { r: false, t: testLimit },
+            padding: { r: false, t: testPadding },
+            behaviour: { r: true, t: testBehaviour },
+            ariaFormat: { r: false, t: testAriaFormat },
+            format: { r: false, t: testFormat },
+            tooltips: { r: false, t: testTooltips },
+            keyboardSupport: { r: true, t: testKeyboardSupport },
+            documentElement: { r: false, t: testDocumentElement },
+            cssPrefix: { r: true, t: testCssPrefix },
+            cssClasses: { r: true, t: testCssClasses },
+            handleAttributes: { r: false, t: testHandleAttributes },
+        };
+        var defaults = {
+            connect: false,
+            direction: "ltr",
+            behaviour: "tap",
+            orientation: "horizontal",
+            keyboardSupport: true,
+            cssPrefix: "noUi-",
+            cssClasses: cssClasses,
+            keyboardPageMultiplier: 5,
+            keyboardMultiplier: 1,
+            keyboardDefaultStep: 10,
+        };
+        // AriaFormat defaults to regular format, if any.
+        if (options.format && !options.ariaFormat) {
+            options.ariaFormat = options.format;
+        }
+        // Run all options through a testing mechanism to ensure correct
+        // input. It should be noted that options might get modified to
+        // be handled properly. E.g. wrapping integers in arrays.
+        Object.keys(tests).forEach(function (name) {
+            // If the option isn't set, but it is required, throw an error.
+            if (!isSet(options[name]) && defaults[name] === undefined) {
+                if (tests[name].r) {
+                    throw new Error("noUiSlider: '" + name + "' is required.");
+                }
+                return;
+            }
+            tests[name].t(parsed, !isSet(options[name]) ? defaults[name] : options[name]);
+        });
+        // Forward pips options
+        parsed.pips = options.pips;
+        // All recent browsers accept unprefixed transform.
+        // We need -ms- for IE9 and -webkit- for older Android;
+        // Assume use of -webkit- if unprefixed and -ms- are not supported.
+        // https://caniuse.com/#feat=transforms2d
+        var d = document.createElement("div");
+        var msPrefix = d.style.msTransform !== undefined;
+        var noPrefix = d.style.transform !== undefined;
+        parsed.transformRule = noPrefix ? "transform" : msPrefix ? "msTransform" : "webkitTransform";
+        // Pips don't move, so we can place them using left/top.
+        var styles = [
+            ["left", "top"],
+            ["right", "bottom"],
+        ];
+        parsed.style = styles[parsed.dir][parsed.ort];
+        return parsed;
+    }
+    //endregion
+    function scope(target, options, originalOptions) {
+        var actions = getActions();
+        var supportsTouchActionNone = getSupportsTouchActionNone();
+        var supportsPassive = supportsTouchActionNone && getSupportsPassive();
+        // All variables local to 'scope' are prefixed with 'scope_'
+        // Slider DOM Nodes
+        var scope_Target = target;
+        var scope_Base;
+        var scope_Handles;
+        var scope_Connects;
+        var scope_Pips;
+        var scope_Tooltips;
+        // Slider state values
+        var scope_Spectrum = options.spectrum;
+        var scope_Values = [];
+        var scope_Locations = [];
+        var scope_HandleNumbers = [];
+        var scope_ActiveHandlesCount = 0;
+        var scope_Events = {};
+        // Document Nodes
+        var scope_Document = target.ownerDocument;
+        var scope_DocumentElement = options.documentElement || scope_Document.documentElement;
+        var scope_Body = scope_Document.body;
+        // For horizontal sliders in standard ltr documents,
+        // make .noUi-origin overflow to the left so the document doesn't scroll.
+        var scope_DirOffset = scope_Document.dir === "rtl" || options.ort === 1 ? 0 : 100;
+        // Creates a node, adds it to target, returns the new node.
+        function addNodeTo(addTarget, className) {
+            var div = scope_Document.createElement("div");
+            if (className) {
+                addClass(div, className);
+            }
+            addTarget.appendChild(div);
+            return div;
+        }
+        // Append a origin to the base
+        function addOrigin(base, handleNumber) {
+            var origin = addNodeTo(base, options.cssClasses.origin);
+            var handle = addNodeTo(origin, options.cssClasses.handle);
+            addNodeTo(handle, options.cssClasses.touchArea);
+            handle.setAttribute("data-handle", String(handleNumber));
+            if (options.keyboardSupport) {
+                // https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
+                // 0 = focusable and reachable
+                handle.setAttribute("tabindex", "0");
+                handle.addEventListener("keydown", function (event) {
+                    return eventKeydown(event, handleNumber);
+                });
+            }
+            if (options.handleAttributes !== undefined) {
+                var attributes_1 = options.handleAttributes[handleNumber];
+                Object.keys(attributes_1).forEach(function (attribute) {
+                    handle.setAttribute(attribute, attributes_1[attribute]);
+                });
+            }
+            handle.setAttribute("role", "slider");
+            handle.setAttribute("aria-orientation", options.ort ? "vertical" : "horizontal");
+            if (handleNumber === 0) {
+                addClass(handle, options.cssClasses.handleLower);
+            }
+            else if (handleNumber === options.handles - 1) {
+                addClass(handle, options.cssClasses.handleUpper);
+            }
+            origin.handle = handle;
+            return origin;
+        }
+        // Insert nodes for connect elements
+        function addConnect(base, add) {
+            if (!add) {
+                return false;
+            }
+            return addNodeTo(base, options.cssClasses.connect);
+        }
+        // Add handles to the slider base.
+        function addElements(connectOptions, base) {
+            var connectBase = addNodeTo(base, options.cssClasses.connects);
+            scope_Handles = [];
+            scope_Connects = [];
+            scope_Connects.push(addConnect(connectBase, connectOptions[0]));
+            // [::::O====O====O====]
+            // connectOptions = [0, 1, 1, 1]
+            for (var i = 0; i < options.handles; i++) {
+                // Keep a list of all added handles.
+                scope_Handles.push(addOrigin(base, i));
+                scope_HandleNumbers[i] = i;
+                scope_Connects.push(addConnect(connectBase, connectOptions[i + 1]));
+            }
+        }
+        // Initialize a single slider.
+        function addSlider(addTarget) {
+            // Apply classes and data to the target.
+            addClass(addTarget, options.cssClasses.target);
+            if (options.dir === 0) {
+                addClass(addTarget, options.cssClasses.ltr);
+            }
+            else {
+                addClass(addTarget, options.cssClasses.rtl);
+            }
+            if (options.ort === 0) {
+                addClass(addTarget, options.cssClasses.horizontal);
+            }
+            else {
+                addClass(addTarget, options.cssClasses.vertical);
+            }
+            var textDirection = getComputedStyle(addTarget).direction;
+            if (textDirection === "rtl") {
+                addClass(addTarget, options.cssClasses.textDirectionRtl);
+            }
+            else {
+                addClass(addTarget, options.cssClasses.textDirectionLtr);
+            }
+            return addNodeTo(addTarget, options.cssClasses.base);
+        }
+        function addTooltip(handle, handleNumber) {
+            if (!options.tooltips || !options.tooltips[handleNumber]) {
+                return false;
+            }
+            return addNodeTo(handle.firstChild, options.cssClasses.tooltip);
+        }
+        function isSliderDisabled() {
+            return scope_Target.hasAttribute("disabled");
+        }
+        // Disable the slider dragging if any handle is disabled
+        function isHandleDisabled(handleNumber) {
+            var handleOrigin = scope_Handles[handleNumber];
+            return handleOrigin.hasAttribute("disabled");
+        }
+        function disable(handleNumber) {
+            if (handleNumber !== null && handleNumber !== undefined) {
+                scope_Handles[handleNumber].setAttribute("disabled", "");
+                scope_Handles[handleNumber].handle.removeAttribute("tabindex");
+            }
+            else {
+                scope_Target.setAttribute("disabled", "");
+                scope_Handles.forEach(function (handle) {
+                    handle.handle.removeAttribute("tabindex");
+                });
+            }
+        }
+        function enable(handleNumber) {
+            if (handleNumber !== null && handleNumber !== undefined) {
+                scope_Handles[handleNumber].removeAttribute("disabled");
+                scope_Handles[handleNumber].handle.setAttribute("tabindex", "0");
+            }
+            else {
+                scope_Target.removeAttribute("disabled");
+                scope_Handles.forEach(function (handle) {
+                    handle.removeAttribute("disabled");
+                    handle.handle.setAttribute("tabindex", "0");
+                });
+            }
+        }
+        function removeTooltips() {
+            if (scope_Tooltips) {
+                removeEvent("update" + INTERNAL_EVENT_NS.tooltips);
+                scope_Tooltips.forEach(function (tooltip) {
+                    if (tooltip) {
+                        removeElement(tooltip);
+                    }
+                });
+                scope_Tooltips = null;
+            }
+        }
+        // The tooltips option is a shorthand for using the 'update' event.
+        function tooltips() {
+            removeTooltips();
+            // Tooltips are added with options.tooltips in original order.
+            scope_Tooltips = scope_Handles.map(addTooltip);
+            bindEvent("update" + INTERNAL_EVENT_NS.tooltips, function (values, handleNumber, unencoded) {
+                if (!scope_Tooltips || !options.tooltips) {
+                    return;
+                }
+                if (scope_Tooltips[handleNumber] === false) {
+                    return;
+                }
+                var formattedValue = values[handleNumber];
+                if (options.tooltips[handleNumber] !== true) {
+                    formattedValue = options.tooltips[handleNumber].to(unencoded[handleNumber]);
+                }
+                scope_Tooltips[handleNumber].innerHTML = formattedValue;
+            });
+        }
+        function aria() {
+            removeEvent("update" + INTERNAL_EVENT_NS.aria);
+            bindEvent("update" + INTERNAL_EVENT_NS.aria, function (values, handleNumber, unencoded, tap, positions) {
+                // Update Aria Values for all handles, as a change in one changes min and max values for the next.
+                scope_HandleNumbers.forEach(function (index) {
+                    var handle = scope_Handles[index];
+                    var min = checkHandlePosition(scope_Locations, index, 0, true, true, true);
+                    var max = checkHandlePosition(scope_Locations, index, 100, true, true, true);
+                    var now = positions[index];
+                    // Formatted value for display
+                    var text = String(options.ariaFormat.to(unencoded[index]));
+                    // Map to slider range values
+                    min = scope_Spectrum.fromStepping(min).toFixed(1);
+                    max = scope_Spectrum.fromStepping(max).toFixed(1);
+                    now = scope_Spectrum.fromStepping(now).toFixed(1);
+                    handle.children[0].setAttribute("aria-valuemin", min);
+                    handle.children[0].setAttribute("aria-valuemax", max);
+                    handle.children[0].setAttribute("aria-valuenow", now);
+                    handle.children[0].setAttribute("aria-valuetext", text);
+                });
+            });
+        }
+        function getGroup(pips) {
+            // Use the range.
+            if (pips.mode === exports.PipsMode.Range || pips.mode === exports.PipsMode.Steps) {
+                return scope_Spectrum.xVal;
+            }
+            if (pips.mode === exports.PipsMode.Count) {
+                if (pips.values < 2) {
+                    throw new Error("noUiSlider: 'values' (>= 2) required for mode 'count'.");
+                }
+                // Divide 0 - 100 in 'count' parts.
+                var interval = pips.values - 1;
+                var spread = 100 / interval;
+                var values = [];
+                // List these parts and have them handled as 'positions'.
+                while (interval--) {
+                    values[interval] = interval * spread;
+                }
+                values.push(100);
+                return mapToRange(values, pips.stepped);
+            }
+            if (pips.mode === exports.PipsMode.Positions) {
+                // Map all percentages to on-range values.
+                return mapToRange(pips.values, pips.stepped);
+            }
+            if (pips.mode === exports.PipsMode.Values) {
+                // If the value must be stepped, it needs to be converted to a percentage first.
+                if (pips.stepped) {
+                    return pips.values.map(function (value) {
+                        // Convert to percentage, apply step, return to value.
+                        return scope_Spectrum.fromStepping(scope_Spectrum.getStep(scope_Spectrum.toStepping(value)));
+                    });
+                }
+                // Otherwise, we can simply use the values.
+                return pips.values;
+            }
+            return []; // pips.mode = never
+        }
+        function mapToRange(values, stepped) {
+            return values.map(function (value) {
+                return scope_Spectrum.fromStepping(stepped ? scope_Spectrum.getStep(value) : value);
+            });
+        }
+        function generateSpread(pips) {
+            function safeIncrement(value, increment) {
+                // Avoid floating point variance by dropping the smallest decimal places.
+                return Number((value + increment).toFixed(7));
+            }
+            var group = getGroup(pips);
+            var indexes = {};
+            var firstInRange = scope_Spectrum.xVal[0];
+            var lastInRange = scope_Spectrum.xVal[scope_Spectrum.xVal.length - 1];
+            var ignoreFirst = false;
+            var ignoreLast = false;
+            var prevPct = 0;
+            // Create a copy of the group, sort it and filter away all duplicates.
+            group = unique(group.slice().sort(function (a, b) {
+                return a - b;
+            }));
+            // Make sure the range starts with the first element.
+            if (group[0] !== firstInRange) {
+                group.unshift(firstInRange);
+                ignoreFirst = true;
+            }
+            // Likewise for the last one.
+            if (group[group.length - 1] !== lastInRange) {
+                group.push(lastInRange);
+                ignoreLast = true;
+            }
+            group.forEach(function (current, index) {
+                // Get the current step and the lower + upper positions.
+                var step;
+                var i;
+                var q;
+                var low = current;
+                var high = group[index + 1];
+                var newPct;
+                var pctDifference;
+                var pctPos;
+                var type;
+                var steps;
+                var realSteps;
+                var stepSize;
+                var isSteps = pips.mode === exports.PipsMode.Steps;
+                // When using 'steps' mode, use the provided steps.
+                // Otherwise, we'll step on to the next subrange.
+                if (isSteps) {
+                    step = scope_Spectrum.xNumSteps[index];
+                }
+                // Default to a 'full' step.
+                if (!step) {
+                    step = high - low;
+                }
+                // If high is undefined we are at the last subrange. Make sure it iterates once (#1088)
+                if (high === undefined) {
+                    high = low;
+                }
+                // Make sure step isn't 0, which would cause an infinite loop (#654)
+                step = Math.max(step, 0.0000001);
+                // Find all steps in the subrange.
+                for (i = low; i <= high; i = safeIncrement(i, step)) {
+                    // Get the percentage value for the current step,
+                    // calculate the size for the subrange.
+                    newPct = scope_Spectrum.toStepping(i);
+                    pctDifference = newPct - prevPct;
+                    steps = pctDifference / (pips.density || 1);
+                    realSteps = Math.round(steps);
+                    // This ratio represents the amount of percentage-space a point indicates.
+                    // For a density 1 the points/percentage = 1. For density 2, that percentage needs to be re-divided.
+                    // Round the percentage offset to an even number, then divide by two
+                    // to spread the offset on both sides of the range.
+                    stepSize = pctDifference / realSteps;
+                    // Divide all points evenly, adding the correct number to this subrange.
+                    // Run up to <= so that 100% gets a point, event if ignoreLast is set.
+                    for (q = 1; q <= realSteps; q += 1) {
+                        // The ratio between the rounded value and the actual size might be ~1% off.
+                        // Correct the percentage offset by the number of points
+                        // per subrange. density = 1 will result in 100 points on the
+                        // full range, 2 for 50, 4 for 25, etc.
+                        pctPos = prevPct + q * stepSize;
+                        indexes[pctPos.toFixed(5)] = [scope_Spectrum.fromStepping(pctPos), 0];
+                    }
+                    // Determine the point type.
+                    type = group.indexOf(i) > -1 ? exports.PipsType.LargeValue : isSteps ? exports.PipsType.SmallValue : exports.PipsType.NoValue;
+                    // Enforce the 'ignoreFirst' option by overwriting the type for 0.
+                    if (!index && ignoreFirst && i !== high) {
+                        type = 0;
+                    }
+                    if (!(i === high && ignoreLast)) {
+                        // Mark the 'type' of this point. 0 = plain, 1 = real value, 2 = step value.
+                        indexes[newPct.toFixed(5)] = [i, type];
+                    }
+                    // Update the percentage count.
+                    prevPct = newPct;
+                }
+            });
+            return indexes;
+        }
+        function addMarking(spread, filterFunc, formatter) {
+            var _a, _b;
+            var element = scope_Document.createElement("div");
+            var valueSizeClasses = (_a = {},
+                _a[exports.PipsType.None] = "",
+                _a[exports.PipsType.NoValue] = options.cssClasses.valueNormal,
+                _a[exports.PipsType.LargeValue] = options.cssClasses.valueLarge,
+                _a[exports.PipsType.SmallValue] = options.cssClasses.valueSub,
+                _a);
+            var markerSizeClasses = (_b = {},
+                _b[exports.PipsType.None] = "",
+                _b[exports.PipsType.NoValue] = options.cssClasses.markerNormal,
+                _b[exports.PipsType.LargeValue] = options.cssClasses.markerLarge,
+                _b[exports.PipsType.SmallValue] = options.cssClasses.markerSub,
+                _b);
+            var valueOrientationClasses = [options.cssClasses.valueHorizontal, options.cssClasses.valueVertical];
+            var markerOrientationClasses = [options.cssClasses.markerHorizontal, options.cssClasses.markerVertical];
+            addClass(element, options.cssClasses.pips);
+            addClass(element, options.ort === 0 ? options.cssClasses.pipsHorizontal : options.cssClasses.pipsVertical);
+            function getClasses(type, source) {
+                var a = source === options.cssClasses.value;
+                var orientationClasses = a ? valueOrientationClasses : markerOrientationClasses;
+                var sizeClasses = a ? valueSizeClasses : markerSizeClasses;
+                return source + " " + orientationClasses[options.ort] + " " + sizeClasses[type];
+            }
+            function addSpread(offset, value, type) {
+                // Apply the filter function, if it is set.
+                type = filterFunc ? filterFunc(value, type) : type;
+                if (type === exports.PipsType.None) {
+                    return;
+                }
+                // Add a marker for every point
+                var node = addNodeTo(element, false);
+                node.className = getClasses(type, options.cssClasses.marker);
+                node.style[options.style] = offset + "%";
+                // Values are only appended for points marked '1' or '2'.
+                if (type > exports.PipsType.NoValue) {
+                    node = addNodeTo(element, false);
+                    node.className = getClasses(type, options.cssClasses.value);
+                    node.setAttribute("data-value", String(value));
+                    node.style[options.style] = offset + "%";
+                    node.innerHTML = String(formatter.to(value));
+                }
+            }
+            // Append all points.
+            Object.keys(spread).forEach(function (offset) {
+                addSpread(offset, spread[offset][0], spread[offset][1]);
+            });
+            return element;
+        }
+        function removePips() {
+            if (scope_Pips) {
+                removeElement(scope_Pips);
+                scope_Pips = null;
+            }
+        }
+        function pips(pips) {
+            // Fix #669
+            removePips();
+            var spread = generateSpread(pips);
+            var filter = pips.filter;
+            var format = pips.format || {
+                to: function (value) {
+                    return String(Math.round(value));
+                },
+            };
+            scope_Pips = scope_Target.appendChild(addMarking(spread, filter, format));
+            return scope_Pips;
+        }
+        // Shorthand for base dimensions.
+        function baseSize() {
+            var rect = scope_Base.getBoundingClientRect();
+            var alt = ("offset" + ["Width", "Height"][options.ort]);
+            return options.ort === 0 ? rect.width || scope_Base[alt] : rect.height || scope_Base[alt];
+        }
+        // Handler for attaching events trough a proxy.
+        function attachEvent(events, element, callback, data) {
+            // This function can be used to 'filter' events to the slider.
+            // element is a node, not a nodeList
+            var method = function (event) {
+                var e = fixEvent(event, data.pageOffset, data.target || element);
+                // fixEvent returns false if this event has a different target
+                // when handling (multi-) touch events;
+                if (!e) {
+                    return false;
+                }
+                // doNotReject is passed by all end events to make sure released touches
+                // are not rejected, leaving the slider "stuck" to the cursor;
+                if (isSliderDisabled() && !data.doNotReject) {
+                    return false;
+                }
+                // Stop if an active 'tap' transition is taking place.
+                if (hasClass(scope_Target, options.cssClasses.tap) && !data.doNotReject) {
+                    return false;
+                }
+                // Ignore right or middle clicks on start #454
+                if (events === actions.start && e.buttons !== undefined && e.buttons > 1) {
+                    return false;
+                }
+                // Ignore right or middle clicks on start #454
+                if (data.hover && e.buttons) {
+                    return false;
+                }
+                // 'supportsPassive' is only true if a browser also supports touch-action: none in CSS.
+                // iOS safari does not, so it doesn't get to benefit from passive scrolling. iOS does support
+                // touch-action: manipulation, but that allows panning, which breaks
+                // sliders after zooming/on non-responsive pages.
+                // See: https://bugs.webkit.org/show_bug.cgi?id=133112
+                if (!supportsPassive) {
+                    e.preventDefault();
+                }
+                e.calcPoint = e.points[options.ort];
+                // Call the event handler with the event [ and additional data ].
+                callback(e, data);
+                return;
+            };
+            var methods = [];
+            // Bind a closure on the target for every event type.
+            events.split(" ").forEach(function (eventName) {
+                element.addEventListener(eventName, method, supportsPassive ? { passive: true } : false);
+                methods.push([eventName, method]);
+            });
+            return methods;
+        }
+        // Provide a clean event with standardized offset values.
+        function fixEvent(e, pageOffset, eventTarget) {
+            // Filter the event to register the type, which can be
+            // touch, mouse or pointer. Offset changes need to be
+            // made on an event specific basis.
+            var touch = e.type.indexOf("touch") === 0;
+            var mouse = e.type.indexOf("mouse") === 0;
+            var pointer = e.type.indexOf("pointer") === 0;
+            var x = 0;
+            var y = 0;
+            // IE10 implemented pointer events with a prefix;
+            if (e.type.indexOf("MSPointer") === 0) {
+                pointer = true;
+            }
+            // Erroneous events seem to be passed in occasionally on iOS/iPadOS after user finishes interacting with
+            // the slider. They appear to be of type MouseEvent, yet they don't have usual properties set. Ignore
+            // events that have no touches or buttons associated with them. (#1057, #1079, #1095)
+            if (e.type === "mousedown" && !e.buttons && !e.touches) {
+                return false;
+            }
+            // The only thing one handle should be concerned about is the touches that originated on top of it.
+            if (touch) {
+                // Returns true if a touch originated on the target.
+                var isTouchOnTarget = function (checkTouch) {
+                    var target = checkTouch.target;
+                    return (target === eventTarget ||
+                        eventTarget.contains(target) ||
+                        (e.composed && e.composedPath().shift() === eventTarget));
+                };
+                // In the case of touchstart events, we need to make sure there is still no more than one
+                // touch on the target so we look amongst all touches.
+                if (e.type === "touchstart") {
+                    var targetTouches = Array.prototype.filter.call(e.touches, isTouchOnTarget);
+                    // Do not support more than one touch per handle.
+                    if (targetTouches.length > 1) {
+                        return false;
+                    }
+                    x = targetTouches[0].pageX;
+                    y = targetTouches[0].pageY;
+                }
+                else {
+                    // In the other cases, find on changedTouches is enough.
+                    var targetTouch = Array.prototype.find.call(e.changedTouches, isTouchOnTarget);
+                    // Cancel if the target touch has not moved.
+                    if (!targetTouch) {
+                        return false;
+                    }
+                    x = targetTouch.pageX;
+                    y = targetTouch.pageY;
+                }
+            }
+            pageOffset = pageOffset || getPageOffset(scope_Document);
+            if (mouse || pointer) {
+                x = e.clientX + pageOffset.x;
+                y = e.clientY + pageOffset.y;
+            }
+            e.pageOffset = pageOffset;
+            e.points = [x, y];
+            e.cursor = mouse || pointer; // Fix #435
+            return e;
+        }
+        // Translate a coordinate in the document to a percentage on the slider
+        function calcPointToPercentage(calcPoint) {
+            var location = calcPoint - offset(scope_Base, options.ort);
+            var proposal = (location * 100) / baseSize();
+            // Clamp proposal between 0% and 100%
+            // Out-of-bound coordinates may occur when .noUi-base pseudo-elements
+            // are used (e.g. contained handles feature)
+            proposal = limit(proposal);
+            return options.dir ? 100 - proposal : proposal;
+        }
+        // Find handle closest to a certain percentage on the slider
+        function getClosestHandle(clickedPosition) {
+            var smallestDifference = 100;
+            var handleNumber = false;
+            scope_Handles.forEach(function (handle, index) {
+                // Disabled handles are ignored
+                if (isHandleDisabled(index)) {
+                    return;
+                }
+                var handlePosition = scope_Locations[index];
+                var differenceWithThisHandle = Math.abs(handlePosition - clickedPosition);
+                // Initial state
+                var clickAtEdge = differenceWithThisHandle === 100 && smallestDifference === 100;
+                // Difference with this handle is smaller than the previously checked handle
+                var isCloser = differenceWithThisHandle < smallestDifference;
+                var isCloserAfter = differenceWithThisHandle <= smallestDifference && clickedPosition > handlePosition;
+                if (isCloser || isCloserAfter || clickAtEdge) {
+                    handleNumber = index;
+                    smallestDifference = differenceWithThisHandle;
+                }
+            });
+            return handleNumber;
+        }
+        // Fire 'end' when a mouse or pen leaves the document.
+        function documentLeave(event, data) {
+            if (event.type === "mouseout" &&
+                event.target.nodeName === "HTML" &&
+                event.relatedTarget === null) {
+                eventEnd(event, data);
+            }
+        }
+        // Handle movement on document for handle and range drag.
+        function eventMove(event, data) {
+            // Fix #498
+            // Check value of .buttons in 'start' to work around a bug in IE10 mobile (data.buttonsProperty).
+            // https://connect.microsoft.com/IE/feedback/details/927005/mobile-ie10-windows-phone-buttons-property-of-pointermove-event-always-zero
+            // IE9 has .buttons and .which zero on mousemove.
+            // Firefox breaks the spec MDN defines.
+            if (navigator.appVersion.indexOf("MSIE 9") === -1 && event.buttons === 0 && data.buttonsProperty !== 0) {
+                return eventEnd(event, data);
+            }
+            // Check if we are moving up or down
+            var movement = (options.dir ? -1 : 1) * (event.calcPoint - data.startCalcPoint);
+            // Convert the movement into a percentage of the slider width/height
+            var proposal = (movement * 100) / data.baseSize;
+            moveHandles(movement > 0, proposal, data.locations, data.handleNumbers, data.connect);
+        }
+        // Unbind move events on document, call callbacks.
+        function eventEnd(event, data) {
+            // The handle is no longer active, so remove the class.
+            if (data.handle) {
+                removeClass(data.handle, options.cssClasses.active);
+                scope_ActiveHandlesCount -= 1;
+            }
+            // Unbind the move and end events, which are added on 'start'.
+            data.listeners.forEach(function (c) {
+                scope_DocumentElement.removeEventListener(c[0], c[1]);
+            });
+            if (scope_ActiveHandlesCount === 0) {
+                // Remove dragging class.
+                removeClass(scope_Target, options.cssClasses.drag);
+                setZindex();
+                // Remove cursor styles and text-selection events bound to the body.
+                if (event.cursor) {
+                    scope_Body.style.cursor = "";
+                    scope_Body.removeEventListener("selectstart", preventDefault);
+                }
+            }
+            if (options.events.smoothSteps) {
+                data.handleNumbers.forEach(function (handleNumber) {
+                    setHandle(handleNumber, scope_Locations[handleNumber], true, true, false, false);
+                });
+                data.handleNumbers.forEach(function (handleNumber) {
+                    fireEvent("update", handleNumber);
+                });
+            }
+            data.handleNumbers.forEach(function (handleNumber) {
+                fireEvent("change", handleNumber);
+                fireEvent("set", handleNumber);
+                fireEvent("end", handleNumber);
+            });
+        }
+        // Bind move events on document.
+        function eventStart(event, data) {
+            // Ignore event if any handle is disabled
+            if (data.handleNumbers.some(isHandleDisabled)) {
+                return;
+            }
+            var handle;
+            if (data.handleNumbers.length === 1) {
+                var handleOrigin = scope_Handles[data.handleNumbers[0]];
+                handle = handleOrigin.children[0];
+                scope_ActiveHandlesCount += 1;
+                // Mark the handle as 'active' so it can be styled.
+                addClass(handle, options.cssClasses.active);
+            }
+            // A drag should never propagate up to the 'tap' event.
+            event.stopPropagation();
+            // Record the event listeners.
+            var listeners = [];
+            // Attach the move and end events.
+            var moveEvent = attachEvent(actions.move, scope_DocumentElement, eventMove, {
+                // The event target has changed so we need to propagate the original one so that we keep
+                // relying on it to extract target touches.
+                target: event.target,
+                handle: handle,
+                connect: data.connect,
+                listeners: listeners,
+                startCalcPoint: event.calcPoint,
+                baseSize: baseSize(),
+                pageOffset: event.pageOffset,
+                handleNumbers: data.handleNumbers,
+                buttonsProperty: event.buttons,
+                locations: scope_Locations.slice(),
+            });
+            var endEvent = attachEvent(actions.end, scope_DocumentElement, eventEnd, {
+                target: event.target,
+                handle: handle,
+                listeners: listeners,
+                doNotReject: true,
+                handleNumbers: data.handleNumbers,
+            });
+            var outEvent = attachEvent("mouseout", scope_DocumentElement, documentLeave, {
+                target: event.target,
+                handle: handle,
+                listeners: listeners,
+                doNotReject: true,
+                handleNumbers: data.handleNumbers,
+            });
+            // We want to make sure we pushed the listeners in the listener list rather than creating
+            // a new one as it has already been passed to the event handlers.
+            listeners.push.apply(listeners, moveEvent.concat(endEvent, outEvent));
+            // Text selection isn't an issue on touch devices,
+            // so adding cursor styles can be skipped.
+            if (event.cursor) {
+                // Prevent the 'I' cursor and extend the range-drag cursor.
+                scope_Body.style.cursor = getComputedStyle(event.target).cursor;
+                // Mark the target with a dragging state.
+                if (scope_Handles.length > 1) {
+                    addClass(scope_Target, options.cssClasses.drag);
+                }
+                // Prevent text selection when dragging the handles.
+                // In noUiSlider <= 9.2.0, this was handled by calling preventDefault on mouse/touch start/move,
+                // which is scroll blocking. The selectstart event is supported by FireFox starting from version 52,
+                // meaning the only holdout is iOS Safari. This doesn't matter: text selection isn't triggered there.
+                // The 'cursor' flag is false.
+                // See: http://caniuse.com/#search=selectstart
+                scope_Body.addEventListener("selectstart", preventDefault, false);
+            }
+            data.handleNumbers.forEach(function (handleNumber) {
+                fireEvent("start", handleNumber);
+            });
+        }
+        // Move closest handle to tapped location.
+        function eventTap(event) {
+            // The tap event shouldn't propagate up
+            event.stopPropagation();
+            var proposal = calcPointToPercentage(event.calcPoint);
+            var handleNumber = getClosestHandle(proposal);
+            // Tackle the case that all handles are 'disabled'.
+            if (handleNumber === false) {
+                return;
+            }
+            // Flag the slider as it is now in a transitional state.
+            // Transition takes a configurable amount of ms (default 300). Re-enable the slider after that.
+            if (!options.events.snap) {
+                addClassFor(scope_Target, options.cssClasses.tap, options.animationDuration);
+            }
+            setHandle(handleNumber, proposal, true, true);
+            setZindex();
+            fireEvent("slide", handleNumber, true);
+            fireEvent("update", handleNumber, true);
+            if (!options.events.snap) {
+                fireEvent("change", handleNumber, true);
+                fireEvent("set", handleNumber, true);
+            }
+            else {
+                eventStart(event, { handleNumbers: [handleNumber] });
+            }
+        }
+        // Fires a 'hover' event for a hovered mouse/pen position.
+        function eventHover(event) {
+            var proposal = calcPointToPercentage(event.calcPoint);
+            var to = scope_Spectrum.getStep(proposal);
+            var value = scope_Spectrum.fromStepping(to);
+            Object.keys(scope_Events).forEach(function (targetEvent) {
+                if ("hover" === targetEvent.split(".")[0]) {
+                    scope_Events[targetEvent].forEach(function (callback) {
+                        callback.call(scope_Self, value);
+                    });
+                }
+            });
+        }
+        // Handles keydown on focused handles
+        // Don't move the document when pressing arrow keys on focused handles
+        function eventKeydown(event, handleNumber) {
+            if (isSliderDisabled() || isHandleDisabled(handleNumber)) {
+                return false;
+            }
+            var horizontalKeys = ["Left", "Right"];
+            var verticalKeys = ["Down", "Up"];
+            var largeStepKeys = ["PageDown", "PageUp"];
+            var edgeKeys = ["Home", "End"];
+            if (options.dir && !options.ort) {
+                // On an right-to-left slider, the left and right keys act inverted
+                horizontalKeys.reverse();
+            }
+            else if (options.ort && !options.dir) {
+                // On a top-to-bottom slider, the up and down keys act inverted
+                verticalKeys.reverse();
+                largeStepKeys.reverse();
+            }
+            // Strip "Arrow" for IE compatibility. https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+            var key = event.key.replace("Arrow", "");
+            var isLargeDown = key === largeStepKeys[0];
+            var isLargeUp = key === largeStepKeys[1];
+            var isDown = key === verticalKeys[0] || key === horizontalKeys[0] || isLargeDown;
+            var isUp = key === verticalKeys[1] || key === horizontalKeys[1] || isLargeUp;
+            var isMin = key === edgeKeys[0];
+            var isMax = key === edgeKeys[1];
+            if (!isDown && !isUp && !isMin && !isMax) {
+                return true;
+            }
+            event.preventDefault();
+            var to;
+            if (isUp || isDown) {
+                var direction = isDown ? 0 : 1;
+                var steps = getNextStepsForHandle(handleNumber);
+                var step = steps[direction];
+                // At the edge of a slider, do nothing
+                if (step === null) {
+                    return false;
+                }
+                // No step set, use the default of 10% of the sub-range
+                if (step === false) {
+                    step = scope_Spectrum.getDefaultStep(scope_Locations[handleNumber], isDown, options.keyboardDefaultStep);
+                }
+                if (isLargeUp || isLargeDown) {
+                    step *= options.keyboardPageMultiplier;
+                }
+                else {
+                    step *= options.keyboardMultiplier;
+                }
+                // Step over zero-length ranges (#948);
+                step = Math.max(step, 0.0000001);
+                // Decrement for down steps
+                step = (isDown ? -1 : 1) * step;
+                to = scope_Values[handleNumber] + step;
+            }
+            else if (isMax) {
+                // End key
+                to = options.spectrum.xVal[options.spectrum.xVal.length - 1];
+            }
+            else {
+                // Home key
+                to = options.spectrum.xVal[0];
+            }
+            setHandle(handleNumber, scope_Spectrum.toStepping(to), true, true);
+            fireEvent("slide", handleNumber);
+            fireEvent("update", handleNumber);
+            fireEvent("change", handleNumber);
+            fireEvent("set", handleNumber);
+            return false;
+        }
+        // Attach events to several slider parts.
+        function bindSliderEvents(behaviour) {
+            // Attach the standard drag event to the handles.
+            if (!behaviour.fixed) {
+                scope_Handles.forEach(function (handle, index) {
+                    // These events are only bound to the visual handle
+                    // element, not the 'real' origin element.
+                    attachEvent(actions.start, handle.children[0], eventStart, {
+                        handleNumbers: [index],
+                    });
+                });
+            }
+            // Attach the tap event to the slider base.
+            if (behaviour.tap) {
+                attachEvent(actions.start, scope_Base, eventTap, {});
+            }
+            // Fire hover events
+            if (behaviour.hover) {
+                attachEvent(actions.move, scope_Base, eventHover, {
+                    hover: true,
+                });
+            }
+            // Make the range draggable.
+            if (behaviour.drag) {
+                scope_Connects.forEach(function (connect, index) {
+                    if (connect === false || index === 0 || index === scope_Connects.length - 1) {
+                        return;
+                    }
+                    var handleBefore = scope_Handles[index - 1];
+                    var handleAfter = scope_Handles[index];
+                    var eventHolders = [connect];
+                    var handlesToDrag = [handleBefore, handleAfter];
+                    var handleNumbersToDrag = [index - 1, index];
+                    addClass(connect, options.cssClasses.draggable);
+                    // When the range is fixed, the entire range can
+                    // be dragged by the handles. The handle in the first
+                    // origin will propagate the start event upward,
+                    // but it needs to be bound manually on the other.
+                    if (behaviour.fixed) {
+                        eventHolders.push(handleBefore.children[0]);
+                        eventHolders.push(handleAfter.children[0]);
+                    }
+                    if (behaviour.dragAll) {
+                        handlesToDrag = scope_Handles;
+                        handleNumbersToDrag = scope_HandleNumbers;
+                    }
+                    eventHolders.forEach(function (eventHolder) {
+                        attachEvent(actions.start, eventHolder, eventStart, {
+                            handles: handlesToDrag,
+                            handleNumbers: handleNumbersToDrag,
+                            connect: connect,
+                        });
+                    });
+                });
+            }
+        }
+        // Attach an event to this slider, possibly including a namespace
+        function bindEvent(namespacedEvent, callback) {
+            scope_Events[namespacedEvent] = scope_Events[namespacedEvent] || [];
+            scope_Events[namespacedEvent].push(callback);
+            // If the event bound is 'update,' fire it immediately for all handles.
+            if (namespacedEvent.split(".")[0] === "update") {
+                scope_Handles.forEach(function (a, index) {
+                    fireEvent("update", index);
+                });
+            }
+        }
+        function isInternalNamespace(namespace) {
+            return namespace === INTERNAL_EVENT_NS.aria || namespace === INTERNAL_EVENT_NS.tooltips;
+        }
+        // Undo attachment of event
+        function removeEvent(namespacedEvent) {
+            var event = namespacedEvent && namespacedEvent.split(".")[0];
+            var namespace = event ? namespacedEvent.substring(event.length) : namespacedEvent;
+            Object.keys(scope_Events).forEach(function (bind) {
+                var tEvent = bind.split(".")[0];
+                var tNamespace = bind.substring(tEvent.length);
+                if ((!event || event === tEvent) && (!namespace || namespace === tNamespace)) {
+                    // only delete protected internal event if intentional
+                    if (!isInternalNamespace(tNamespace) || namespace === tNamespace) {
+                        delete scope_Events[bind];
+                    }
+                }
+            });
+        }
+        // External event handling
+        function fireEvent(eventName, handleNumber, tap) {
+            Object.keys(scope_Events).forEach(function (targetEvent) {
+                var eventType = targetEvent.split(".")[0];
+                if (eventName === eventType) {
+                    scope_Events[targetEvent].forEach(function (callback) {
+                        callback.call(
+                        // Use the slider public API as the scope ('this')
+                        scope_Self, 
+                        // Return values as array, so arg_1[arg_2] is always valid.
+                        scope_Values.map(options.format.to), 
+                        // Handle index, 0 or 1
+                        handleNumber, 
+                        // Un-formatted slider values
+                        scope_Values.slice(), 
+                        // Event is fired by tap, true or false
+                        tap || false, 
+                        // Left offset of the handle, in relation to the slider
+                        scope_Locations.slice(), 
+                        // add the slider public API to an accessible parameter when this is unavailable
+                        scope_Self);
+                    });
+                }
+            });
+        }
+        // Split out the handle positioning logic so the Move event can use it, too
+        function checkHandlePosition(reference, handleNumber, to, lookBackward, lookForward, getValue, smoothSteps) {
+            var distance;
+            // For sliders with multiple handles, limit movement to the other handle.
+            // Apply the margin option by adding it to the handle positions.
+            if (scope_Handles.length > 1 && !options.events.unconstrained) {
+                if (lookBackward && handleNumber > 0) {
+                    distance = scope_Spectrum.getAbsoluteDistance(reference[handleNumber - 1], options.margin, false);
+                    to = Math.max(to, distance);
+                }
+                if (lookForward && handleNumber < scope_Handles.length - 1) {
+                    distance = scope_Spectrum.getAbsoluteDistance(reference[handleNumber + 1], options.margin, true);
+                    to = Math.min(to, distance);
+                }
+            }
+            // The limit option has the opposite effect, limiting handles to a
+            // maximum distance from another. Limit must be > 0, as otherwise
+            // handles would be unmovable.
+            if (scope_Handles.length > 1 && options.limit) {
+                if (lookBackward && handleNumber > 0) {
+                    distance = scope_Spectrum.getAbsoluteDistance(reference[handleNumber - 1], options.limit, false);
+                    to = Math.min(to, distance);
+                }
+                if (lookForward && handleNumber < scope_Handles.length - 1) {
+                    distance = scope_Spectrum.getAbsoluteDistance(reference[handleNumber + 1], options.limit, true);
+                    to = Math.max(to, distance);
+                }
+            }
+            // The padding option keeps the handles a certain distance from the
+            // edges of the slider. Padding must be > 0.
+            if (options.padding) {
+                if (handleNumber === 0) {
+                    distance = scope_Spectrum.getAbsoluteDistance(0, options.padding[0], false);
+                    to = Math.max(to, distance);
+                }
+                if (handleNumber === scope_Handles.length - 1) {
+                    distance = scope_Spectrum.getAbsoluteDistance(100, options.padding[1], true);
+                    to = Math.min(to, distance);
+                }
+            }
+            if (!smoothSteps) {
+                to = scope_Spectrum.getStep(to);
+            }
+            // Limit percentage to the 0 - 100 range
+            to = limit(to);
+            // Return false if handle can't move
+            if (to === reference[handleNumber] && !getValue) {
+                return false;
+            }
+            return to;
+        }
+        // Uses slider orientation to create CSS rules. a = base value;
+        function inRuleOrder(v, a) {
+            var o = options.ort;
+            return (o ? a : v) + ", " + (o ? v : a);
+        }
+        // Moves handle(s) by a percentage
+        // (bool, % to move, [% where handle started, ...], [index in scope_Handles, ...])
+        function moveHandles(upward, proposal, locations, handleNumbers, connect) {
+            var proposals = locations.slice();
+            // Store first handle now, so we still have it in case handleNumbers is reversed
+            var firstHandle = handleNumbers[0];
+            var smoothSteps = options.events.smoothSteps;
+            var b = [!upward, upward];
+            var f = [upward, !upward];
+            // Copy handleNumbers so we don't change the dataset
+            handleNumbers = handleNumbers.slice();
+            // Check to see which handle is 'leading'.
+            // If that one can't move the second can't either.
+            if (upward) {
+                handleNumbers.reverse();
+            }
+            // Step 1: get the maximum percentage that any of the handles can move
+            if (handleNumbers.length > 1) {
+                handleNumbers.forEach(function (handleNumber, o) {
+                    var to = checkHandlePosition(proposals, handleNumber, proposals[handleNumber] + proposal, b[o], f[o], false, smoothSteps);
+                    // Stop if one of the handles can't move.
+                    if (to === false) {
+                        proposal = 0;
+                    }
+                    else {
+                        proposal = to - proposals[handleNumber];
+                        proposals[handleNumber] = to;
+                    }
+                });
+            }
+            // If using one handle, check backward AND forward
+            else {
+                b = f = [true];
+            }
+            var state = false;
+            // Step 2: Try to set the handles with the found percentage
+            handleNumbers.forEach(function (handleNumber, o) {
+                state =
+                    setHandle(handleNumber, locations[handleNumber] + proposal, b[o], f[o], false, smoothSteps) || state;
+            });
+            // Step 3: If a handle moved, fire events
+            if (state) {
+                handleNumbers.forEach(function (handleNumber) {
+                    fireEvent("update", handleNumber);
+                    fireEvent("slide", handleNumber);
+                });
+                // If target is a connect, then fire drag event
+                if (connect != undefined) {
+                    fireEvent("drag", firstHandle);
+                }
+            }
+        }
+        // Takes a base value and an offset. This offset is used for the connect bar size.
+        // In the initial design for this feature, the origin element was 1% wide.
+        // Unfortunately, a rounding bug in Chrome makes it impossible to implement this feature
+        // in this manner: https://bugs.chromium.org/p/chromium/issues/detail?id=798223
+        function transformDirection(a, b) {
+            return options.dir ? 100 - a - b : a;
+        }
+        // Updates scope_Locations and scope_Values, updates visual state
+        function updateHandlePosition(handleNumber, to) {
+            // Update locations.
+            scope_Locations[handleNumber] = to;
+            // Convert the value to the slider stepping/range.
+            scope_Values[handleNumber] = scope_Spectrum.fromStepping(to);
+            var translation = transformDirection(to, 0) - scope_DirOffset;
+            var translateRule = "translate(" + inRuleOrder(translation + "%", "0") + ")";
+            scope_Handles[handleNumber].style[options.transformRule] = translateRule;
+            updateConnect(handleNumber);
+            updateConnect(handleNumber + 1);
+        }
+        // Handles before the slider middle are stacked later = higher,
+        // Handles after the middle later is lower
+        // [[7] [8] .......... | .......... [5] [4]
+        function setZindex() {
+            scope_HandleNumbers.forEach(function (handleNumber) {
+                var dir = scope_Locations[handleNumber] > 50 ? -1 : 1;
+                var zIndex = 3 + (scope_Handles.length + dir * handleNumber);
+                scope_Handles[handleNumber].style.zIndex = String(zIndex);
+            });
+        }
+        // Test suggested values and apply margin, step.
+        // if exactInput is true, don't run checkHandlePosition, then the handle can be placed in between steps (#436)
+        function setHandle(handleNumber, to, lookBackward, lookForward, exactInput, smoothSteps) {
+            if (!exactInput) {
+                to = checkHandlePosition(scope_Locations, handleNumber, to, lookBackward, lookForward, false, smoothSteps);
+            }
+            if (to === false) {
+                return false;
+            }
+            updateHandlePosition(handleNumber, to);
+            return true;
+        }
+        // Updates style attribute for connect nodes
+        function updateConnect(index) {
+            // Skip connects set to false
+            if (!scope_Connects[index]) {
+                return;
+            }
+            var l = 0;
+            var h = 100;
+            if (index !== 0) {
+                l = scope_Locations[index - 1];
+            }
+            if (index !== scope_Connects.length - 1) {
+                h = scope_Locations[index];
+            }
+            // We use two rules:
+            // 'translate' to change the left/top offset;
+            // 'scale' to change the width of the element;
+            // As the element has a width of 100%, a translation of 100% is equal to 100% of the parent (.noUi-base)
+            var connectWidth = h - l;
+            var translateRule = "translate(" + inRuleOrder(transformDirection(l, connectWidth) + "%", "0") + ")";
+            var scaleRule = "scale(" + inRuleOrder(connectWidth / 100, "1") + ")";
+            scope_Connects[index].style[options.transformRule] =
+                translateRule + " " + scaleRule;
+        }
+        // Parses value passed to .set method. Returns current value if not parse-able.
+        function resolveToValue(to, handleNumber) {
+            // Setting with null indicates an 'ignore'.
+            // Inputting 'false' is invalid.
+            if (to === null || to === false || to === undefined) {
+                return scope_Locations[handleNumber];
+            }
+            // If a formatted number was passed, attempt to decode it.
+            if (typeof to === "number") {
+                to = String(to);
+            }
+            to = options.format.from(to);
+            if (to !== false) {
+                to = scope_Spectrum.toStepping(to);
+            }
+            // If parsing the number failed, use the current value.
+            if (to === false || isNaN(to)) {
+                return scope_Locations[handleNumber];
+            }
+            return to;
+        }
+        // Set the slider value.
+        function valueSet(input, fireSetEvent, exactInput) {
+            var values = asArray(input);
+            var isInit = scope_Locations[0] === undefined;
+            // Event fires by default
+            fireSetEvent = fireSetEvent === undefined ? true : fireSetEvent;
+            // Animation is optional.
+            // Make sure the initial values were set before using animated placement.
+            if (options.animate && !isInit) {
+                addClassFor(scope_Target, options.cssClasses.tap, options.animationDuration);
+            }
+            // First pass, without lookAhead but with lookBackward. Values are set from left to right.
+            scope_HandleNumbers.forEach(function (handleNumber) {
+                setHandle(handleNumber, resolveToValue(values[handleNumber], handleNumber), true, false, exactInput);
+            });
+            var i = scope_HandleNumbers.length === 1 ? 0 : 1;
+            // Spread handles evenly across the slider if the range has no size (min=max)
+            if (isInit && scope_Spectrum.hasNoSize()) {
+                exactInput = true;
+                scope_Locations[0] = 0;
+                if (scope_HandleNumbers.length > 1) {
+                    var space_1 = 100 / (scope_HandleNumbers.length - 1);
+                    scope_HandleNumbers.forEach(function (handleNumber) {
+                        scope_Locations[handleNumber] = handleNumber * space_1;
+                    });
+                }
+            }
+            // Secondary passes. Now that all base values are set, apply constraints.
+            // Iterate all handles to ensure constraints are applied for the entire slider (Issue #1009)
+            for (; i < scope_HandleNumbers.length; ++i) {
+                scope_HandleNumbers.forEach(function (handleNumber) {
+                    setHandle(handleNumber, scope_Locations[handleNumber], true, true, exactInput);
+                });
+            }
+            setZindex();
+            scope_HandleNumbers.forEach(function (handleNumber) {
+                fireEvent("update", handleNumber);
+                // Fire the event only for handles that received a new value, as per #579
+                if (values[handleNumber] !== null && fireSetEvent) {
+                    fireEvent("set", handleNumber);
+                }
+            });
+        }
+        // Reset slider to initial values
+        function valueReset(fireSetEvent) {
+            valueSet(options.start, fireSetEvent);
+        }
+        // Set value for a single handle
+        function valueSetHandle(handleNumber, value, fireSetEvent, exactInput) {
+            // Ensure numeric input
+            handleNumber = Number(handleNumber);
+            if (!(handleNumber >= 0 && handleNumber < scope_HandleNumbers.length)) {
+                throw new Error("noUiSlider: invalid handle number, got: " + handleNumber);
+            }
+            // Look both backward and forward, since we don't want this handle to "push" other handles (#960);
+            // The exactInput argument can be used to ignore slider stepping (#436)
+            setHandle(handleNumber, resolveToValue(value, handleNumber), true, true, exactInput);
+            fireEvent("update", handleNumber);
+            if (fireSetEvent) {
+                fireEvent("set", handleNumber);
+            }
+        }
+        // Get the slider value.
+        function valueGet(unencoded) {
+            if (unencoded === void 0) { unencoded = false; }
+            if (unencoded) {
+                // return a copy of the raw values
+                return scope_Values.length === 1 ? scope_Values[0] : scope_Values.slice(0);
+            }
+            var values = scope_Values.map(options.format.to);
+            // If only one handle is used, return a single value.
+            if (values.length === 1) {
+                return values[0];
+            }
+            return values;
+        }
+        // Removes classes from the root and empties it.
+        function destroy() {
+            // remove protected internal listeners
+            removeEvent(INTERNAL_EVENT_NS.aria);
+            removeEvent(INTERNAL_EVENT_NS.tooltips);
+            Object.keys(options.cssClasses).forEach(function (key) {
+                removeClass(scope_Target, options.cssClasses[key]);
+            });
+            while (scope_Target.firstChild) {
+                scope_Target.removeChild(scope_Target.firstChild);
+            }
+            delete scope_Target.noUiSlider;
+        }
+        function getNextStepsForHandle(handleNumber) {
+            var location = scope_Locations[handleNumber];
+            var nearbySteps = scope_Spectrum.getNearbySteps(location);
+            var value = scope_Values[handleNumber];
+            var increment = nearbySteps.thisStep.step;
+            var decrement = null;
+            // If snapped, directly use defined step value
+            if (options.snap) {
+                return [
+                    value - nearbySteps.stepBefore.startValue || null,
+                    nearbySteps.stepAfter.startValue - value || null,
+                ];
+            }
+            // If the next value in this step moves into the next step,
+            // the increment is the start of the next step - the current value
+            if (increment !== false) {
+                if (value + increment > nearbySteps.stepAfter.startValue) {
+                    increment = nearbySteps.stepAfter.startValue - value;
+                }
+            }
+            // If the value is beyond the starting point
+            if (value > nearbySteps.thisStep.startValue) {
+                decrement = nearbySteps.thisStep.step;
+            }
+            else if (nearbySteps.stepBefore.step === false) {
+                decrement = false;
+            }
+            // If a handle is at the start of a step, it always steps back into the previous step first
+            else {
+                decrement = value - nearbySteps.stepBefore.highestStep;
+            }
+            // Now, if at the slider edges, there is no in/decrement
+            if (location === 100) {
+                increment = null;
+            }
+            else if (location === 0) {
+                decrement = null;
+            }
+            // As per #391, the comparison for the decrement step can have some rounding issues.
+            var stepDecimals = scope_Spectrum.countStepDecimals();
+            // Round per #391
+            if (increment !== null && increment !== false) {
+                increment = Number(increment.toFixed(stepDecimals));
+            }
+            if (decrement !== null && decrement !== false) {
+                decrement = Number(decrement.toFixed(stepDecimals));
+            }
+            return [decrement, increment];
+        }
+        // Get the current step size for the slider.
+        function getNextSteps() {
+            return scope_HandleNumbers.map(getNextStepsForHandle);
+        }
+        // Updatable: margin, limit, padding, step, range, animate, snap
+        function updateOptions(optionsToUpdate, fireSetEvent) {
+            // Spectrum is created using the range, snap, direction and step options.
+            // 'snap' and 'step' can be updated.
+            // If 'snap' and 'step' are not passed, they should remain unchanged.
+            var v = valueGet();
+            var updateAble = [
+                "margin",
+                "limit",
+                "padding",
+                "range",
+                "animate",
+                "snap",
+                "step",
+                "format",
+                "pips",
+                "tooltips",
+            ];
+            // Only change options that we're actually passed to update.
+            updateAble.forEach(function (name) {
+                // Check for undefined. null removes the value.
+                if (optionsToUpdate[name] !== undefined) {
+                    originalOptions[name] = optionsToUpdate[name];
+                }
+            });
+            var newOptions = testOptions(originalOptions);
+            // Load new options into the slider state
+            updateAble.forEach(function (name) {
+                if (optionsToUpdate[name] !== undefined) {
+                    options[name] = newOptions[name];
+                }
+            });
+            scope_Spectrum = newOptions.spectrum;
+            // Limit, margin and padding depend on the spectrum but are stored outside of it. (#677)
+            options.margin = newOptions.margin;
+            options.limit = newOptions.limit;
+            options.padding = newOptions.padding;
+            // Update pips, removes existing.
+            if (options.pips) {
+                pips(options.pips);
+            }
+            else {
+                removePips();
+            }
+            // Update tooltips, removes existing.
+            if (options.tooltips) {
+                tooltips();
+            }
+            else {
+                removeTooltips();
+            }
+            // Invalidate the current positioning so valueSet forces an update.
+            scope_Locations = [];
+            valueSet(isSet(optionsToUpdate.start) ? optionsToUpdate.start : v, fireSetEvent);
+        }
+        // Initialization steps
+        function setupSlider() {
+            // Create the base element, initialize HTML and set classes.
+            // Add handles and connect elements.
+            scope_Base = addSlider(scope_Target);
+            addElements(options.connect, scope_Base);
+            // Attach user events.
+            bindSliderEvents(options.events);
+            // Use the public value method to set the start values.
+            valueSet(options.start);
+            if (options.pips) {
+                pips(options.pips);
+            }
+            if (options.tooltips) {
+                tooltips();
+            }
+            aria();
+        }
+        setupSlider();
+        var scope_Self = {
+            destroy: destroy,
+            steps: getNextSteps,
+            on: bindEvent,
+            off: removeEvent,
+            get: valueGet,
+            set: valueSet,
+            setHandle: valueSetHandle,
+            reset: valueReset,
+            disable: disable,
+            enable: enable,
+            // Exposed for unit testing, don't use this in your application.
+            __moveHandles: function (upward, proposal, handleNumbers) {
+                moveHandles(upward, proposal, scope_Locations, handleNumbers);
+            },
+            options: originalOptions,
+            updateOptions: updateOptions,
+            target: scope_Target,
+            removePips: removePips,
+            removeTooltips: removeTooltips,
+            getPositions: function () {
+                return scope_Locations.slice();
+            },
+            getTooltips: function () {
+                return scope_Tooltips;
+            },
+            getOrigins: function () {
+                return scope_Handles;
+            },
+            pips: pips, // Issue #594
+        };
+        return scope_Self;
+    }
+    // Run the standard initializer
+    function initialize(target, originalOptions) {
+        if (!target || !target.nodeName) {
+            throw new Error("noUiSlider: create requires a single element, got: " + target);
+        }
+        // Throw an error if the slider was already initialized.
+        if (target.noUiSlider) {
+            throw new Error("noUiSlider: Slider was already initialized.");
+        }
+        // Test the options and create the slider environment;
+        var options = testOptions(originalOptions);
+        var api = scope(target, options, originalOptions);
+        target.noUiSlider = api;
+        return api;
+    }
+    var nouislider = {
+        // Exposed for unit testing, don't use this in your application.
+        __spectrum: Spectrum,
+        // A reference to the default classes, allows global changes.
+        // Use the cssClasses option for changes to one slider.
+        cssClasses: cssClasses,
+        create: initialize,
+    };
+
+    exports.create = initialize;
+    exports.cssClasses = cssClasses;
+    exports["default"] = nouislider;
+
+    Object.defineProperty(exports, '__esModule', { value: true });
+
+}));
 
 
 /***/ }),
@@ -18905,7 +25381,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;

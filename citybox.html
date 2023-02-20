@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>ЖК на Журова</title>
+  <link rel="preload" href="fonts/FiraSansCondensed-ExtraLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+    <header class="header">
+  <div class="container-header">
+    <div class="header__content">
+      <div class="header__menu">
+        <div class="header-burger">
+          <span>Меню</span>
+        </div>
+        <a href="tel:+79005676767" class="header__tel">+7 (90) 05-67-67-67</a>
+      </div>
+      <a href="#" class="header__logo">
+        <img src="img/pages/logo.svg" alt="">
+      </a>
+      <a href="#" class="header__btn btn-green">Выбрать квартиру</a>
+    </div>
+  </div>
+</header>
+
+    <main class="main">
+      <div class="container">
+        <div class="page__hat">
+          <div class="page__breadcrumbs">
+            <a href="#">Главная</a>
+            <a href="#">Выбор квартиры</a>
+          </div>
+          <div class="house__hat">
+            <h1 class="title-h1 page__title">Выбор сити бокса</h1>
+          </div>
+        </div>
+      </div>
+      <div class="container-header page__container">
+        <div class="page__wrap">
+          <div class="container flex-column">
+            <h3 class="title-h3 house__title">Подвальный этаж</h3>
+            <div class="citybox__chooses">
+              <button class="citybox__choose tab-btn zoom-item citybox__choose-1 active" data-tab="#house-1">
+                Дом 1
+              </button>
+              <button class="citybox__choose tab-btn zoom-item citybox__choose-2" data-tab="#house-2">
+                Дом 2
+              </button>
+            </div>
+            <div class="citybox__body">
+              <div class="flat-scheme citybox-scheme">
+                <div class="flat-scheme__overlay hidden">
+                  <div class="flat-scheme__overlay-body">
+                    <svg width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16.7084 5.68913C16.8512 5.8329 17.0387 5.90396 17.2261 5.90396C17.4136 5.90396 17.601 5.83281 17.7438 5.68913C18.0302 5.40313 18.0302 4.93822 17.7438 4.65223L15.6721 2.57836C15.3857 2.29159 14.9222 2.29159 14.6366 2.57836C14.3503 2.86435 14.3503 3.32926 14.6366 3.61525L16.7084 5.68913Z" fill="white"/>
+                      <path d="M24.4737 5.90465C24.6613 5.90465 24.8487 5.83281 24.9915 5.68981L27.0625 3.61525C27.3488 3.32848 27.3488 2.86435 27.0625 2.57836C26.7769 2.29159 26.3133 2.29159 26.027 2.57836L23.956 4.65292C23.6696 4.93891 23.6696 5.40382 23.956 5.68981C24.0987 5.83281 24.2862 5.90465 24.4737 5.90465Z" fill="white"/>
+                      <path d="M20.8495 4.39988C21.2537 4.39988 21.5818 4.07135 21.5818 3.6666V0.733285C21.5818 0.32853 21.2537 0 20.8495 0C20.4453 0 20.1172 0.32853 20.1172 0.733285V3.66651C20.1171 4.07135 20.4452 4.39988 20.8495 4.39988Z" fill="white"/>
+                      <path d="M16.4551 8.79998C16.4551 8.39523 16.127 8.0667 15.7228 8.0667L0.732293 8.06641C0.328086 8.06641 0 8.39494 0 8.79969C0 9.20445 0.328086 9.53298 0.732293 9.53298L15.7227 9.53327C16.127 9.53327 16.4551 9.20474 16.4551 8.79998Z" fill="white"/>
+                      <path d="M16.7044 11.9104L14.6328 13.9849C14.3464 14.2716 14.3464 14.7358 14.6328 15.0218C14.7756 15.1655 14.9631 15.2366 15.1505 15.2366C15.338 15.2366 15.5254 15.1655 15.6682 15.0218L17.74 12.9472C18.0256 12.6612 18.0256 12.197 17.74 11.9103C17.4536 11.6236 16.9901 11.6236 16.7044 11.9104Z" fill="white"/>
+                      <path d="M55.9462 34.1929C55.148 32.202 54.9686 30.7478 54.7943 29.3421C54.5592 27.4464 54.3168 25.4855 52.5797 22.4724L47.8196 14.216C47.0529 12.8873 45.1466 12.3739 43.8174 13.1424C43.3729 13.3998 43.0023 13.7855 42.7475 14.2468C42.2547 13.5362 41.5355 13.0287 40.6919 12.8021C39.7472 12.5483 38.7608 12.6796 37.9135 13.168C37.1079 13.6337 36.5463 14.3618 36.2731 15.1824C35.1277 14.235 33.4668 14.0443 32.1069 14.8319C31.3152 15.2895 30.7338 16.0103 30.4555 16.8756L24.1532 8.00047C22.299 5.46977 20.4755 5.9846 19.552 6.51912C18.7018 7.01041 18.1408 7.79285 17.971 8.72345C17.815 9.57919 17.9988 10.5179 18.4997 11.3846L28.6336 27.8717C28.8452 28.2164 29.2963 28.3242 29.6405 28.1122C29.9854 27.8996 30.0931 27.4486 29.8807 27.104L19.7571 10.6338C19.4414 10.0853 19.3184 9.50082 19.4121 8.98606C19.5044 8.4793 19.8061 8.06578 20.2843 7.78933C20.6139 7.59864 21.6157 7.01789 22.9661 8.85922L30.8049 19.8992C31.0312 20.2175 31.4677 20.3025 31.7979 20.0914C32.1267 19.8795 32.2314 19.4461 32.0359 19.1073C31.7422 18.5984 31.6646 18.0058 31.8162 17.4375C31.9677 16.8699 32.3317 16.3955 32.8392 16.1022C33.8886 15.4964 35.2361 15.8565 35.841 16.9074L36.5704 18.1731C36.5718 18.1746 36.5726 18.1761 36.5733 18.1775C36.7754 18.5287 37.2236 18.6476 37.5737 18.4459C37.9237 18.2435 38.0438 17.7955 37.8417 17.4442C37.2361 16.3934 37.5963 15.0455 38.6458 14.4391C39.1533 14.145 39.7487 14.0673 40.3126 14.2191C40.8801 14.3716 41.3532 14.7353 41.6461 15.2443L42.7424 17.145C42.7432 17.1465 42.7438 17.1479 42.7446 17.1494C42.9475 17.4999 43.395 17.6195 43.7457 17.4178C44.0957 17.2154 44.2158 16.7673 44.0137 16.416C43.8284 16.0956 43.7823 15.69 43.8877 15.3043C43.9932 14.9201 44.2341 14.5951 44.5497 14.4125C45.1912 14.0415 46.1821 14.3084 46.5512 14.9493L51.3113 23.2057C52.9004 25.9608 53.1143 27.6913 53.3406 29.5224C53.5091 30.8806 53.6819 32.2804 54.3593 34.1438L40.1918 42.3349C37.7239 39.6737 33.9516 36.8812 28.9675 34.0279C28.4285 33.7191 27.8939 33.4206 27.3689 33.134C26.0229 32.3992 25.0723 30.9384 25.0554 29.5825C25.0481 28.9665 25.2414 28.1152 26.2052 27.5586C26.5559 27.3554 26.676 26.9067 26.4739 26.5561C26.2711 26.2056 25.8221 26.0854 25.4729 26.2878C24.2426 26.9998 23.5739 28.176 23.5915 29.6001C23.6135 31.4914 24.8504 33.4288 26.6681 34.4224C27.1843 34.704 27.7102 34.9973 28.2403 35.3009C33.3637 38.2341 37.1505 41.0772 39.4954 43.7501C39.6382 43.9129 39.8403 43.9994 40.0454 43.9994C40.1706 43.9994 40.2973 43.9672 40.4116 43.9012L55.6329 35.1014C55.9485 34.9189 56.0817 34.5318 55.9462 34.1929Z" fill="white"/>
+                    </svg>
+                    <span>Двигайте пальцем <br> для просмотра</span>
+                  </div>
+                </div>
+                <img src="img/icons/compass.svg" alt="" class="flat-scheme__compass">
+                <div class="flat-scheme__zooms">
+                  <svg class="flat-scheme__zoom flat-scheme__zoom-in" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#159947"/>
+                    <path d="M31.8724 21.8729H21.8724V31.8729H18.5391V21.8729H8.53906V18.5396H18.5391V8.53955H21.8724V18.5396H31.8724V21.8729Z" fill="#159947"/>
+                  </svg>
+                  <svg class="flat-scheme__zoom flat-scheme__zoom-out" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#159947"/>
+                    <path d="M31.8724 21.7601H8.53906V18.4268H31.8724V21.7601Z" fill="#159947"/>
+                  </svg>
+                </div>
+                <div class="flat-scheme__img flat-scheme__img-citybox tab-item active" id="house-1" style="left: 0; top: 0;">
+                  <img src="img/pages/citybox/citybox_1.jpg" alt="">
+                  <svg width="770" height="773" viewBox="0 0 770 773" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g style="mix-blend-mode:darken">
+                    <rect width="770" height="773" fill="url(#pattern0)"/>
+                    </g>
+                    <path d="M312.05 404.865V407.353H311.367H308.367V410.353V432.304V435.304H311.367H312.05V457.456V460.456H315.05H327.478H330.478V458.169H360.619H363.619V455.169V407.152V404.152H360.619H330.478V401.865H327.478H315.05H312.05V404.865Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M482.675 671.498H479.675V674.498V716.633H476.656H473.656V719.633V754.636V757.636H476.656H559.525H562.525V754.636V707.435H578.506H581.506V704.435V703.29H582.672H585.672V700.29V677.722V674.722H582.672H581.506V674.498V671.498H578.506H482.675Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M618.566 704.438H615.143V703.715V700.715H612.143H588.747H585.747V703.715V704.438H567.645H564.645V707.438V756.306V759.306H567.645H618.566H621.566V756.306V707.438V704.438H618.566Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M617.974 755.47V758.47H620.974H707.055H710.055V755.47V675.332V672.332H707.055H621.9H618.9V675.332V675.556H617.734H614.734V678.556V702.045V705.045H617.734H617.974V755.47Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M708.383 623.574V620.574H705.383H621.765H618.765V623.574V641.324H618.566H615.566V644.324V666.919V669.919H618.566H618.765V671.991V674.991H621.765H705.383H708.383V671.991V623.574Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M709.22 570.15V567.15H706.22H621.421H618.421V570.15V571.745H617.734H614.734V574.745V596.802V599.802H617.734H618.421V620.237V623.237H621.421H706.22H709.22V620.237V570.15Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M708.386 516.725V513.725H705.386H621.406H618.406V516.725V536.946H617.734H614.734V539.946V561.802V564.802H617.734H618.406V566.811V569.811H621.406H705.386H708.386V566.811V516.725Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M581.965 630.939V627.939H578.965H567.601V623.574V620.574H564.601H481.664H478.664V623.574V672.826V675.826H481.664H578.965H581.965V672.826V670.763H582.672H585.672V667.763V644.288V641.288H582.672H581.965V630.939Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M482.5 572.158H479.5V575.158V621.071V624.071H482.5H564.136H567.136V621.775H578.895H581.895V618.775V606.624H583.508H586.508V603.624V580.668V577.668H583.508H581.895V575.158V572.158H578.895H482.5Z" stroke="transparent" stroke-width="6"/>
+                    <path class="flat-sold" d="M550.134 494.525H547.134V497.525V498.194H530.918H527.918V501.194V571.82V574.82H530.918H578.5H581.5V571.82V545.679V542.679H578.5H568.232V538.131H578.5H581.5V535.131V501.194V498.194H578.5H576.467V497.525V494.525H573.467H550.134Z" stroke="transparent" stroke-width="6"/>
+                    <path class="flat-sold" d="M530.574 500.863V497.863H527.574H477.372H474.372V500.863V541.174H474.148H471.148V544.174V567.672V570.672H474.148H474.372V571.819V574.819H477.372H527.574H530.574V571.819V500.863Z" stroke="transparent" stroke-width="6"/>
+                    <path class="flat-sold" d="M369.405 595.69H372.405V592.69V582.319H373.975H376.975V579.319V517.997V514.997H373.975H359.609V513.387V510.387H356.609H315.937H312.937V513.387V514.997H311.367H308.367V517.997V540.59V543.59H311.367H312.937V592.69V595.69H315.937H369.405Z" stroke="transparent" stroke-width="6"/>
+                    <path class="flat-sold" d="M434.578 517.13V514.13H431.578H430.85V512.551V509.551H427.85H375.648H372.648V512.551V578.035V581.035H374.979V592.689V595.689H377.979H427.85H430.85V592.689V543.027H431.578H434.578V540.027V517.13Z" stroke="transparent" stroke-width="6"/>
+                    <path class="flat-sold" d="M311.722 509.211V512.211H314.722H428.238H431.238V509.211V459.959V456.959H428.238H314.722H311.722V459.959V462.887H310.535H307.535V465.887V487.777V490.777H310.535H311.722V509.211Z" stroke="transparent" stroke-width="6"/>
+                    <path class="flat-sold" d="M315.021 323.396H312.021V326.396V370.288H311.367H308.367V373.288V397.203V400.203H311.367H312.021V402.361V405.361H315.021H359.784H362.784V402.361V329.21V326.21H359.784H330.811V323.396H327.811H315.021Z" stroke="transparent" stroke-width="6"/>
+                    <path class="flat-sold" d="M428.731 63.4434V60.4434H425.731H356.445H353.445V63.4434V165.708V168.708H356.445H358.095V170.294V173.294H361.095H384.346H387.346V170.294V168.708H425.731H428.731V165.708V63.4434Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M44.2422 523.403V456.621H82.4283V463.482H81.5082V479.492H92.0899V470.801H97.6108V467.599H120.154V470.801H125.215V523.403H44.2422Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M130.933 465.309H127.933V468.041H127.719H124.719V471.041V523.404V526.404H127.719H201.179H204.179V523.404V475.594V472.594H201.179H174.55H171.55V474.415H161.021V471.041V468.041H158.021H156.43V465.309H153.43H130.933Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M90.1562 309.036H87.1562V312.036V381.326V384.326H89.4618V400.182H87.1562V403.182V407.368V410.368H90.1562H134.884H137.884V407.368V343.403H138.573H141.573V340.403V317.616V314.616H138.573H137.884V305.525V302.525H134.884H110.445H107.445V305.525V309.036H90.1562Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M229.221 305.525V302.525H226.221H192.786H189.786V305.525V309.519H178.587H175.587V312.519V312.782H174.465H171.465V315.782V339.094V342.094H174.465H175.587V393.177V396.177H178.587H226.221H229.221V393.177V305.525Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M229.562 303.361H226.562V306.361V393.178V396.178H229.562H277.588H280.588V393.178V340.931H281.318H284.318V337.931V315.182V312.182H281.318H280.588V310.54V307.54H277.588H266.6V306.361V303.361H263.6H229.562Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M172.305 427.847V430.847H175.305H175.539V467.471V470.471H178.539H227.061H230.061V467.471V396.516V393.516H227.061H178.539H175.539V396.516V402.731H175.305H172.305V405.731V427.847Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M229.562 393.516H226.562V396.516V468.306V471.306H229.562H277.622H280.622V468.306V426.667H281.318H284.318V423.667V401.578V398.578H281.318H280.622V396.516V393.516H277.622H229.562Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M87.6516 384.835H90.6516V381.835V312.205V309.205H87.6516H45.0781H42.0781V312.205V406.901V409.901H45.0781H47.1137V411.543V414.543H50.1137H73.0026H76.0026V411.543V409.901H87.6516H90.6516V406.901V403.652V400.652H87.6516H85.616V384.835H87.6516Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M139.904 183.651V180.651H136.904H90.1562H87.1562V183.651V259.265V262.265H90.1562H106.405V262.954V265.954H109.405H131.862H134.862V262.954V262.265H136.904H139.904V259.265V183.651Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M185.32 262.247H190.652V262.953V265.953H193.652H216.794H219.794V262.953V262.247H232.068H235.068V259.247V182.815V179.815H232.068H191.8H188.8V182.594H185.32H182.32V185.594V259.247V262.247H185.32Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M152.178 262.953V265.953H155.178H178.516H181.516V262.953V262.71H183.65H186.65V259.71V184.667V181.667H183.65H178.716V179.814H175.716H140.242H137.242V182.814V259.71V262.71H140.242H152.178V262.953Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M284.318 479.136V476.136H281.318H280.621V474.986V471.986H277.621H203.684H200.684V474.986V523.403V526.403H203.684H277.621H280.621V523.403V504.731H281.318H284.318V501.731V479.136Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M44.2422 522.906H41.2422V525.906V571.89V574.89H44.2422H90.01V575.568V578.568H93.01H94.6108V580.167V583.167H97.6108H119.694H122.694V580.167V578.568H125.215H128.215V575.568V525.906V522.906H125.215H44.2422Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M125.555 575.151V578.151H128.555H130.662V580.167V583.167H133.662H155.487H158.487V580.167V578.151H176.382H179.382V576.783H190.563V579.063H193.563H202.85H205.85V576.063V525.906V522.906H202.85H128.555H125.555V525.906V575.151Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M204.52 523.742H201.52V526.742V576.944V579.944H204.52H211.222V580.168V583.168H214.222H236.86H239.86V580.168V579.944H277.98H280.98V576.944V553.915V550.915H277.98H273.587V539.875H277.98H280.98V536.875V526.742V523.742H277.98H204.52Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M44.2422 576.332H41.2422V579.332V709.557V712.557H44.2422H111.024H114.024V709.557V618.584V615.584H111.024H92.8381V610.501H93.9832H96.9832V607.501V584.412V581.412H93.9832H93.7592V579.332V576.332H90.7592H44.2422Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M165.284 616.37H144.429V615.229V612.229H141.429H118.951H115.951V615.229V616.37H114.363H111.363V619.37V709.558V712.558H114.363H165.284H168.284V709.558V619.37V616.37H165.284Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M172.418 612.229H169.418V615.229V615.928H167.789H164.789V618.928V709.558V712.558H167.789H218.71H221.71V709.558V618.928V615.928H218.71H198.564V615.229V612.229H195.564H172.418Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M225.755 612.229H222.755V615.229V615.91H222.051H219.051V618.91V709.558V712.558H222.051H272.053H275.053V709.558V638.015H277.146H280.146V635.015V618.91V615.91H277.146H250.978V615.229V612.229H247.978H225.755Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M284.666 628.09H281.666V631.09V632.706H280.484H277.484V635.706V709.559V712.559H280.484H329.736H332.736V709.559V635.706V632.706H329.736H310.898V631.09V628.09H307.898H284.666Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M337.256 628.924H334.256V631.924V632.139H333.074H330.074V635.139V709.558V712.558H333.074H382.326H385.326V709.558V635.139V632.139H382.326H363.488V631.924V628.924H360.488H337.256Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M446.097 628.09H443.097V631.09V632.248H385.664H382.664V635.248V756.306V759.306H385.664H473.315H476.315V756.306V635.248V632.248H473.315H472.163V631.09V628.09H469.163H446.097Z" stroke="transparent" stroke-width="6"/>
+                  </svg>
+                </div>
+                <div class="flat-scheme__img flat-scheme__img-citybox tab-item" id="house-2" style="left: 0; top: 0;">
+                  <img src="img/pages/citybox/citybox_1.jpg" alt="">
+                  <svg width="770" height="773" viewBox="0 0 770 773" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g style="mix-blend-mode:darken">
+                    <rect width="770" height="773" fill="url(#pattern0)"/>
+                    </g>
+                    <path data-graph-path="popup-citybox" d="M311.367 407.353H308.367V410.353V432.304V435.304H311.367H312.05V457.456V460.456H315.05H327.478H330.478V458.169H360.619H363.619V455.169V407.152V404.152H360.619H330.478V401.865H327.478H315.05H312.05V404.865V407.353H311.367Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M581.506 674.498V671.498H578.506H482.675H479.675V674.498V716.633H476.656H473.656V719.633V754.636V757.636H476.656H559.525H562.525V754.636V707.435H578.506H581.506V704.435V703.29H582.672H585.672V700.29V677.722V674.722H582.672H581.506V674.498Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M615.143 703.715V700.715H612.143H588.747H585.747V703.715V704.438H567.645H564.645V707.438V756.306V759.306H567.645H618.566H621.566V756.306V707.438V704.438H618.566H615.143V703.715Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M617.734 705.045H617.974V755.47V758.47H620.974H707.055H710.055V755.47V675.332V672.332H707.055H621.9H618.9V675.332V675.556H617.734H614.734V678.556V702.045V705.045H617.734Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M621.765 620.574H618.765V623.574V641.324H618.566H615.566V644.324V666.919V669.919H618.566H618.765V671.991V674.991H621.765H705.383H708.383V671.991V623.574V620.574H705.383H621.765Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M621.421 567.15H618.421V570.15V571.745H617.734H614.734V574.745V596.802V599.802H617.734H618.421V620.237V623.237H621.421H706.22H709.22V620.237V570.15V567.15H706.22H621.421Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M621.406 513.725H618.406V516.725V536.946H617.734H614.734V539.946V561.802V564.802H617.734H618.406V566.811V569.811H621.406H705.386H708.386V566.811V516.725V513.725H705.386H621.406Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M582.672 641.288H581.965V630.939V627.939H578.965H567.601V623.574V620.574H564.601H481.664H478.664V623.574V672.826V675.826H481.664H578.965H581.965V672.826V670.763H582.672H585.672V667.763V644.288V641.288H582.672Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M581.895 575.158V572.158H578.895H482.5H479.5V575.158V621.071V624.071H482.5H564.136H567.136V621.775H578.895H581.895V618.775V606.624H583.508H586.508V603.624V580.668V577.668H583.508H581.895V575.158Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M550.134 494.525H547.134V497.525V498.194H530.918H527.918V501.194V571.82V574.82H530.918H578.5H581.5V571.82V545.679V542.679H578.5H568.232V538.131H578.5H581.5V535.131V501.194V498.194H578.5H576.467V497.525V494.525H573.467H550.134Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M477.372 497.863H474.372V500.863V541.174H474.148H471.148V544.174V567.672V570.672H474.148H474.372V571.819V574.819H477.372H527.574H530.574V571.819V500.863V497.863H527.574H477.372Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M312.937 592.69V595.69H315.937H369.405H372.405V592.69V582.319H373.975H376.975V579.319V517.997V514.997H373.975H359.609V513.387V510.387H356.609H315.937H312.937V513.387V514.997H311.367H308.367V517.997V540.59V543.59H311.367H312.937V592.69Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M434.578 517.13V514.13H431.578H430.85V512.551V509.551H427.85H375.648H372.648V512.551V578.035V581.035H374.979V592.689V595.689H377.979H427.85H430.85V592.689V543.027H431.578H434.578V540.027V517.13Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M310.535 490.777H311.722V509.211V512.211H314.722H428.238H431.238V509.211V459.959V456.959H428.238H314.722H311.722V459.959V462.887H310.535H307.535V465.887V487.777V490.777H310.535Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M315.021 323.396H312.021V326.396V370.288H311.367H308.367V373.288V397.203V400.203H311.367H312.021V402.361V405.361H315.021H359.784H362.784V402.361V329.21V326.21H359.784H330.811V323.396H327.811H315.021Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M425.731 168.708H428.731V165.708V63.4434V60.4434H425.731H356.445H353.445V63.4434V165.708V168.708H356.445H358.095V170.294V173.294H361.095H384.346H387.346V170.294V168.708H425.731Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M44.2422 523.403V456.621H82.4283V463.482H81.5082V479.492H92.0899V470.801H97.6108V467.599H120.154V470.801H125.215V523.403H44.2422Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M130.933 465.309H127.933V468.041H127.719H124.719V471.041V523.404V526.404H127.719H201.179H204.179V523.404V475.594V472.594H201.179H174.55H171.55V474.415H161.021V471.041V468.041H158.021H156.43V465.309H153.43H130.933Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M137.884 407.368V343.403H138.573H141.573V340.403V317.616V314.616H138.573H137.884V305.525V302.525H134.884H110.445H107.445V305.525V309.036H90.1562H87.1562V312.036V381.326V384.326H89.4618V400.182H87.1562V403.182V407.368V410.368H90.1562H134.884H137.884V407.368Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M192.786 302.525H189.786V305.525V309.519H178.587H175.587V312.519V312.782H174.465H171.465V315.782V339.094V342.094H174.465H175.587V393.177V396.177H178.587H226.221H229.221V393.177V305.525V302.525H226.221H192.786Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M266.6 306.361V303.361H263.6H229.562H226.562V306.361V393.178V396.178H229.562H277.588H280.588V393.178V340.931H281.318H284.318V337.931V315.182V312.182H281.318H280.588V310.54V307.54H277.588H266.6V306.361Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M172.305 427.847V430.847H175.305H175.539V467.471V470.471H178.539H227.061H230.061V467.471V396.516V393.516H227.061H178.539H175.539V396.516V402.731H175.305H172.305V405.731V427.847Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M280.622 396.516V393.516H277.622H229.562H226.562V396.516V468.306V471.306H229.562H277.622H280.622V468.306V426.667H281.318H284.318V423.667V401.578V398.578H281.318H280.622V396.516Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M90.6516 312.205V309.205H87.6516H45.0781H42.0781V312.205V406.901V409.901H45.0781H47.1137V411.543V414.543H50.1137H73.0026H76.0026V411.543V409.901H87.6516H90.6516V406.901V403.652V400.652H87.6516H85.616V384.835H87.6516H90.6516V381.835V312.205Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M90.1562 180.651H87.1562V183.651V259.265V262.265H90.1562H106.405V262.954V265.954H109.405H131.862H134.862V262.954V262.265H136.904H139.904V259.265V183.651V180.651H136.904H90.1562Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M185.32 182.594H182.32V185.594V259.247V262.247H185.32H190.652V262.953V265.953H193.652H216.794H219.794V262.953V262.247H232.068H235.068V259.247V182.815V179.815H232.068H191.8H188.8V182.594H185.32Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M140.242 262.71H152.178V262.953V265.953H155.178H178.516H181.516V262.953V262.71H183.65H186.65V259.71V184.667V181.667H183.65H178.716V179.814H175.716H140.242H137.242V182.814V259.71V262.71H140.242Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M284.318 479.136V476.136H281.318H280.621V474.986V471.986H277.621H203.684H200.684V474.986V523.403V526.403H203.684H277.621H280.621V523.403V504.731H281.318H284.318V501.731V479.136Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M128.215 525.906V522.906H125.215H44.2422H41.2422V525.906V571.89V574.89H44.2422H90.01V575.568V578.568H93.01H94.6108V580.167V583.167H97.6108H119.694H122.694V580.167V578.568H125.215H128.215V575.568V525.906Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M128.555 522.906H125.555V525.906V575.151V578.151H128.555H130.662V580.167V583.167H133.662H155.487H158.487V580.167V578.151H176.382H179.382V576.783H190.563V579.063H193.563H202.85H205.85V576.063V525.906V522.906H202.85H128.555Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M280.98 526.742V523.742H277.98H204.52H201.52V526.742V576.944V579.944H204.52H211.222V580.168V583.168H214.222H236.86H239.86V580.168V579.944H277.98H280.98V576.944V553.915V550.915H277.98H273.587V539.875H277.98H280.98V536.875V526.742Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M93.7592 579.332V576.332H90.7592H44.2422H41.2422V579.332V709.557V712.557H44.2422H111.024H114.024V709.557V618.584V615.584H111.024H92.8381V610.501H93.9832H96.9832V607.501V584.412V581.412H93.9832H93.7592V579.332Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M144.429 615.229V612.229H141.429H118.951H115.951V615.229V616.37H114.363H111.363V619.37V709.558V712.558H114.363H165.284H168.284V709.558V619.37V616.37H165.284H144.429V615.229Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M172.418 612.229H169.418V615.229V615.928H167.789H164.789V618.928V709.558V712.558H167.789H218.71H221.71V709.558V618.928V615.928H218.71H198.564V615.229V612.229H195.564H172.418Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M225.755 612.229H222.755V615.229V615.91H222.051H219.051V618.91V709.558V712.558H222.051H272.053H275.053V709.558V638.015H277.146H280.146V635.015V618.91V615.91H277.146H250.978V615.229V612.229H247.978H225.755Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M284.666 628.09H281.666V631.09V632.706H280.484H277.484V635.706V709.559V712.559H280.484H329.736H332.736V709.559V635.706V632.706H329.736H310.898V631.09V628.09H307.898H284.666Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M337.256 628.924H334.256V631.924V632.139H333.074H330.074V635.139V709.558V712.558H333.074H382.326H385.326V709.558V635.139V632.139H382.326H363.488V631.924V628.924H360.488H337.256Z" stroke="transparent" stroke-width="6"/>
+                    <path data-graph-path="popup-citybox" d="M446.097 628.09H443.097V631.09V632.248H385.664H382.664V635.248V756.306V759.306H385.664H473.315H476.315V756.306V635.248V632.248H473.315H472.163V631.09V628.09H469.163H446.097Z" stroke="transparent" stroke-width="6"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__content">
+      <img src="img/pages/logo_white.svg" alt="" class="footer__logo">
+      <h3 class="footer__builder">Застройщик: <br> ООО «Специализированный застройщик <br> „ВолгаИнвестГрупп“</h3>
+      <div class="footer-info">
+        <div class="footer__left">
+          <div class="footer__mlinks">
+            <a href="#" class="footer__mlink">О жилом комплексе</a>
+            <a href="#" class="footer__mlink">Выбор квартиры</a>
+            <a href="#" class="footer__mlink">Выбор ситибокса</a>
+            <a href="#" class="footer__mlink">Выбор коммерческого помещения</a>
+          </div>
+          <div class="footer__slinks">
+            <a href="#" class="footer__slink">О застройщике</a>
+            <a href="#" class="footer__slink">Документы</a>
+            <a href="#" class="footer__slink">Ипотека</a>
+            <a href="#" class="footer__slink">Гарантии</a>
+            <a href="#" class="footer__slink">Контакты</a>
+            <a href="#" class="footer__slink">Новости и акции</a>
+          </div>
+        </div>
+        <div class="footer__right">
+          <div class="footer-item">
+            <span class="footer-item__title">Главный офис</span>
+            <span class="footer-item__subtitle">г Нижний Новгород, ул Павла Мочалова, д. 11, помещ. п1; оф. 3</span>
+          </div>
+          <div class="footer-item">
+            <span class="footer-item__title">Часы работы</span>
+            <span class="footer-item__subtitle">c 9 до 18 Пн-Пт</span>
+          </div>
+          <div class="footer-item">
+            <span class="footer-item__title">Контактный номер</span>
+            <a href="tel:+79005676767" class="footer-item__subtitle">+7 (90) 05-67-67-67</a>
+          </div>
+          <div class="footer-item">
+            <span class="footer-item__title">Адрес почты</span>
+            <a href="mailto:Volga.net" class="footer-item__subtitle">Volga.net</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copy">
+        <div class="footer-copy__left">
+          <span>© СЗ ВолгаИнвестГрупп 2023</span>
+          <a href="#">Политика конфиденциальности</a>
+        </div>
+        <span class="footer-copy__right">Информация, размещённая на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 Гражданского кодекса РФ.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <div class="menu">
+  <div class="menu__body">
+    <div class="container-header menu__container">
+      <button class="menu__close" type="">
+        <svg class="">
+          <use xlink:href="img/sprite.svg#close"></use>
+        </svg>
+        <span>Закрыть</span>
+      </button>
+    </div>
+    <div class="container">
+      <div class="menu__content">
+        <div class="menu__hat">
+          <img src="img/pages/logo_green.svg" alt="" class="menu__logo">
+          <div class="footer__left menu__links">
+            <div class="footer__mlinks">
+              <a href="#" class="footer__mlink">О жилом комплексе</a>
+              <a href="#" class="footer__mlink">Выбор квартиры</a>
+              <a href="#" class="footer__mlink">Выбор ситибокса</a>
+              <a href="#" class="footer__mlink">Выбор коммерческого помещения</a>
+            </div>
+            <div class="footer__slinks">
+              <a href="#" class="footer__slink">О застройщике</a>
+              <a href="#" class="footer__slink">Документы</a>
+              <a href="#" class="footer__slink">Ипотека</a>
+              <a href="#" class="footer__slink">Гарантии</a>
+              <a href="#" class="footer__slink">Контакты</a>
+              <a href="#" class="footer__slink">Новости и акции</a>
+            </div>
+          </div>
+          <div class="footer__right menu__info">
+            <div class="footer-item">
+              <span class="footer-item__title">Главный офис</span>
+              <span class="footer-item__subtitle">г Нижний Новгород, ул Павла Мочалова, д. 11, помещ. п1; оф. 3</span>
+            </div>
+            <div class="footer-item">
+              <span class="footer-item__title">Часы работы</span>
+              <span class="footer-item__subtitle">c 9 до 18 Пн-Пт</span>
+            </div>
+            <div class="footer-item">
+              <span class="footer-item__title">Контактный номер</span>
+              <a href="tel:+79005676767" class="footer-item__subtitle">+7 (90) 05-67-67-67</a>
+            </div>
+            <div class="footer-item">
+              <span class="footer-item__title">Адрес почты</span>
+              <a href="mailto:Volga.net" class="footer-item__subtitle">Volga.net</a>
+            </div>
+          </div>
+        </div>
+        <div class="menu__footer">
+          <button class="menu__btn text-btn">
+            Скачать презентацию
+            <svg class="">
+              <use xlink:href="img/sprite.svg#arrow_down"></use>
+            </svg>
+          </button>
+          <div class="menu__request">
+            <span>Не нашли нужной информации? <br> Мы поможем:</span>
+            <button class="btn-green">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="graph-modal popup-citybox">
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="popup-citybox">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <div class="popup-citybox__body">
+        <div class="popup-citybox__left">
+          <div class="popup-citybox__left-text">
+            <h4 class="title-h4">Ситибокс № 1</h4>
+            <div class="popup-citybox__params">
+              <span>6,5 кв м</span>
+              <span>Дом 1</span>
+            </div>
+            <span class="popup-citybox__price">130 000 руб</span>
+          </div>
+          <picture class="popup-citybox__img">
+            <source srcset="img/pages/citybox/citybox1.webp" type="image/webp">
+            <img loading="lazy" src="img/pages/citybox/citybox1.png" class="image" width="" height="" alt="">
+          </picture>
+        </div>
+        <div class="popup-citybox__right">
+          <div class="popup-citybox__right-text">
+            <h4 class="title-h4">Забронировать ситибокс</h4>
+            <span class="req__agree">Оставьте заявку и наши менеджеры отдела продаж с удовольствием расскажут вам все подробности</span>
+          </div>
+          <div class="req__form">
+            <form action="">
+              <div class="input">
+                <span class="input__placeholder">Имя</span>
+                <input type="text">
+              </div>
+              <div class="input">
+                <span class="input__placeholder">Телефон</span>
+                <input class="phone" type="tel">
+              </div>
+              <button class="btn-white">Оставить заявку</button>
+              <span class="req__agree">Нажимая на кнопку «Оставить заявку», я даю согласие на <a href="#">обработку персональных данных</a> и условия <a href="#">политики конфиденциалности</a></span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>

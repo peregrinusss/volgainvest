@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>ЖК на Журова</title>
+  <link rel="preload" href="fonts/FiraSansCondensed-ExtraLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/FiraSansCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+    <header class="header">
+  <div class="container-header">
+    <div class="header__content">
+      <div class="header__menu">
+        <div class="header-burger">
+          <span>Меню</span>
+        </div>
+        <a href="tel:+79005676767" class="header__tel">+7 (90) 05-67-67-67</a>
+      </div>
+      <a href="#" class="header__logo">
+        <img src="img/pages/logo.svg" alt="">
+      </a>
+      <a href="#" class="header__btn btn-green">Выбрать квартиру</a>
+    </div>
+  </div>
+</header>
+
+    <main class="main">
+      <div class="container">
+        <div class="page__hat">
+          <div class="page__breadcrumbs">
+            <a href="#">Главная</a>
+            <a href="#">Выбор квартиры</a>
+          </div>
+          <div class="house__hat">
+            <h1 class="title-h1 page__title">Выбор сити бокса</h1>
+          </div>
+        </div>
+      </div>
+      <div class="container-header page__container">
+        <div class="page__wrap">
+          <div class="container flex-column">
+            <h3 class="title-h3 house__title">Подвальный этаж</h3>
+            <div class="citybox__chooses">
+              <button class="citybox__choose tab-btn zoom-item citybox__choose-1 active" data-tab="#house-1">
+                Дом 1
+              </button>
+              <button class="citybox__choose tab-btn zoom-item citybox__choose-2" data-tab="#house-2">
+                Дом 2
+              </button>
+            </div>
+            <div class="citybox__body">
+              <div class="flat-scheme citybox-scheme">
+                <div class="flat-scheme__overlay hidden">
+                  <div class="flat-scheme__overlay-body">
+                    <svg width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16.7084 5.68913C16.8512 5.8329 17.0387 5.90396 17.2261 5.90396C17.4136 5.90396 17.601 5.83281 17.7438 5.68913C18.0302 5.40313 18.0302 4.93822 17.7438 4.65223L15.6721 2.57836C15.3857 2.29159 14.9222 2.29159 14.6366 2.57836C14.3503 2.86435 14.3503 3.32926 14.6366 3.61525L16.7084 5.68913Z" fill="white"/>
+                      <path d="M24.4737 5.90465C24.6613 5.90465 24.8487 5.83281 24.9915 5.68981L27.0625 3.61525C27.3488 3.32848 27.3488 2.86435 27.0625 2.57836C26.7769 2.29159 26.3133 2.29159 26.027 2.57836L23.956 4.65292C23.6696 4.93891 23.6696 5.40382 23.956 5.68981C24.0987 5.83281 24.2862 5.90465 24.4737 5.90465Z" fill="white"/>
+                      <path d="M20.8495 4.39988C21.2537 4.39988 21.5818 4.07135 21.5818 3.6666V0.733285C21.5818 0.32853 21.2537 0 20.8495 0C20.4453 0 20.1172 0.32853 20.1172 0.733285V3.66651C20.1171 4.07135 20.4452 4.39988 20.8495 4.39988Z" fill="white"/>
+                      <path d="M16.4551 8.79998C16.4551 8.39523 16.127 8.0667 15.7228 8.0667L0.732293 8.06641C0.328086 8.06641 0 8.39494 0 8.79969C0 9.20445 0.328086 9.53298 0.732293 9.53298L15.7227 9.53327C16.127 9.53327 16.4551 9.20474 16.4551 8.79998Z" fill="white"/>
+                      <path d="M16.7044 11.9104L14.6328 13.9849C14.3464 14.2716 14.3464 14.7358 14.6328 15.0218C14.7756 15.1655 14.9631 15.2366 15.1505 15.2366C15.338 15.2366 15.5254 15.1655 15.6682 15.0218L17.74 12.9472C18.0256 12.6612 18.0256 12.197 17.74 11.9103C17.4536 11.6236 16.9901 11.6236 16.7044 11.9104Z" fill="white"/>
+                      <path d="M55.9462 34.1929C55.148 32.202 54.9686 30.7478 54.7943 29.3421C54.5592 27.4464 54.3168 25.4855 52.5797 22.4724L47.8196 14.216C47.0529 12.8873 45.1466 12.3739 43.8174 13.1424C43.3729 13.3998 43.0023 13.7855 42.7475 14.2468C42.2547 13.5362 41.5355 13.0287 40.6919 12.8021C39.7472 12.5483 38.7608 12.6796 37.9135 13.168C37.1079 13.6337 36.5463 14.3618 36.2731 15.1824C35.1277 14.235 33.4668 14.0443 32.1069 14.8319C31.3152 15.2895 30.7338 16.0103 30.4555 16.8756L24.1532 8.00047C22.299 5.46977 20.4755 5.9846 19.552 6.51912C18.7018 7.01041 18.1408 7.79285 17.971 8.72345C17.815 9.57919 17.9988 10.5179 18.4997 11.3846L28.6336 27.8717C28.8452 28.2164 29.2963 28.3242 29.6405 28.1122C29.9854 27.8996 30.0931 27.4486 29.8807 27.104L19.7571 10.6338C19.4414 10.0853 19.3184 9.50082 19.4121 8.98606C19.5044 8.4793 19.8061 8.06578 20.2843 7.78933C20.6139 7.59864 21.6157 7.01789 22.9661 8.85922L30.8049 19.8992C31.0312 20.2175 31.4677 20.3025 31.7979 20.0914C32.1267 19.8795 32.2314 19.4461 32.0359 19.1073C31.7422 18.5984 31.6646 18.0058 31.8162 17.4375C31.9677 16.8699 32.3317 16.3955 32.8392 16.1022C33.8886 15.4964 35.2361 15.8565 35.841 16.9074L36.5704 18.1731C36.5718 18.1746 36.5726 18.1761 36.5733 18.1775C36.7754 18.5287 37.2236 18.6476 37.5737 18.4459C37.9237 18.2435 38.0438 17.7955 37.8417 17.4442C37.2361 16.3934 37.5963 15.0455 38.6458 14.4391C39.1533 14.145 39.7487 14.0673 40.3126 14.2191C40.8801 14.3716 41.3532 14.7353 41.6461 15.2443L42.7424 17.145C42.7432 17.1465 42.7438 17.1479 42.7446 17.1494C42.9475 17.4999 43.395 17.6195 43.7457 17.4178C44.0957 17.2154 44.2158 16.7673 44.0137 16.416C43.8284 16.0956 43.7823 15.69 43.8877 15.3043C43.9932 14.9201 44.2341 14.5951 44.5497 14.4125C45.1912 14.0415 46.1821 14.3084 46.5512 14.9493L51.3113 23.2057C52.9004 25.9608 53.1143 27.6913 53.3406 29.5224C53.5091 30.8806 53.6819 32.2804 54.3593 34.1438L40.1918 42.3349C37.7239 39.6737 33.9516 36.8812 28.9675 34.0279C28.4285 33.7191 27.8939 33.4206 27.3689 33.134C26.0229 32.3992 25.0723 30.9384 25.0554 29.5825C25.0481 28.9665 25.2414 28.1152 26.2052 27.5586C26.5559 27.3554 26.676 26.9067 26.4739 26.5561C26.2711 26.2056 25.8221 26.0854 25.4729 26.2878C24.2426 26.9998 23.5739 28.176 23.5915 29.6001C23.6135 31.4914 24.8504 33.4288 26.6681 34.4224C27.1843 34.704 27.7102 34.9973 28.2403 35.3009C33.3637 38.2341 37.1505 41.0772 39.4954 43.7501C39.6382 43.9129 39.8403 43.9994 40.0454 43.9994C40.1706 43.9994 40.2973 43.9672 40.4116 43.9012L55.6329 35.1014C55.9485 34.9189 56.0817 34.5318 55.9462 34.1929Z" fill="white"/>
+                    </svg>
+                    <span>Двигайте пальцем <br> для просмотра</span>
+                  </div>
+                </div>
+                <img src="img/icons/compass.svg" alt="" class="flat-scheme__compass">
+                <div class="flat-scheme__zooms">
+                  <svg class="flat-scheme__zoom flat-scheme__zoom-in" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#159947"/>
+                    <path d="M31.8724 21.8729H21.8724V31.8729H18.5391V21.8729H8.53906V18.5396H18.5391V8.53955H21.8724V18.5396H31.8724V21.8729Z" fill="#159947"/>
+                  </svg>
+                  <svg class="flat-scheme__zoom flat-scheme__zoom-out" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#159947"/>
+                    <path d="M31.8724 21.7601H8.53906V18.4268H31.8724V21.7601Z" fill="#159947"/>
+                  </svg>
+                </div>
+                <div class="flat-scheme__img flat-scheme__img-citybox flat-scheme__img-commerce tab-item active" id="house-1" style="left: 0; top: 0;">
+                  <img src="img/pages/commerce/commerce_1.png" alt="">
+                  <svg width="809" height="841" viewBox="0 0 809 841" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect width="809" height="841" fill="url(#pattern0)"/>
+                    <path class="flat-sold" opacity="0.95" d="M89.3773 337.948H19.7055H16.7055V340.948V345.255H8H5V348.255V385.275V388.275H8H16.7055V509V512H19.7055H266.985H269.985V509V495.926H326H329V492.926V361.894V358.894H326H269.985V339V336H266.985H92.3773H89.3773V337.948Z" stroke="transparent" stroke-width="6"/>
+                    <path opacity="0.95" d="M21 771.846H222.532V782V785H225.532H263.119H266.119V782V771.846H268H271V768.846V516V513H268H21H18V516V768.846V771.846H21Z" stroke="transparent" stroke-width="6"/>
+                    <path class="flat-sold" opacity="0.95" d="M276 772.66H276.915V781.873V784.873H279.915H318.089H321.089V781.873V772.66H385.565V819V822H388.565H484H487V819V500V497H484H276H273V500V769.66V772.66H276Z" stroke="transparent" stroke-width="6"/>
+                    <path opacity="0.95" d="M549.321 835H552.321V832V822.758H735H738V819.758V500V497H735H492H489V500V819.758V822.758H492H508.597V832V835H511.597H549.321Z" stroke="transparent" stroke-width="6"/>
+                    <path opacity="0.95" d="M801 281.918V278.918H798H788.713V278V275H785.713H509H506V278V493V496H509H785.713H788.713V493V323.608H798H801V320.608V281.918Z" stroke="transparent" stroke-width="6"/>
+                    <path opacity="0.95" d="M788.245 270V268.622H797H800V265.622V228.168V225.168H797H788.245V73V70H785.245H509H506V73V270V273H509H785.245H788.245V270Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M70.6977 285.699H58V323.227H70.6977V332H268V23H70.6977V285.699Z" stroke="transparent"/>
+                  </svg>
+                </div>
+                <div class="flat-scheme__img flat-scheme__img-citybox flat-scheme__img-commerce tab-item" id="house-2" style="left: 0; top: 0;">
+                  <img src="img/pages//commerce/commerce_1.png" alt="">
+                  <svg width="809" height="841" viewBox="0 0 809 841" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect width="809" height="841" fill="url(#pattern0)"/>
+                    <path opacity="0.95" d="M89.3773 337.948H19.7055H16.7055V340.948V345.255H8H5V348.255V385.275V388.275H8H16.7055V509V512H19.7055H266.985H269.985V509V495.926H326H329V492.926V361.894V358.894H326H269.985V339V336H266.985H92.3773H89.3773V337.948Z" stroke="transparent" stroke-width="6"/>
+                    <path class="flat-sold" opacity="0.95" d="M21 771.846H222.532V782V785H225.532H263.119H266.119V782V771.846H268H271V768.846V516V513H268H21H18V516V768.846V771.846H21Z" stroke="transparent" stroke-width="6"/>
+                    <path class="flat-sold" opacity="0.95" d="M276 772.66H276.915V781.873V784.873H279.915H318.089H321.089V781.873V772.66H385.565V819V822H388.565H484H487V819V500V497H484H276H273V500V769.66V772.66H276Z" stroke="transparent" stroke-width="6"/>
+                    <path opacity="0.95" d="M549.321 835H552.321V832V822.758H735H738V819.758V500V497H735H492H489V500V819.758V822.758H492H508.597V832V835H511.597H549.321Z" stroke="transparent" stroke-width="6"/>
+                    <path opacity="0.95" d="M801 281.918V278.918H798H788.713V278V275H785.713H509H506V278V493V496H509H785.713H788.713V493V323.608H798H801V320.608V281.918Z" stroke="transparent" stroke-width="6"/>
+                    <path opacity="0.95" d="M788.245 270V268.622H797H800V265.622V228.168V225.168H797H788.245V73V70H785.245H509H506V73V270V273H509H785.245H788.245V270Z" stroke="transparent" stroke-width="6"/>
+                    <path d="M70.6977 285.699H58V323.227H70.6977V332H268V23H70.6977V285.699Z" stroke="transparent"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__content">
+      <img src="img/pages/logo_white.svg" alt="" class="footer__logo">
+      <h3 class="footer__builder">Застройщик: <br> ООО «Специализированный застройщик <br> „ВолгаИнвестГрупп“</h3>
+      <div class="footer-info">
+        <div class="footer__left">
+          <div class="footer__mlinks">
+            <a href="#" class="footer__mlink">О жилом комплексе</a>
+            <a href="#" class="footer__mlink">Выбор квартиры</a>
+            <a href="#" class="footer__mlink">Выбор ситибокса</a>
+            <a href="#" class="footer__mlink">Выбор коммерческого помещения</a>
+          </div>
+          <div class="footer__slinks">
+            <a href="#" class="footer__slink">О застройщике</a>
+            <a href="#" class="footer__slink">Документы</a>
+            <a href="#" class="footer__slink">Ипотека</a>
+            <a href="#" class="footer__slink">Гарантии</a>
+            <a href="#" class="footer__slink">Контакты</a>
+            <a href="#" class="footer__slink">Новости и акции</a>
+          </div>
+        </div>
+        <div class="footer__right">
+          <div class="footer-item">
+            <span class="footer-item__title">Главный офис</span>
+            <span class="footer-item__subtitle">г Нижний Новгород, ул Павла Мочалова, д. 11, помещ. п1; оф. 3</span>
+          </div>
+          <div class="footer-item">
+            <span class="footer-item__title">Часы работы</span>
+            <span class="footer-item__subtitle">c 9 до 18 Пн-Пт</span>
+          </div>
+          <div class="footer-item">
+            <span class="footer-item__title">Контактный номер</span>
+            <a href="tel:+79005676767" class="footer-item__subtitle">+7 (90) 05-67-67-67</a>
+          </div>
+          <div class="footer-item">
+            <span class="footer-item__title">Адрес почты</span>
+            <a href="mailto:Volga.net" class="footer-item__subtitle">Volga.net</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copy">
+        <div class="footer-copy__left">
+          <span>© СЗ ВолгаИнвестГрупп 2023</span>
+          <a href="#">Политика конфиденциальности</a>
+        </div>
+        <span class="footer-copy__right">Информация, размещённая на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 Гражданского кодекса РФ.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <div class="menu">
+  <div class="menu__body">
+    <div class="container-header menu__container">
+      <button class="menu__close" type="">
+        <svg class="">
+          <use xlink:href="img/sprite.svg#close"></use>
+        </svg>
+        <span>Закрыть</span>
+      </button>
+    </div>
+    <div class="container">
+      <div class="menu__content">
+        <div class="menu__hat">
+          <img src="img/pages/logo_green.svg" alt="" class="menu__logo">
+          <div class="footer__left menu__links">
+            <div class="footer__mlinks">
+              <a href="#" class="footer__mlink">О жилом комплексе</a>
+              <a href="#" class="footer__mlink">Выбор квартиры</a>
+              <a href="#" class="footer__mlink">Выбор ситибокса</a>
+              <a href="#" class="footer__mlink">Выбор коммерческого помещения</a>
+            </div>
+            <div class="footer__slinks">
+              <a href="#" class="footer__slink">О застройщике</a>
+              <a href="#" class="footer__slink">Документы</a>
+              <a href="#" class="footer__slink">Ипотека</a>
+              <a href="#" class="footer__slink">Гарантии</a>
+              <a href="#" class="footer__slink">Контакты</a>
+              <a href="#" class="footer__slink">Новости и акции</a>
+            </div>
+          </div>
+          <div class="footer__right menu__info">
+            <div class="footer-item">
+              <span class="footer-item__title">Главный офис</span>
+              <span class="footer-item__subtitle">г Нижний Новгород, ул Павла Мочалова, д. 11, помещ. п1; оф. 3</span>
+            </div>
+            <div class="footer-item">
+              <span class="footer-item__title">Часы работы</span>
+              <span class="footer-item__subtitle">c 9 до 18 Пн-Пт</span>
+            </div>
+            <div class="footer-item">
+              <span class="footer-item__title">Контактный номер</span>
+              <a href="tel:+79005676767" class="footer-item__subtitle">+7 (90) 05-67-67-67</a>
+            </div>
+            <div class="footer-item">
+              <span class="footer-item__title">Адрес почты</span>
+              <a href="mailto:Volga.net" class="footer-item__subtitle">Volga.net</a>
+            </div>
+          </div>
+        </div>
+        <div class="menu__footer">
+          <button class="menu__btn text-btn">
+            Скачать презентацию
+            <svg class="">
+              <use xlink:href="img/sprite.svg#arrow_down"></use>
+            </svg>
+          </button>
+          <div class="menu__request">
+            <span>Не нашли нужной информации? <br> Мы поможем:</span>
+            <button class="btn-green">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="graph-modal popup-citybox">
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="popup-commerce">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <div class="popup-citybox__body">
+        <div class="popup-citybox__left">
+          <div class="popup-citybox__left-text">
+            <h4 class="title-h4">Помещение № 1</h4>
+            <div class="popup-citybox__params">
+              <span>61,5 кв м</span>
+              <span>Дом 1</span>
+            </div>
+            <span class="popup-citybox__price">4 350 000 руб</span>
+          </div>
+          <picture class="popup-citybox__img">
+            <source srcset="img/pages/commerce/commerce1.webp" type="image/webp">
+            <img loading="lazy" src="img/pages/commerce/commerce1.png" class="image" width="" height="" alt="">
+          </picture>
+        </div>
+        <div class="popup-citybox__right">
+          <div class="popup-citybox__right-text">
+            <h4 class="title-h4">Посмотреть помещение</h4>
+            <span class="req__agree">Оставьте заявку и наши менеджеры отдела продаж с удовольствием расскажут вам все подробности</span>
+          </div>
+          <div class="req__form">
+            <form action="">
+              <div class="input">
+                <span class="input__placeholder">Имя</span>
+                <input type="text">
+              </div>
+              <div class="input">
+                <span class="input__placeholder">Телефон</span>
+                <input class="phone" type="tel">
+              </div>
+              <button class="btn-white">Оставить заявку</button>
+              <span class="req__agree">Нажимая на кнопку «Оставить заявку», я даю согласие на <a href="#">обработку персональных данных</a> и условия <a href="#">политики конфиденциалности</a></span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
