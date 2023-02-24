@@ -67,8 +67,12 @@ const modal = new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]();
 // Реализация табов
 
 const motion = document.querySelector('.motion');
+const prodTab = document.querySelector('.prod-tab');
 if (motion) {
   const tabs = new graph_tabs__WEBPACK_IMPORTED_MODULE_1__["default"]('motion');
+}
+if (prodTab) {
+  const tabs = new graph_tabs__WEBPACK_IMPORTED_MODULE_1__["default"]('prod-tab');
 }
 
 // Получение высоты шапки сайта (не забудьте вызвать функцию)
@@ -534,8 +538,12 @@ if (flatSchemes.length != 0) {
     xx = e.pageX;
     yy = e.pageY;
     function moveAt(e) {
-      block.style.left = left + e.pageX - xx + 'px';
-      block.style.top = tp + e.pageY - yy + 'px';
+      if (left + e.pageX - xx < 1500 && left + e.pageX - xx > -1500) {
+        block.style.left = left + e.pageX - xx + 'px';
+      }
+      if (tp + e.pageY - yy < 1500 && tp + e.pageY - yy > -1500) {
+        block.style.top = tp + e.pageY - yy + 'px';
+      }
     }
     blockmove.onmousemove = function (e) {
       moveAt(e);
@@ -696,6 +704,75 @@ if (commerces.length != 0) {
       path.dataset.graphPath = 'popup-commerce';
     });
   });
+}
+
+// Accordion product aside
+const accordionProd = document.querySelector('.p-info__line-acc');
+if (accordionProd) {
+  accordionProd.addEventListener('click', () => {
+    accordionProd.classList.toggle('active');
+    const accordionClauseItemBody = accordionProd.nextElementSibling;
+    if (accordionProd.classList.contains('active')) {
+      accordionClauseItemBody.style.maxHeight = accordionClauseItemBody.scrollHeight + 'px';
+    } else {
+      accordionClauseItemBody.style.maxHeight = 0;
+    }
+  });
+}
+
+// Product fancybox
+const fancyBtn = document.querySelector('#p-fancy');
+if (fancyBtn) {
+  const fancyBody = document.querySelector('.p-fancy');
+  const fancyClose = fancyBody.querySelector('.graph-modal__close');
+  fancyBtn.addEventListener('click', () => {
+    fancyBody.classList.add('active');
+  });
+  fancyClose.addEventListener('click', () => {
+    fancyBody.classList.remove('active');
+  });
+}
+const prodTab = document.querySelector('.prod-tab');
+
+// mistake!!!!!!!
+
+if (prodTab) {
+  const prodTabBtns = prodTab.querySelectorAll('.tabs__nav-btn');
+  const prodTabItems = prodTab.querySelectorAll('.tabs__panel');
+  const fancyBtns = document.querySelectorAll('.p-fancy__prev');
+  const fancyItems = document.querySelectorAll('.p-fancy__pic');
+  console.log(prodTabBtns);
+  console.log(prodTabItems);
+  console.log(fancyBtns);
+  console.log(fancyItems);
+  for (let i = 0; i < prodTabBtns.length; i++) {
+    prodTabBtns[i].addEventListener('click', () => {
+      fancyBtns.forEach(el => {
+        el.classList.remove('active');
+      });
+      fancyItems.forEach(el => {
+        el.classList.remove('active');
+      });
+      fancyBtns[i].classList.add('active');
+      fancyItems[i].classList.add('active');
+    });
+  }
+  for (let i = 0; i < fancyBtns.length; i++) {
+    fancyBtns[i].addEventListener('click', () => {
+      prodTabBtns.forEach(el => {
+        el.classList.remove('tabs__nav-btn--active');
+        el.setAttribute("tabindex", "-1");
+        el.setAttribute("aria-selected", "");
+      });
+      prodTabItems.forEach(el => {
+        el.classList.remove('tabs__panel--active');
+      });
+      prodTabBtns[i].classList.add('tabs__nav-btn--active');
+      prodTabItems[i].classList.add('tabs__panel--active');
+      prodTabBtns[i].setAttribute("tabindex", "");
+      prodTabBtns[i].setAttribute("aria-selected", "true");
+    });
+  }
 }
 
 // Main popup action
