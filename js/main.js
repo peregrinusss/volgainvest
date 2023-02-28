@@ -727,9 +727,11 @@ if (fancyBtn) {
   const fancyClose = fancyBody.querySelector('.graph-modal__close');
   fancyBtn.addEventListener('click', () => {
     fancyBody.classList.add('active');
+    document.body.classList.add('noscroll');
   });
   fancyClose.addEventListener('click', () => {
     fancyBody.classList.remove('active');
+    document.body.classList.remove('noscroll');
   });
 }
 const prodTab = document.querySelector('.prod-tab');
