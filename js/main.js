@@ -255,6 +255,56 @@ function init1() {
 if (document.querySelector('#map')) {
   ymaps.ready(init1);
 }
+
+// Yandex map
+function init2() {
+  let mapCenter = [56.32877217433268, 43.90089356707584];
+  let map = new ymaps.Map('map1', {
+    center: mapCenter,
+    zoom: 13,
+    controls: ['searchControl']
+  });
+  if (screenWidth <= 768) {
+    map.setZoom(11);
+  } else if (screenWidth <= 1200) {
+    map.setZoom(12);
+  }
+  var searchControl = new ymaps.control.SearchControl({
+    options: {
+      provider: 'yandex#map'
+    }
+  });
+  searchControl.search('Продукты');
+
+  // let placemark = new ymaps.Placemark([56.3034682015124,43.933365907409666], {}, {
+  // })
+
+  // map.controls.remove('geolocationControl'); // удаляем геолокацию
+  map.controls.remove('searchControl'); // удаляем поиск
+  map.controls.remove('trafficControl'); // удаляем контроль трафика
+  map.controls.remove('typeSelector'); // удаляем тип
+  // map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+  // map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+  // map.controls.remove('rulerControl'); // удаляем контрол правил
+  // map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+
+  map.geoObjects
+  // .add(placemark)
+  .add(new ymaps.Placemark([56.3034682015124, 43.933365907409666], {
+    iconCaption: 'ЖК на Журова'
+  }, {
+    preset: 'islands#redHomeIcon',
+    iconColor: 'green'
+  })).add(new ymaps.Placemark([56.34624200424052, 43.86168999999998], {
+    iconCaption: 'Главный офис'
+  }, {
+    preset: 'islands#redHomeIcon',
+    iconColor: 'green'
+  }));
+}
+if (document.querySelector('#map1')) {
+  ymaps.ready(init2);
+}
 const mapTabs = document.querySelectorAll('.map__point');
 if (mapTabs.length != 0) {
   mapTabs.forEach(mapTab => {
