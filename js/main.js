@@ -224,18 +224,49 @@ function init1() {
   let map = new ymaps.Map('map', {
     center: mapCenter,
     zoom: 16,
-    controls: ['searchControl']
+    controls: []
   });
   var searchControl = new ymaps.control.SearchControl({
     options: {
-      provider: 'yandex#map'
+      provider: 'yandex#search',
+      noPopup: true,
+      noSuggestPanel: true,
+      boundedBy: [[56.31470576779187, 43.90511485464363], [56.292087803719355, 43.95300837881353]]
     }
   });
-  searchControl.search('Продукты');
-  let placemark = new ymaps.Placemark([56.3034682015124, 43.933365907409666], {}, {});
+  map.controls.add(searchControl);
+  searchControl.search('Магазины');
+  const mapTab = document.querySelector('.map__nav');
+  const mapTabs = mapTab.querySelectorAll('.tabs__nav-btn');
+  console.log(mapTabs);
+  mapTabs.forEach(el => {
+    console.log(el);
+    console.log(el.dataset.map);
+    el.addEventListener('click', () => {
+      mapTabs.forEach(elem => {
+        elem.classList.remove('active');
+      });
+      el.classList.add('active');
+    });
+  });
+  mapTabs[0].addEventListener('click', () => {
+    searchControl.search('Магазины');
+  });
+  mapTabs[1].addEventListener('click', () => {
+    searchControl.search('Образование');
+  });
+  mapTabs[2].addEventListener('click', () => {
+    searchControl.search('Транспорт');
+  });
+  mapTabs[3].addEventListener('click', () => {
+    searchControl.search('Здоровье');
+  });
+  mapTabs[4].addEventListener('click', () => {
+    searchControl.search('Развлечения');
+  });
 
   // map.controls.remove('geolocationControl'); // удаляем геолокацию
-  // map.controls.remove('searchControl'); // удаляем поиск
+  map.controls.remove('searchControl'); // удаляем поиск
   map.controls.remove('trafficControl'); // удаляем контроль трафика
   map.controls.remove('typeSelector'); // удаляем тип
   // map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
@@ -243,14 +274,28 @@ function init1() {
   // map.controls.remove('rulerControl'); // удаляем контрол правил
   // map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
 
-  map.geoObjects
-  // .add(placemark)
-  .add(new ymaps.Placemark([56.3034682015124, 43.933365907409666], {
+  map.geoObjects.add(new ymaps.Placemark([56.3034682015124, 43.933365907409666], {
     iconCaption: 'ЖК на Журова'
   }, {
     preset: 'islands#redHomeIcon',
     iconColor: 'green'
   }));
+  const mapOpen = document.querySelector('.map__open');
+  const mapWrap = document.querySelector('.map');
+  const mapExtand = mapOpen.querySelector('.map__open-extend');
+  const mapReduce = mapOpen.querySelector('.map__open-reduce');
+  mapExtand.addEventListener('click', () => {
+    mapWrap.classList.add('fullscreen');
+    mapExtand.classList.remove('active');
+    mapReduce.classList.add('active');
+    map.container.enterFullscreen();
+  });
+  mapReduce.addEventListener('click', () => {
+    mapWrap.classList.remove('fullscreen');
+    mapExtand.classList.add('active');
+    mapReduce.classList.remove('active');
+    map.container.exitFullscreen();
+  });
 }
 if (document.querySelector('#map')) {
   ymaps.ready(init1);
@@ -826,74 +871,6 @@ if (prodTab) {
     });
   }
 }
-
-// Main popup action
-// const allPopups = document.querySelectorAll('.popup')
-// const allClosePopupBtns = document.querySelectorAll('.close-btn')
-// const allPopupOpenBtns = document.querySelectorAll('.popup-open')
-
-// if (allPopupOpenBtns.length != 0) {
-//     const popupClientsCards = document.querySelector('.popup-clients__cards')
-//     const popupReqForm = document.querySelector('.popup-req__form')
-
-//     const popupClients = document.querySelector('.popup-clients')
-//     const popupReq = document.querySelector('.popup-req')
-//     const mobileMenu = document.querySelector('.header-mobile-menu')
-//     const headerContent = document.querySelector('.header__content')
-//     const headerBurger = document.querySelector('.header__burger')
-
-//     allPopupOpenBtns.forEach((popupOpenBtn) => {
-//         popupOpenBtn.addEventListener('click', () => {
-//             let popupId = popupOpenBtn.getAttribute('data-popup')
-//             let currentPopup = document.querySelector(popupId)
-
-//             allPopups.forEach((popup) => {
-//               popup.classList.remove('active')
-//             })
-
-//             function animateCards(el) {
-//               el.classList.add('active')
-//             }
-
-//             currentPopup.classList.add('active')
-//             document.body.classList.add('noscroll')
-
-//             if (popupClients.classList.contains('active')) {
-//               setTimeout(animateCards(popupClientsCards), 300)
-//             }
-//             if (popupReq.classList.contains('active')) {
-//               // mobileMenu.classList.remove('active')
-//               setTimeout(animateCards(popupReqForm), 300)
-//             }
-//         })
-//     })
-
-//     allPopups.forEach((popup) => {
-//         if (popup.classList.contains('active')) {
-//             document.body.classList.add('noscroll')
-//         } else {
-//             document.body.classList.remove('noscroll')
-//         }
-//     })
-
-//     allClosePopupBtns.forEach((closePopupBtn) => {
-//         closePopupBtn.addEventListener('click', () => {
-//             allPopups.forEach((popup) => {
-//                 popup.classList.remove('active')
-//                 document.body.classList.remove('noscroll')
-//             })
-//             if (popupClientsCards) {
-//               setTimeout(popupClientsCards.classList.remove('active'), 1000);
-//             }
-//             if (popupReqForm) {
-//               setTimeout(popupReqForm.classList.remove('active'), 1000);
-//             }
-//             mobileMenu.classList.remove('menu--active')
-//             headerContent.classList.remove('mobile')
-//             headerBurger.classList.remove('burger--active')
-//         })
-//     })
-// }
 
 /***/ }),
 

@@ -2947,6 +2947,26 @@ ul, ol {
   margin-top: 50px;
   position: relative;
 }
+.map.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  margin: 0;
+}
+.map.fullscreen .map__open {
+  z-index: 10001;
+}
+.map.fullscreen .map__nav {
+  z-index: 10001;
+}
+.map__container {
+  position: static;
+}
 .map__nav {
   width: 100%;
   -webkit-box-sizing: content-box;
@@ -2982,6 +3002,9 @@ ul, ol {
   position: relative;
   z-index: 1;
 }
+.map__body.fullscreen {
+  height: 100%;
+}
 @media (max-width: 1400px) {
   .map__body {
     height: 768px;
@@ -2996,6 +3019,91 @@ ul, ol {
   .map__body {
     height: 560px;
   }
+}
+.map__open {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  z-index: 2;
+}
+.map__open-btn {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  background: #FFFFFF;
+  -webkit-box-shadow: 5px 6px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 6px 14px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  padding: 8px 24px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.map__open-btn:hover {
+  background: #06373A;
+  color: #ffffff;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.map__open-btn:hover svg {
+  fill: #ffffff;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.map__open-reduce {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none;
+}
+.map__open-reduce svg {
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.map__open-reduce.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.map__open-extend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none;
+}
+.map__open-extend svg {
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.map__open-extend.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .motion {
@@ -4724,38 +4832,6 @@ ul, ol {
   margin-right: 3px;
 }
 
-.flat-available {
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-  letter-spacing: 0.03em;
-  padding: 8px;
-  margin-top: auto;
-}
-@media (max-width: 1400px) {
-  .flat-available {
-    font-size: 16px;
-  }
-}
-@media (max-width: 1200px) {
-  .flat-available {
-    padding: 5px;
-  }
-}
-.flat-available__onsale {
-  color: #159947;
-  background: rgba(21, 153, 71, 0.15);
-}
-.flat-available__booked {
-  color: #FFBD70;
-  background: rgba(255, 155, 112, 0.15);
-}
-.flat-available__sold {
-  color: #FF473C;
-  background: rgba(255, 71, 60, 0.15);
-}
-
 .choices__inner {
   border-radius: 0;
   width: 220px;
@@ -5140,6 +5216,7 @@ ul, ol {
   cursor: pointer;
   z-index: 2;
   stroke-width: 6px;
+  pointer-events: all;
 }
 .flat-scheme__img svg path:hover {
   stroke: #159947;
@@ -5252,7 +5329,7 @@ ul, ol {
 .flat-sold {
   fill: #FF473C;
   fill-opacity: 0.94;
-  pointer-events: none;
+  pointer-events: none !important;
   position: relative;
 }
 
@@ -5376,6 +5453,39 @@ ul, ol {
     max-width: 40px;
     font-size: 14px;
   }
+}
+
+.flat-available {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  padding: 8px;
+  margin-top: auto;
+}
+@media (max-width: 1400px) {
+  .flat-available {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1200px) {
+  .flat-available {
+    padding: 5px;
+  }
+}
+.flat-available__onsale {
+  color: #159947;
+  background: rgba(21, 153, 71, 0.15);
+}
+.flat-available__booked {
+  color: #FFBD70;
+  background: rgba(255, 155, 112, 0.15);
+}
+.flat-available__sold {
+  color: #FF473C;
+  background: rgba(255, 71, 60, 0.15);
+  pointer-events: none !important;
 }
 
 .citybox__chooses {

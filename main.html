@@ -253,15 +253,29 @@
         <div class="container map__container">
           <div class="map__nav tabs">
             <ul class="tabs__nav">
-              <li class="tabs__nav-item"><button class="tabs__nav-btn active" type="button">Магазины</button></li>
-              <li class="tabs__nav-item"><button class="tabs__nav-btn" type="button">Образование</button></li>
-              <li class="tabs__nav-item"><button class="tabs__nav-btn" type="button">Транспорт</button></li>
-              <li class="tabs__nav-item"><button class="tabs__nav-btn" type="button">Здоровье и красота</button></li>
-              <li class="tabs__nav-item"><button class="tabs__nav-btn" type="button">Развлечения</button></li>
+              <li class="tabs__nav-item"><button class="tabs__nav-btn active" data-map="products" type="button">Магазины</button></li>
+              <li class="tabs__nav-item"><button class="tabs__nav-btn" data-map="education" type="button">Образование</button></li>
+              <li class="tabs__nav-item"><button class="tabs__nav-btn" data-map="transport" type="button">Транспорт</button></li>
+              <li class="tabs__nav-item"><button class="tabs__nav-btn" data-map="health" type="button">Здоровье и красота</button></li>
+              <li class="tabs__nav-item"><button class="tabs__nav-btn" data-map="entert" type="button">Развлечения</button></li>
             </ul>
           </div>
         </div>
         <div class="map__body" id="map"></div>
+        <div class="map__open">
+          <div class="map__open-btn map__open-reduce">
+            <svg class="">
+              <use xlink:href="img/sprite.svg#reduce"></use>
+            </svg>
+            <span>Закрыть карту</span>
+          </div>
+          <div class="map__open-btn map__open-extend active">
+            <svg class="">
+              <use xlink:href="img/sprite.svg#extend"></use>
+            </svg>
+            <span>Раскрыть карту</span>
+          </div>
+        </div>
       </section>
       <section class="stat">
         <div class="container">
@@ -805,7 +819,7 @@
   </div>
 </div>
 
-    <script src="https://api-maps.yandex.ru/2.1.79/?apikey=d889cf05-49b0-4f2f-b7a7-17edfafbf91b&lang=ru_RU"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=d889cf05-49b0-4f2f-b7a7-17edfafbf91b&lang=ru_RU" type="text/javascript"></script>
 </body>
 
 </html>
