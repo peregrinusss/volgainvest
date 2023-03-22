@@ -19,7 +19,7 @@
   <script defer src="js/main.js"></script>
 </head>
 
-<body class="page__body">
+<body class="page__body noscroll">
     <header class="header header-1">
   <div class="container-header">
     <div class="header__content">
@@ -459,7 +459,7 @@
   </div>
 </div>
 
-    <div class="graph-modal">
+    <div class="graph-modal is-open">
 
   <div class="graph-modal__container popup-req" role="dialog" aria-modal="true" data-graph-target="popup-req">
     <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
@@ -484,6 +484,22 @@
             <span class="req__agree">Нажимая на кнопку «Оставить заявку», я даю согласие на <a href="#">обработку персональных данных</a> и условия <a href="#">политики конфиденциалности</a></span>
           </form>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="graph-modal__container popup-req graph-modal-open fade animate-open" role="dialog" aria-modal="true" data-graph-target="popup-req">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <div class="popup-req__hat">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="50" fill="white"/>
+          <path d="M39.792 75.0002L16.042 51.2502L21.9795 45.3127L39.792 63.1252L78.0212 24.896L83.9587 30.8335L39.792 75.0002Z" fill="#1F5F5B"/>
+        </svg>
+      </div>
+      <div class="popup-req__body popup-success__body">
+        <h3 class="title-h3">Заявка успешно <br> принята!</h3>
+        <span class="req__agree">Наши менеджеры скоро с вами свяжутся</span>
       </div>
     </div>
   </div>

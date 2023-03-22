@@ -263,12 +263,6 @@
         </div>
         <div class="map__body" id="map"></div>
         <div class="map__open">
-          <div class="map__open-btn map__open-reduce">
-            <svg class="">
-              <use xlink:href="img/sprite.svg#reduce"></use>
-            </svg>
-            <span>Закрыть карту</span>
-          </div>
           <div class="map__open-btn map__open-extend active">
             <svg class="">
               <use xlink:href="img/sprite.svg#extend"></use>
@@ -753,6 +747,29 @@
   </div>
 </footer>
 
+    <div class="map popup popup-map">
+      <div class="container map__container">
+        <div class="map__nav map__nav-popup tabs">
+          <ul class="tabs__nav">
+            <li class="tabs__nav-item"><button class="tabs__nav-btn active" data-map="products" type="button">Магазины</button></li>
+            <li class="tabs__nav-item"><button class="tabs__nav-btn" data-map="education" type="button">Образование</button></li>
+            <li class="tabs__nav-item"><button class="tabs__nav-btn" data-map="transport" type="button">Транспорт</button></li>
+            <li class="tabs__nav-item"><button class="tabs__nav-btn" data-map="health" type="button">Здоровье и красота</button></li>
+            <li class="tabs__nav-item"><button class="tabs__nav-btn" data-map="entert" type="button">Развлечения</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="map__body popup-map__body" id="map-popup"></div>
+      <div class="map__open">
+        <div class="map__open-btn map__open-reduce active">
+          <svg class="">
+            <use xlink:href="img/sprite.svg#reduce"></use>
+          </svg>
+          <span>Закрыть карту</span>
+        </div>
+      </div>
+    </div>
+
     <div class="menu">
   <div class="menu__body">
     <div class="container-header menu__container">
@@ -811,7 +828,7 @@
           </button>
           <div class="menu__request">
             <span>Не нашли нужной информации? <br> Мы поможем:</span>
-            <button class="btn-green">Оставить заявку</button>
+            <button class="btn-green" data-graph-path="popup-req">Оставить заявку</button>
           </div>
         </div>
       </div>
@@ -819,6 +836,36 @@
   </div>
 </div>
 
+    <div class="graph-modal">
+
+  <div class="graph-modal__container popup-req" role="dialog" aria-modal="true" data-graph-target="popup-req">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <div class="popup-req__hat">
+        <h3 class="title-h3 popup-req__title">Оставьте заявку</h3>
+        <h4 class="popup-req__subtitle">на бронирование квартиры</h4>
+      </div>
+      <div class="popup-req__body">
+        <span class="req__agree">Наши менеджеры отдела продаж с удовольствием расскажут вам все подробности</span>
+        <div class="req__form">
+          <form action="">
+            <div class="input">
+              <span class="input__placeholder">Имя</span>
+              <input type="text">
+            </div>
+            <div class="input">
+              <span class="input__placeholder">Телефон</span>
+              <input class="phone" type="tel">
+            </div>
+            <button class="btn-green">Оставить заявку</button>
+            <span class="req__agree">Нажимая на кнопку «Оставить заявку», я даю согласие на <a href="#">обработку персональных данных</a> и условия <a href="#">политики конфиденциалности</a></span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </div>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=d889cf05-49b0-4f2f-b7a7-17edfafbf91b&lang=ru_RU" type="text/javascript"></script>
 </body>
 

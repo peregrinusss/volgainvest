@@ -159,13 +159,40 @@
           </button>
           <div class="menu__request">
             <span>Не нашли нужной информации? <br> Мы поможем:</span>
-            <button class="btn-green">Оставить заявку</button>
+            <button class="btn-green" data-graph-path="popup-req">Оставить заявку</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+  <div class="graph-modal__container popup-req" role="dialog" aria-modal="true" data-graph-target="popup-req">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <div class="popup-req__hat">
+        <h3 class="title-h3 popup-req__title">Оставьте заявку</h3>
+        <h4 class="popup-req__subtitle">на бронирование квартиры</h4>
+      </div>
+      <div class="popup-req__body">
+        <span class="req__agree">Наши менеджеры отдела продаж с удовольствием расскажут вам все подробности</span>
+        <div class="req__form">
+          <form action="">
+            <div class="input">
+              <span class="input__placeholder">Имя</span>
+              <input type="text">
+            </div>
+            <div class="input">
+              <span class="input__placeholder">Телефон</span>
+              <input class="phone" type="tel">
+            </div>
+            <button class="btn-green">Оставить заявку</button>
+            <span class="req__agree">Нажимая на кнопку «Оставить заявку», я даю согласие на <a href="#">обработку персональных данных</a> и условия <a href="#">политики конфиденциалности</a></span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 

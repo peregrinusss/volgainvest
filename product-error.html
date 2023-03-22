@@ -19,7 +19,7 @@
   <script defer src="js/main.js"></script>
 </head>
 
-<body class="page__body">
+<body class="page__body noscroll">
     <header class="header header-1">
   <div class="container-header">
     <div class="header__content">
@@ -459,7 +459,23 @@
   </div>
 </div>
 
-    <div class="graph-modal">
+    <div class="graph-modal is-open">
+
+  <div class="graph-modal__container popup-req graph-modal-open fade animate-open" role="dialog" aria-modal="true" data-graph-target="popup-req">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <div class="popup-req__hat">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="50" fill="white"/>
+          <path d="M55.293 65.6445H44.668L41.7578 14.1406H58.2617L55.293 65.6445ZM58.1641 77.6563C58.1641 78.8086 57.9492 79.8828 57.5195 80.8789C57.0898 81.875 56.5039 82.7539 55.7812 83.4766C55.0391 84.1992 54.1992 84.7852 53.2031 85.2148C52.2266 85.6445 51.1719 85.8594 50.0586 85.8594C48.9453 85.8594 47.8516 85.6445 46.8555 85.2148C45.8789 84.7852 45 84.1992 44.2578 83.4766C43.5156 82.7344 42.9297 81.875 42.5 80.8789C42.0703 79.8828 41.8555 78.8086 41.8555 77.6563C41.8555 76.5039 42.0703 75.4883 42.5 74.5117C42.9297 73.5352 43.5156 72.6758 44.2578 71.9336C45 71.2109 45.8789 70.625 46.8555 70.1953C47.832 69.7656 48.9062 69.5508 50.0586 69.5508C51.2109 69.5508 52.2266 69.7656 53.2031 70.1953C54.1797 70.625 55.0391 71.2109 55.7812 71.9336C56.5039 72.6758 57.0898 73.5156 57.5195 74.5117C57.9492 75.4883 58.1641 76.543 58.1641 77.6563Z" fill="#1F5F5B"/>
+        </svg>
+      </div>
+      <div class="popup-req__body popup-success__body">
+        <h3 class="title-h3">Упс! <br> Что-то пошло не так</h3>
+        <span class="req__agree">Пожалуйста, попробуйте снова</span>
+      </div>
+    </div>
+  </div>
 
   <div class="graph-modal__container popup-req" role="dialog" aria-modal="true" data-graph-target="popup-req">
     <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>

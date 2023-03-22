@@ -221,7 +221,12 @@ if (inputs.length != 0) {
 // Yandex map
 function init1() {
   let mapCenter = [56.3034682015124, 43.933365907409666];
-  let map = new ymaps.Map('map', {
+  let mapMain = new ymaps.Map('map', {
+    center: mapCenter,
+    zoom: 16,
+    controls: []
+  });
+  let mapPop = new ymaps.Map('map-popup', {
     center: mapCenter,
     zoom: 16,
     controls: []
@@ -234,67 +239,137 @@ function init1() {
       boundedBy: [[56.31470576779187, 43.90511485464363], [56.292087803719355, 43.95300837881353]]
     }
   });
-  map.controls.add(searchControl);
+  var searchControl1 = new ymaps.control.SearchControl({
+    options: {
+      provider: 'yandex#search',
+      noPopup: true,
+      noSuggestPanel: true,
+      boundedBy: [[56.31470576779187, 43.90511485464363], [56.292087803719355, 43.95300837881353]]
+    }
+  });
+  mapPop.controls.add(searchControl1);
+  mapMain.controls.add(searchControl);
   searchControl.search('Магазины');
+  searchControl1.search('Магазины');
   const mapTab = document.querySelector('.map__nav');
   const mapTabs = mapTab.querySelectorAll('.tabs__nav-btn');
-  console.log(mapTabs);
+  const mapTabPopup = document.querySelector('.map__nav-popup');
+  const mapTabsPopup = mapTabPopup.querySelectorAll('.tabs__nav-btn');
   mapTabs.forEach(el => {
-    console.log(el);
-    console.log(el.dataset.map);
     el.addEventListener('click', () => {
       mapTabs.forEach(elem => {
         elem.classList.remove('active');
       });
-      el.classList.add('active');
+      mapTabsPopup.forEach(elem => {
+        elem.classList.remove('active');
+      });
     });
   });
   mapTabs[0].addEventListener('click', () => {
     searchControl.search('Магазины');
+    searchControl1.search('Магазины');
+    mapTabs[0].classList.add('active');
+    mapTabsPopup[0].classList.add('active');
   });
   mapTabs[1].addEventListener('click', () => {
     searchControl.search('Образование');
+    searchControl1.search('Образование');
+    mapTabs[1].classList.add('active');
+    mapTabsPopup[1].classList.add('active');
   });
   mapTabs[2].addEventListener('click', () => {
     searchControl.search('Транспорт');
+    searchControl1.search('Транспорт');
+    mapTabs[2].classList.add('active');
+    mapTabsPopup[2].classList.add('active');
   });
   mapTabs[3].addEventListener('click', () => {
     searchControl.search('Здоровье');
+    searchControl1.search('Здоровье');
+    mapTabs[3].classList.add('active');
+    mapTabsPopup[3].classList.add('active');
   });
   mapTabs[4].addEventListener('click', () => {
     searchControl.search('Развлечения');
+    searchControl1.search('Развлечения');
+    mapTabs[4].classList.add('active');
+    mapTabsPopup[4].classList.add('active');
+  });
+  mapTabsPopup.forEach(el => {
+    el.addEventListener('click', () => {
+      mapTabsPopup.forEach(elem => {
+        elem.classList.remove('active');
+      });
+      mapTabs.forEach(elem => {
+        elem.classList.remove('active');
+      });
+    });
+  });
+  mapTabsPopup[0].addEventListener('click', () => {
+    searchControl1.search('Магазины');
+    searchControl.search('Магазины');
+    mapTabs[0].classList.add('active');
+    mapTabsPopup[0].classList.add('active');
+  });
+  mapTabsPopup[1].addEventListener('click', () => {
+    searchControl1.search('Образование');
+    searchControl.search('Магазины');
+    mapTabs[1].classList.add('active');
+    mapTabsPopup[1].classList.add('active');
+  });
+  mapTabsPopup[2].addEventListener('click', () => {
+    searchControl1.search('Транспорт');
+    searchControl.search('Транспорт');
+    mapTabs[2].classList.add('active');
+    mapTabsPopup[2].classList.add('active');
+  });
+  mapTabsPopup[3].addEventListener('click', () => {
+    searchControl1.search('Здоровье');
+    searchControl.search('Здоровье');
+    mapTabs[3].classList.add('active');
+    mapTabsPopup[3].classList.add('active');
+  });
+  mapTabsPopup[4].addEventListener('click', () => {
+    searchControl1.search('Развлечения');
+    searchControl.search('Развлечения');
+    mapTabs[4].classList.add('active');
+    mapTabsPopup[4].classList.add('active');
   });
 
   // map.controls.remove('geolocationControl'); // удаляем геолокацию
-  map.controls.remove('searchControl'); // удаляем поиск
-  map.controls.remove('trafficControl'); // удаляем контроль трафика
-  map.controls.remove('typeSelector'); // удаляем тип
+  mapPop.controls.remove('searchControl'); // удаляем поиск
+  mapPop.controls.remove('trafficControl'); // удаляем контроль трафика
+  mapPop.controls.remove('typeSelector'); // удаляем тип
+  mapMain.controls.remove('searchControl'); // удаляем поиск
+  mapMain.controls.remove('trafficControl'); // удаляем контроль трафика
+  mapMain.controls.remove('typeSelector'); // удаляем тип
   // map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
   // map.controls.remove('zoomControl'); // удаляем контрол зуммирования
   // map.controls.remove('rulerControl'); // удаляем контрол правил
   // map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
 
-  map.geoObjects.add(new ymaps.Placemark([56.3034682015124, 43.933365907409666], {
+  mapPop.geoObjects.add(new ymaps.Placemark([56.3034682015124, 43.933365907409666], {
     iconCaption: 'ЖК на Журова'
   }, {
     preset: 'islands#redHomeIcon',
     iconColor: 'green'
   }));
-  const mapOpen = document.querySelector('.map__open');
-  const mapWrap = document.querySelector('.map');
-  const mapExtand = mapOpen.querySelector('.map__open-extend');
-  const mapReduce = mapOpen.querySelector('.map__open-reduce');
+  mapMain.geoObjects.add(new ymaps.Placemark([56.3034682015124, 43.933365907409666], {
+    iconCaption: 'ЖК на Журова'
+  }, {
+    preset: 'islands#redHomeIcon',
+    iconColor: 'green'
+  }));
+  const mapExtand = document.querySelector('.map__open-extend');
+  const mapReduce = document.querySelector('.map__open-reduce');
+  const mapPopup = document.querySelector('.popup-map');
   mapExtand.addEventListener('click', () => {
-    mapWrap.classList.add('fullscreen');
-    mapExtand.classList.remove('active');
-    mapReduce.classList.add('active');
-    map.container.enterFullscreen();
+    mapPopup.classList.add('active');
+    document.body.classList.add('noscroll');
   });
   mapReduce.addEventListener('click', () => {
-    mapWrap.classList.remove('fullscreen');
-    mapExtand.classList.add('active');
-    mapReduce.classList.remove('active');
-    map.container.exitFullscreen();
+    mapPopup.classList.remove('active');
+    document.body.classList.remove('noscroll');
   });
 }
 if (document.querySelector('#map')) {
@@ -830,18 +905,11 @@ if (fancyBtn) {
   });
 }
 const prodTab = document.querySelector('.prod-tab');
-
-// mistake!!!!!!!
-
 if (prodTab) {
   const prodTabBtns = prodTab.querySelectorAll('.tabs__nav-btn');
   const prodTabItems = prodTab.querySelectorAll('.tabs__panel');
   const fancyBtns = document.querySelectorAll('.p-fancy__prev');
   const fancyItems = document.querySelectorAll('.p-fancy__pic');
-  console.log(prodTabBtns);
-  console.log(prodTabItems);
-  console.log(fancyBtns);
-  console.log(fancyItems);
   for (let i = 0; i < prodTabBtns.length; i++) {
     prodTabBtns[i].addEventListener('click', () => {
       fancyBtns.forEach(el => {
@@ -872,6 +940,20 @@ if (prodTab) {
   }
 }
 
+// mobile cityboxes // commerce
+const cityboxTabs = document.querySelectorAll('.citybox__choose');
+if (cityboxTabs.length != 0) {
+  const cityboxItems = document.querySelectorAll('.citybox-list');
+  cityboxTabs[0].addEventListener('click', () => {
+    cityboxItems[0].classList.add('active');
+    cityboxItems[1].classList.remove('active');
+  });
+  cityboxTabs[1].addEventListener('click', () => {
+    cityboxItems[1].classList.add('active');
+    cityboxItems[0].classList.remove('active');
+  });
+}
+
 /***/ }),
 
 /***/ "./src/js/components/swiper.js":
@@ -891,16 +973,16 @@ const motionSwiper1 = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.motio
     nextEl: '.motion__swiper-1-button-next',
     prevEl: '.motion__swiper-1-button-prev'
   },
-  loop: 'true',
   spaceBetween: 8,
   simulateTouch: true,
   slidesPerView: '2',
+  watchSlidesProgress: true,
   breakpoints: {
-    769: {
+    768: {
       slidesPerView: '3',
       spaceBetween: 16
     },
-    1201: {
+    1200: {
       spaceBetween: 32,
       slidesPerView: '3'
     }
@@ -912,16 +994,16 @@ const motionSwiper2 = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.motio
     nextEl: '.motion__swiper-2-button-next',
     prevEl: '.motion__swiper-2-button-prev'
   },
-  loop: 'true',
   spaceBetween: 8,
   simulateTouch: true,
   slidesPerView: '2',
+  watchSlidesProgress: true,
   breakpoints: {
-    769: {
+    768: {
       slidesPerView: '3',
       spaceBetween: 16
     },
-    1201: {
+    1200: {
       spaceBetween: 32,
       slidesPerView: '3'
     }
@@ -934,16 +1016,16 @@ const motionSwiper3 = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.motio
     nextEl: '.motion__swiper-3-button-next',
     prevEl: '.motion__swiper-3-button-prev'
   },
-  loop: 'true',
   spaceBetween: 8,
   simulateTouch: true,
   slidesPerView: '2',
+  watchSlidesProgress: true,
   breakpoints: {
-    769: {
+    768: {
       slidesPerView: '3',
       spaceBetween: 16
     },
-    1201: {
+    1200: {
       spaceBetween: 32,
       slidesPerView: '3'
     }
@@ -25555,4 +25637,3 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.js.map
