@@ -20,80 +20,188 @@
 </head>
 
 <style>
+  @keyframes gradient {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+
+  html, body {
+    height: 100%;
+    color: #fff;
+    background: -o-linear-gradient(310deg, #000000, #04523c);
+    background: linear-gradient(140deg, #0c0c0c, #03515a);
+    background-repeat: no-repeat;
+    background-size: 200%;
+    animation: gradient 10s infinite;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  html {
+    height: 200% !important;
+  }
+
   li {
-    list-style: inherit;
-    font-size: 20px;
+    list-style: none;
+    list-style-type: decimal;
+    font-size: 18px;
+    margin-top: 15px;
   }
   .index {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 15px;
   }
-  a:hover {
-    color: crimson;
-    transition: 0.2s;
+  h1 {
+    width: fit-content;
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 130%;
+    background-image: linear-gradient(to right, #5cc889, #2b8bbb);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
   }
   a {
-    transition: 0.2s;
-    color: #333333;
+    background-image: linear-gradient(
+      to right,
+      #1dd994,
+      #1dd994 50%,
+      #ffffff 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+
+  a::before{
+    content: '';
+    background: #1dd994;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+  a::after{
+    content: '';
+    background: #ffffff;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  a:hover {
+    background-position: 0;
+  }
+
+  a:hover::before{
+    width: 100%;
+  }
+  a:hover::after{
+    width: 0;
+  }
+
+  .disc {
+    display: block;
+    font-size: 16px;
+    margin: 40px 0 50px;
+  }
+
+  .stack {
+    display: flex;
+    column-gap: 20px;
+    row-gap: 5px;
+    flex-wrap: wrap;
+  }
+  .stack span {
+    font-size: 22px;
+    font-weight: 600;
+    color: #817f7f;
   }
 </style>
 
 <body class="page__body">
   <main class="main">
     <div class="index">
-      <h1>ВолгаИнвестГрупп</h1>
+      <div class="stack">
+        <span>Html</span>
+        <span>Scss</span>
+        <span>Js (ES6)</span>
+        <span>Js libraries</span>
+        <span>Gulp</span>
+        <span>Bem</span>
+      </div>
+      <h1>Разработка верстки сайта ЖК ВолгаИнвестГрупп</h1>
+      <span class="disc">Ниже приведены ссылки на страницы проекта. Для вашего удобства страницы открываются в новом окне.</span>
       <ol>
         <li>
-          <a href="main.html">Главная</a>
+          <a href="main.html" target="_blank">Главная</a>
         </li>
         <li>
-          <a href="house.html">Выбор дома</a>
+          <a href="house.html" target="_blank">Выбор дома</a>
         </li>
         <li>
-          <a href="flat.html">Выбор квартиры</a>
+          <a href="flat.html" target="_blank">Выбор квартиры</a>
         </li>
         <li>
-          <a href="product.html">Страница о квартире</a>
+          <a href="product.html" target="_blank">Страница о квартире</a>
         </li>
         <li>
-          <a href="product-success.html">Попап Успех</a>
+          <a href="product-success.html" target="_blank">Попап Успех</a>
         </li>
         <li>
-          <a href="product-error.html">Попап Ошибка</a>
+          <a href="product-error.html" target="_blank">Попап Ошибка</a>
         </li>
         <li>
-          <a href="citybox.html">Выбор ситибокса</a>
+          <a href="citybox.html" target="_blank">Выбор ситибокса</a>
         </li>
         <li>
-          <a href="commerce.html">Выбор коммерческого помещения</a>
+          <a href="commerce.html" target="_blank">Выбор коммерческого помещения</a>
         </li>
         <li>
-          <a href="constructor.html">О застройщике</a>
+          <a href="constructor.html" target="_blank">О застройщике</a>
         </li>
         <li>
-          <a href="mort.html">Ипотека</a>
+          <a href="mort.html" target="_blank">Ипотека</a>
         </li>
         <li>
-          <a href="contacts.html">Контакты</a>
+          <a href="contacts.html" target="_blank">Контакты</a>
         </li>
         <li>
-          <a href="safe.html">Гарантии</a>
+          <a href="safe.html" target="_blank">Гарантии</a>
         </li>
         <li>
-          <a href="docs.html">Документы</a>
+          <a href="docs.html" target="_blank">Документы</a>
         </li>
         <li>
-          <a href="stocks.html">Новости и акции</a>
+          <a href="stocks.html" target="_blank">Новости и акции</a>
         </li>
         <li>
-          <a href="headline.html">Новость</a>
+          <a href="headline.html" target="_blank">Новость</a>
         </li>
         <li>
-          <a href="404.html">404</a>
+          <a href="404.html" target="_blank">404</a>
         </li>
         <li>
-          <a href="text.html">Текстовая страница</a>
+          <a href="text.html" target="_blank">Текстовая страница</a>
         </li>
       </ol>
     </div>
